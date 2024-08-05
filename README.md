@@ -1,4 +1,6 @@
-# DogDog
+# Veterinaria DogDog
+
+![Logo](images/logo.jpg)
 
 - Diagrama de Clases
 
