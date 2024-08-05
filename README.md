@@ -2,6 +2,6 @@
 
 - Diagramas
 
-![Diagrama UML](images/uml.jpg)
+![Diagrama UML](images/UML.jpg)
 
 ![Diagrama Entidad-Relación](images/entities.jpg)
