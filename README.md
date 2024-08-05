@@ -1,4 +1,6 @@
-# Veterinaria DogDog ![Logo](images/Logo.png)
+# Veterinaria DogDog 
+
+![Logo](images/Logo.png)
 
 - Paleta de Colores
 
