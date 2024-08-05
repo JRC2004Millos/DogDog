@@ -1,6 +1,6 @@
 # Veterinaria DogDog
 
-![Logo](images/logo.jpg)
+![Logo](images/Logo.jpg)
 
 - Diagrama de Clases
 
