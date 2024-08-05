@@ -1,6 +1,8 @@
-# Veterinaria DogDog
+# Veterinaria DogDog ![Logo](images/Logo.png)
 
-![Logo](images/Logo.png)
+- Paleta de Colores
+
+![Paleta](images/paleta_colores.png)
 
 - Diagrama de Clases
 
