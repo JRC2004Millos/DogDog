@@ -1,5 +1,13 @@
 # Veterinaria DogDog 
 
+Página web de la veterinaria Dog Dog, donde cada perro es familia.
+
+- Desarrolladores
+  
+  > Nicolás Hincapié
+  > Juan David Rincón
+  > Julián Rodríguez
+
 ![Logo](images/Logo.png)
 
 - Paleta de Colores
