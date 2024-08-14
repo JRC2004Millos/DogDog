@@ -43,7 +43,7 @@ Valoramos profundamente la confianza que nuestros clientes depositan en nosotros
 
 # Diagrama de Clases
 
-![Diagrama UML](demo/src/main/resources/static/imagesimages/UML.jpg)
+![Diagrama UML](demo/src/main/resources/static/images/UML.jpg)
 
 # Diagrama de Entidad-Relación
 
