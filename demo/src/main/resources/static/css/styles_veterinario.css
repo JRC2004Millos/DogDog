@@ -1,0 +1,124 @@
+header {
+  /* Define el encabezado como un contenedor flexible */
+  display: flex;
+  /* Distribuye el espacio entre los elementos secundarios */
+  justify-content: space-between;
+  /* Añade un relleno de 10px alrededor del contenido */
+  /* Centra los elementos a lo largo del eje transversal */
+  align-items: center;
+  /* Establece el color de fondo del encabezado */
+  background-color: #6673e1;
+  height: 100px;
+}
+
+header img {
+  height: 80%;
+}
+
+a {
+  /* Añade un margen de 10px alrededor de los enlaces */
+  margin: 10px;
+}
+
+.indice {
+  justify-content: end;
+}
+
+body {
+  margin: 0;
+  margin-bottom: 100px;
+  background-color: #9acdfe;
+}
+
+header > ul {
+  /* Define la lista dentro del encabezado como un contenedor flexible */
+  display: flex;
+  justify-content: end;
+  margin: 0;
+  padding: 0;
+}
+
+header ul li {
+  align-items: center;
+  display: flex;
+  /* Establece el tamaño de la fuente a 18px */
+  font-size: 18px;
+  /* Elimina el estilo de lista predeterminado */
+  list-style-type: none;
+  /* Elimina la subrayado predeterminado */
+  text-decoration: none;
+  /* Establece el color del texto en negro */
+  color: white;
+}
+
+header li a:hover {
+  /* Cambia el color del texto a rojo al pasar el cursor */
+  color: red;
+  /* Subraya el texto al pasar el cursor */
+  text-decoration: underline;
+}
+
+header a {
+  padding: 3px;
+}
+
+footer {
+  /* Establece el color de fondo del pie de página */
+  background-color: #6673e1;
+  /* Define el pie de página como un contenedor flexible */
+  display: flex;
+  /* Establece la dirección del eje principal en fila */
+  flex-direction: row;
+  /* Establece el color del texto en blanco */
+  color: white;
+
+  bottom: 0;
+
+  position: absolute;
+
+  width: 100%;
+}
+
+footer img {
+  width: 30px;
+  height: 30px;
+}
+
+#copyright {
+  margin: 0 10px;
+  display: grid;
+  place-items: center;
+}
+
+#contact {
+  margin: 0 50px;
+  display: grid;
+  place-items: center;
+}
+
+#social {
+  /* Alinea el contenido al final del contenedor */
+  justify-content: end;
+  /* Define la sección de redes sociales como un contenedor flexible */
+  display: flex;
+  /* Permite que la sección crezca para llenar el espacio disponible */
+  flex-grow: 1;
+}
+
+#social a {
+  /* Define los enlaces en la sección de redes sociales como contenedores flexibles */
+  display: flex;
+  /* Establece la dirección del eje principal en columna */
+  flex-direction: column;
+  /* Centra los elementos a lo largo del eje transversal */
+  align-items: center;
+  /* Centra los elementos a lo largo del eje principal */
+  justify-content: center;
+  /* Establece el color del texto en blanco */
+  color: white;
+}
+
+#social p {
+  margin: 0;
+  font-size: 15px;
+}
