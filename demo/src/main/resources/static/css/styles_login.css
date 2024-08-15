@@ -73,7 +73,7 @@ form {
 }
 
 #cuadro {
-  margin: 10px;
+  margin: 0 100px 0 0;
   background-color: #6673e1;
   color: white;
   width: 40%;
