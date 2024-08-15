@@ -16,17 +16,23 @@
     <header class="header">
       <img src="../images/Logo2.png" alt="Logo" />
       <ul>
-        <li><a href="#nuestrosClientes">Nuestros Clientes</a></li>
+        <li><a href="agregar">Agregar</a></li>
         <li><a href="home">Inicio</a></li>
       </ul>
     </header>
 
     <main>
-      <h1>Mascotas</h1>
-      <table class="table">
+      <div class="titulo">
+        <h1>Mascotas</h1>
+        <button class="btn btn-primary">
+          <img src="../images/agregar.png" alt="Add" height="40px" />
+        </button>
+      </div>
+      <table class="table table-striped">
         <thead class="thead-dark">
           <tr>
             <th scope="col">#</th>
+            <th scope="col">Imagen</th>
             <th scope="col">Nombre</th>
             <th scope="col">Raza</th>
             <th scope="col">Edad</th>
@@ -35,15 +41,26 @@
           </tr>
         </thead>
         <tbody>
-          <tr th:each="mascota : ${mascotas}">
-            <td th:text="${mascota.id}"></td>
+          <tr th:each="mascota, stat : ${mascotas}">
+            <td th:text="${stat.index + 1}"></td>
+            <td>
+              <img
+                th:src="${mascota.fotoURL}"
+                alt="Mascota"
+                style="max-width: 100px; max-height: 100px"
+              />
+            </td>
             <td th:text="${mascota.nombre}"></td>
             <td th:text="${mascota.raza}"></td>
             <td th:text="${mascota.edad}"></td>
             <td th:text="${mascota.peso}"></td>
             <td>
-              <button class="btn btn-primary">Editar</button>
-              <button class="btn btn-danger">Eliminar</button>
+              <button class="btn btn-outline-secondary">
+                <img src="../images/editar.png" alt="Edit" height="40px" />
+              </button>
+              <button class="btn btn-outline-danger">
+                <img src="../images/eliminar.png" alt="Delete" height="40px" />
+              </button>
             </td>
           </tr>
         </tbody>

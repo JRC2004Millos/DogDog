@@ -24,12 +24,6 @@ a {
   justify-content: end;
 }
 
-body {
-  margin: 0;
-  margin-bottom: 100px;
-  background-color: #9acdfe;
-}
-
 header > ul {
   /* Define la lista dentro del encabezado como un contenedor flexible */
   display: flex;
@@ -45,10 +39,6 @@ header ul li {
   font-size: 18px;
   /* Elimina el estilo de lista predeterminado */
   list-style-type: none;
-  /* Elimina la subrayado predeterminado */
-  text-decoration: none;
-  /* Establece el color del texto en negro */
-  color: white;
 }
 
 header li a:hover {
@@ -60,22 +50,30 @@ header li a:hover {
 
 header a {
   padding: 3px;
+  /* Elimina la subrayado predeterminado */
+  text-decoration: none;
+  /* Establece el color del texto en negro */
+  color: white;
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  margin: 0;
+  padding-bottom: 100px; /* Espacio suficiente para el footer */
+  box-sizing: border-box;
 }
 
 footer {
-  /* Establece el color de fondo del pie de página */
   background-color: #6673e1;
-  /* Define el pie de página como un contenedor flexible */
   display: flex;
-  /* Establece la dirección del eje principal en fila */
   flex-direction: row;
-  /* Establece el color del texto en blanco */
   color: white;
-
-  bottom: 0;
-
   position: absolute;
-
+  bottom: 0;
   width: 100%;
 }
 
@@ -121,4 +119,35 @@ footer img {
 #social p {
   margin: 0;
   font-size: 15px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 50%; /* Opcional: ajusta el tamaño de la tabla */
+}
+
+tr,
+th,
+td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+tr:first-child {
+  background-color: black;
+}
+
+.titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
 }
