@@ -133,6 +133,7 @@ footer img {
   border-collapse: collapse;
   margin-top: 10px;
   margin-left: 300px;
+  font-size: 30px;
 }
 
 .headerTabla {
@@ -144,6 +145,7 @@ td {
   padding: 8px;
   text-align: center;
   border: 1px solid #000000;
+  font-size: 30px;
 }
 
 th {
@@ -152,6 +154,7 @@ th {
   text-align: center;
   color: black;
   font-weight: bold;
+  font-size: 30px;
 }
 
 tr:nth-child(even) {
@@ -166,6 +169,7 @@ tr:nth-child(odd) {
 
 .tituloSeccion {
   margin-left: 50px;
+  font-size: 40px;
 }
 
 .mascota {
@@ -181,8 +185,9 @@ tr:nth-child(odd) {
 }
 
 .dropdown {
-  margin-top: 40px;
+  margin-top: 30px;
   margin-left: 300px;
+  margin-bottom: 30px;
 }
 
 .form-select {

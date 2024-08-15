@@ -28,7 +28,16 @@ a {
   justify-content: end;
 }
 
+html,
 body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100hv;
   margin: 0;
   margin-bottom: 100px;
   background-color: #9acdfe;
@@ -144,4 +153,14 @@ footer img {
 #social p {
   margin: 0;
   font-size: 15px;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+#imagen {
+  bottom: 0;
+  margin-top: 30px;
 }

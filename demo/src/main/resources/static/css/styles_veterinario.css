@@ -125,24 +125,18 @@ footer img {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px; /* Puedes ajustar este valor para tener más o menos espacio alrededor de la tabla */
 }
 
-table {
-  border-collapse: collapse;
-  width: 50%; /* Opcional: ajusta el tamaño de la tabla */
+#tabla {
+  width: 80%;
+  margin: 20px auto;
 }
 
-tr,
+td,
 th,
-td {
+tr {
   text-align: center;
-  vertical-align: middle;
-  padding: 8px;
-  border: 1px solid #ddd;
-}
-
-tr:first-child {
-  background-color: black;
 }
 
 .titulo {
@@ -150,4 +144,8 @@ tr:first-child {
   justify-content: space-between;
   align-items: center;
   margin: 20px;
+}
+
+.botones {
+  width: fit-content;
 }
