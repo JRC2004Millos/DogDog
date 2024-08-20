@@ -14,7 +14,8 @@ formUser.addEventListener("submit", (event) => {
             window.location.href = "administrador";
             break;
         case "3":
-            window.location.href = "cliente";
+            //verificar si el usuario existe
+            window.location.href = "http://localhost:8080/clientes/ver/1";
             break;
         default:
             alert("Por favor seleccione un tipo de usuario");

@@ -33,13 +33,6 @@ public class HomeController {
         return "register";
     }
 
-    // http://localhost:8080/dogdog/veterinario
-    @GetMapping("/veterinario")
-    public String veterinario(Model model) {
-        model.addAttribute("mascotas", mascotaService.findAll());
-        return "veterinario";
-    }
-
     // http://localhost:8080/dogdog/administrador
     @GetMapping("/administrador")
     public String administrador() {
@@ -50,5 +43,11 @@ public class HomeController {
     @GetMapping("/cliente")
     public String cliente() {
         return "cliente";
+    }
+
+    // http://localhost:8080/dogdog/veterinario
+    @GetMapping("/veterinario")
+    public String veterinario() {
+        return "vet_home";
     }
 }
