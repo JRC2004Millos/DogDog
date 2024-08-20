@@ -24,4 +24,19 @@ public class ClienteServiceImpl implements ClienteService {
         return repo.findAll();
     }
 
+    @Override
+    public void add(Cliente cliente) {
+        repo.add(cliente);
+    }
+
+    @Override
+    public void deleteById(int id) {
+        repo.deleteById(id);
+    }
+
+    @Override
+    public void update(Cliente cliente) {
+        repo.update(cliente);
+    }
+
 }
