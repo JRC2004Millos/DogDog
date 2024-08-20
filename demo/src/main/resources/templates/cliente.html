@@ -1,63 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8" xmlns="https://thymeleaf.org" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../css/styles_cliente.css" />
+    <link rel="stylesheet" href="/css/styles_cliente.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <header class="header">
-      <img src="../images/Logo2.png" alt="Logo" />
+      <img src="/images/Logo2.png" alt="Logo" />
       <ul>
         <li><a href="#nuestrosClientes">Nuestros Clientes</a></li>
         <li><a href="home">Inicio</a></li>
       </ul>
     </header>
 
-    <h1 class="tituloSeccion">Datos Personales <span>Eladio Carrion</span></h1>
+    <main>
+      <h1 class="tituloSeccion">
+        Datos Personales <span th:text="${cliente.nombre}"></span>
+      </h1>
 
-    <table class="datosPersonales">
-      <thead>
-        <tr>
-          <th class="headerTabla">Datos</th>
-          <th class="headerTabla">Información Personal</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>Nombre</th>
-          <td>Eladio Carrion</td>
-        </tr>
-        <tr>
-          <th>Cédula</th>
-          <td>123456789</td>
-        </tr>
-        <tr>
-          <th>Correo</th>
-          <td>eladio.c@gmail.com</td>
-        </tr>
-        <tr>
-          <th>Teléfono</th>
-          <td>3142560147</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="seleccionMascota">
-      <h1 class="tituloSeccion">Seleccionar <span>Mascota</span></h1>
-
-      <img src="../images/Kemba.jpg" alt="Kemba" class="mascota" />
-
-      <div class="dropdown">
-        <select class="form-select" name="type" id="type">
-          <option value="1" class="opciones">Kemba</option>
-          <option value="2" class="opciones">Petunia</option>
-          <option value="3" class="opciones">Coco</option>
-        </select>
-      </div>
-
-      <table class="datosMascota">
+      <table class="datosPersonales">
         <thead>
           <tr>
             <th class="headerTabla">Datos</th>
@@ -67,23 +36,64 @@
         <tbody>
           <tr>
             <th>Nombre</th>
-            <td>Kemba</td>
+            <td th:text="${cliente.nombre}"></td>
           </tr>
           <tr>
-            <th>Raza</th>
-            <td>Bulldog Frances</td>
+            <th>Cédula</th>
+            <td th:text="${cliente.cedula}"></td>
           </tr>
           <tr>
-            <th>Edad</th>
-            <td>2 años</td>
+            <th>Correo</th>
+            <td th:text="${cliente.email}"></td>
           </tr>
           <tr>
-            <th>Peso</th>
-            <td>4.3Kg</td>
+            <th>Teléfono</th>
+            <td th:text="${cliente.celular}"></td>
           </tr>
         </tbody>
       </table>
-    </div>
+
+      <div class="seleccionMascota">
+        <h1 class="tituloSeccion">Seleccionar <span>Mascota</span></h1>
+
+        <img src="/images/Kemba.jpg" alt="Kemba" class="mascota" />
+
+        <div class="dropdown">
+          <select class="form-select" name="type" id="type">
+            <option value="1" class="opciones">Kemba</option>
+            <option value="2" class="opciones">Petunia</option>
+            <option value="3" class="opciones">Coco</option>
+          </select>
+        </div>
+
+        <table class="datosMascota">
+          <thead>
+            <tr>
+              <th class="headerTabla">Datos</th>
+              <th class="headerTabla">Información Personal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Nombre</th>
+              <td>Kemba</td>
+            </tr>
+            <tr>
+              <th>Raza</th>
+              <td>Bulldog Frances</td>
+            </tr>
+            <tr>
+              <th>Edad</th>
+              <td>2 años</td>
+            </tr>
+            <tr>
+              <th>Peso</th>
+              <td>4.3Kg</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
 
     <footer>
       <div id="copyright">
@@ -98,7 +108,7 @@
       <div id="social">
         <a href="https://www.facebook.com" target="_blank">
           <img
-            src="../images/facebook (1).png"
+            src="/images/facebook (1).png"
             height="25px"
             alt="LogoFacebook"
             class="logos"
@@ -106,7 +116,7 @@
         </a>
         <a href="https://www.instagram.com" target="_blank">
           <img
-            src="../images/logotipo-de-instagram.png"
+            src="/images/logotipo-de-instagram.png"
             height="25px"
             alt="LogoInstagram"
             class="logos"
@@ -114,7 +124,7 @@
         </a>
         <a href="https://x.com/home" target="_blank">
           <img
-            src="../images/twitter.png"
+            src="/images/twitter.png"
             height="25px"
             alt="LogoX"
             class="logos"

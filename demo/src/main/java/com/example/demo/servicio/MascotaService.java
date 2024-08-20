@@ -13,4 +13,12 @@ public interface MascotaService {
 
     public Collection<Mascota> findAll();
 
+    public Collection<Mascota> findByDuenoId(int duenoId);
+
+    public void add(Mascota mascota);
+
+    public void deleteById(int id);
+
+    public void update(Mascota mascota);
+
 }
