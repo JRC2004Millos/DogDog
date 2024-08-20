@@ -1,7 +1,5 @@
 package com.example.demo.entidad;
 
-import java.util.List;
-
 public class Cliente {
 
     private String nombre;

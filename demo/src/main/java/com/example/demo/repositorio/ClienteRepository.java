@@ -29,4 +29,20 @@ public class ClienteRepository {
     public Collection<Cliente> findAll() {
         return clientes.values();
     }
+
+    public void add(Cliente cliente) {
+        int tam = clientes.size();
+        int lastId = clientes.get(tam).getId();
+        cliente.setId(lastId + 1);
+
+        clientes.put(cliente.getId(), cliente);
+    }
+
+    public void deleteById(int id) {
+        clientes.remove(id);
+    }
+
+    public void update(Cliente cliente) {
+        clientes.put(cliente.getId(), cliente);
+    }
 }
