@@ -24,6 +24,8 @@
     <main>
       <h1 class="tituloSeccion">
         Datos Personales <span th:text="${cliente.nombre}"></span>
+        <br>
+        <br>
       </h1>
 
       <table class="datosPersonales">
@@ -53,19 +55,15 @@
         </tbody>
       </table>
 
-      <div class="seleccionMascota">
-        <h1 class="tituloSeccion">Seleccionar <span>Mascota</span></h1>
-
-        <img src="/images/Kemba.jpg" alt="Kemba" class="mascota" />
-
-        <div class="dropdown">
-          <select class="form-select" name="type" id="type">
-            <option value="1" class="opciones">Kemba</option>
-            <option value="2" class="opciones">Petunia</option>
-            <option value="3" class="opciones">Coco</option>
-          </select>
-        </div>
-
+      <br>
+      <br>
+      <div class="header-container">
+        <h1 class="tituloSeccion">Datos de las <span>Mascotas</span></h1>
+      </div>
+      
+      <div th:each="mascota : ${mascotas}" class="seleccionMascota">
+        <img th:src="${mascota.fotoURL}" alt="Foto de la Mascota" class="mascota" />
+        
         <table class="datosMascota">
           <thead>
             <tr>
@@ -76,25 +74,27 @@
           <tbody>
             <tr>
               <th>Nombre</th>
-              <td>Kemba</td>
+              <td th:text="${mascota.nombre}"></td>
             </tr>
             <tr>
               <th>Raza</th>
-              <td>Bulldog Frances</td>
+              <td th:text="${mascota.raza}"></td>
             </tr>
             <tr>
               <th>Edad</th>
-              <td>2 años</td>
+              <td th:text="${mascota.edad + ' años'}"></td>
             </tr>
             <tr>
               <th>Peso</th>
-              <td>4.3Kg</td>
+              <td th:text="${mascota.peso + ' Kg'}"></td>
             </tr>
           </tbody>
         </table>
-      </div>
+    </div>
+    
     </main>
-
+    <br>
+    <br>
     <footer>
       <div id="copyright">
         <p>Copyright &copy; 2024</p>
