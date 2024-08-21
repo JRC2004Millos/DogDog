@@ -22,9 +22,6 @@ public class ClienteController {
     @Autowired
     private ClienteService service;
 
-    @Autowired
-    private MascotaRepository mascotaRepository;
-
     @GetMapping("/ver")
     public String mostrarClientes(Model model) {
         model.addAttribute("clientes", service.findAll());
