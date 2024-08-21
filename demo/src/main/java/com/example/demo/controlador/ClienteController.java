@@ -22,7 +22,7 @@ public class ClienteController {
     @Autowired
     private ClienteService service;
 
-     @Autowired
+    @Autowired
     private MascotaRepository mascotaRepository;
 
     @GetMapping("/ver")

@@ -17,8 +17,7 @@
       <img src="../images/Logo2.png" alt="Logo" />
 
       <ul>
-        <li><a href="register">Registrarse</a></li>
-        <li><a href="home">Inicio</a></li>
+        <li><a href="http://localhost:8080/mascotas/ver">Inicio</a></li>
       </ul>
     </header>
 
@@ -83,16 +82,35 @@
             </div>
           </div>
 
-          <div class="mb-3">
-            <label for="foto" class="form-label">Foto</label>
-            <input
-              th:field="*{fotoURL}"
-              type="text"
-              class="form-control"
-              id="foto"
-              placeholder="Ingresa la url de la imagen de la mascota"
-              required
-            />
+          <div class="row">
+            <div class="col">
+              <label for="foto" class="form-label">Foto</label>
+              <input
+                th:field="*{fotoURL}"
+                type="text"
+                class="form-control"
+                id="foto"
+                placeholder="Ingresa la url de la imagen de la mascota"
+                required
+              />
+            </div>
+
+            <div class="col">
+              <label for="id" class="form-label">ID del dueño</label>
+              <select
+                th:field="*{idDueno}"
+                class="form-select"
+                id="id"
+                required
+              >
+                <option value="">Selecciona el id del dueño</option>
+                <option
+                  th:each="dueno : ${duenos}"
+                  th:value="${dueno.id}"
+                  th:text="${dueno.nombre}"
+                ></option>
+              </select>
+            </div>
           </div>
 
           <button class="btn btn-success" type="submit" id="btnAgregarMascota">

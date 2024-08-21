@@ -6,11 +6,9 @@ body {
 }
 
 .background-image {
-  margin: 20px;
   position: absolute; /* Posiciona la imagen en relación a la ventana del navegador */
   top: 0;
   left: 0;
-  width: 80%; /* Asegura que la imagen tenga el ancho total de la ventana */
-  height: 90%; /* Asegura que la imagen tenga la altura total de la ventana */
+  width: 100%; /* Asegura que la imagen tenga el ancho total de la ventana */
   object-fit: cover; /* Ajusta el tamaño de la imagen para cubrir el área sin distorsión */
 }
