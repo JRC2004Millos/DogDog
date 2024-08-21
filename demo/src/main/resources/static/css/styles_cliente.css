@@ -12,6 +12,9 @@ body {
 footer {
   background-color: #6673e1;
   display: flex;
+  z-index: 1000;
+  margin: 0px 0px;
+  overflow: hidden;
   flex-direction: row;
   color: white;
   position: absolute;
@@ -128,12 +131,17 @@ footer img {
   font-size: 15px;
 }
 
+h1 {
+  margin-top: 5px;
+}
+
 .datosPersonales {
   width: 70%;
   border-collapse: collapse;
   margin-top: 10px;
   margin-left: 300px;
   font-size: 30px;
+  margin: 0 auto;
 }
 
 .headerTabla {
@@ -173,21 +181,31 @@ tr:nth-child(odd) {
 }
 
 .mascota {
-  margin-top: 80px;
-  height: 400px;
+  margin-top: 0; /* Elimina el margen superior */
+  width: 500px;
+  margin-left: 0px;
   border-radius: 100px;
   border: #000000 3px solid;
-  margin-left: -170px;
 }
 
 .seleccionMascota {
   display: flex;
+  justify-content: center; /* Centra los elementos horizontalmente */
+  gap: 100vh; /* Espacio entre los elementos */
+  padding: 20px;
 }
 
-.dropdown {
-  margin-top: 30px;
-  margin-left: 300px;
-  margin-bottom: 30px;
+.datosMascota {
+  border-collapse: collapse;
+  width: 700px;
+  margin-bottom: 100px;
+  margin-top: -30px; /* Elimina márgenes */
+}
+
+.header-container {
+  display: flex;
+  align-items: center; /* Alinea verticalmente el select con el título */
+  gap: 15px; /* Espacio entre el título y la barra desplegable */
 }
 
 .form-select {
