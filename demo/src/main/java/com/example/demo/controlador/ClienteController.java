@@ -1,7 +1,5 @@
 package com.example.demo.controlador;
 
-import java.util.ArrayList;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.entidad.Cliente;
-import com.example.demo.repositorio.MascotaRepository;
 import com.example.demo.servicio.ClienteService;
 
 @Controller
@@ -35,7 +32,6 @@ public class ClienteController {
 
         if (cliente != null) {
             model.addAttribute("cliente", service.findById(identificacion));
-            model.addAttribute("mascotas", new ArrayList<>(mascotaRepository.findByDuenoId(identificacion)));
         } else {
             throw new NotFoundException(identificacion);
         }
