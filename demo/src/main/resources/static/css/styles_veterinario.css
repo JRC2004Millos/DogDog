@@ -1,0 +1,151 @@
+header {
+  /* Define el encabezado como un contenedor flexible */
+  display: flex;
+  /* Distribuye el espacio entre los elementos secundarios */
+  justify-content: space-between;
+  /* Añade un relleno de 10px alrededor del contenido */
+  /* Centra los elementos a lo largo del eje transversal */
+  align-items: center;
+  /* Establece el color de fondo del encabezado */
+  background-color: #6673e1;
+  height: 100px;
+}
+
+header img {
+  height: 80%;
+}
+
+a {
+  /* Añade un margen de 10px alrededor de los enlaces */
+  margin: 10px;
+}
+
+.indice {
+  justify-content: end;
+}
+
+header > ul {
+  /* Define la lista dentro del encabezado como un contenedor flexible */
+  display: flex;
+  justify-content: end;
+  margin: 0;
+  padding: 0;
+}
+
+header ul li {
+  align-items: center;
+  display: flex;
+  /* Establece el tamaño de la fuente a 18px */
+  font-size: 18px;
+  /* Elimina el estilo de lista predeterminado */
+  list-style-type: none;
+}
+
+header li a:hover {
+  /* Cambia el color del texto a rojo al pasar el cursor */
+  color: red;
+  /* Subraya el texto al pasar el cursor */
+  text-decoration: underline;
+}
+
+header a {
+  padding: 3px;
+  /* Elimina la subrayado predeterminado */
+  text-decoration: none;
+  /* Establece el color del texto en negro */
+  color: white;
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  margin: 0;
+  padding-bottom: 100px; /* Espacio suficiente para el footer */
+  box-sizing: border-box;
+}
+
+footer {
+  background-color: #6673e1;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer img {
+  width: 30px;
+  height: 30px;
+}
+
+#copyright {
+  margin: 0 10px;
+  display: grid;
+  place-items: center;
+}
+
+#contact {
+  margin: 0 50px;
+  display: grid;
+  place-items: center;
+}
+
+#social {
+  /* Alinea el contenido al final del contenedor */
+  justify-content: end;
+  /* Define la sección de redes sociales como un contenedor flexible */
+  display: flex;
+  /* Permite que la sección crezca para llenar el espacio disponible */
+  flex-grow: 1;
+}
+
+#social a {
+  /* Define los enlaces en la sección de redes sociales como contenedores flexibles */
+  display: flex;
+  /* Establece la dirección del eje principal en columna */
+  flex-direction: column;
+  /* Centra los elementos a lo largo del eje transversal */
+  align-items: center;
+  /* Centra los elementos a lo largo del eje principal */
+  justify-content: center;
+  /* Establece el color del texto en blanco */
+  color: white;
+}
+
+#social p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Puedes ajustar este valor para tener más o menos espacio alrededor de la tabla */
+}
+
+#tabla {
+  width: 80%;
+  margin: 20px auto;
+}
+
+td,
+th,
+tr {
+  text-align: center;
+}
+
+.titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+}
+
+.botones {
+  width: fit-content;
+}
