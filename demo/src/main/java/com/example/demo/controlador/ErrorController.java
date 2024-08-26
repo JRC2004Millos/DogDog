@@ -10,7 +10,6 @@ public class ErrorController {
     @ExceptionHandler(NotFoundException.class)
     public String error(Model model, NotFoundException e) {
         model.addAttribute("id", e.getId());
-
         return "pagina_error";
     }
 }

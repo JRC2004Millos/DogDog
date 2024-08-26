@@ -3,7 +3,10 @@ package com.example.demo.servicio;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.example.demo.entidad.Cliente;
 import com.example.demo.repositorio.ClienteRepository;
@@ -12,11 +15,12 @@ import com.example.demo.repositorio.ClienteRepository;
 public class ClienteServiceImpl implements ClienteService {
 
     @Autowired
+    public
     ClienteRepository repo;
 
     @Override
-    public Cliente findById(int id) {
-        return repo.findById(id);
+    public Cliente findById(Long id) {
+        return repo.findById(id).get();
     }
 
     @Override
@@ -26,17 +30,17 @@ public class ClienteServiceImpl implements ClienteService {
 
     @Override
     public void add(Cliente cliente) {
-        repo.add(cliente);
+        repo.save(cliente);
     }
 
     @Override
-    public void deleteById(int id) {
+    public void deleteById(Long id) {
         repo.deleteById(id);
     }
 
     @Override
     public void update(Cliente cliente) {
-        repo.update(cliente);
+        repo.save(cliente);
     }
 
 }

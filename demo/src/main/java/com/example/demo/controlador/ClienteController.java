@@ -3,6 +3,7 @@ package com.example.demo.controlador;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,23 +34,22 @@ public class ClienteController {
 
     // http://localhost:8080/clientes/{id}
     @GetMapping("/ver/{id}")
-    public String home(Model model, @PathVariable("id") int identificacion) {
+    public String home(Model model, @PathVariable("id") Long identificacion) {
         Cliente cliente = service.findById(identificacion);
-
+    
         if (cliente != null) {
-            model.addAttribute("cliente", service.findById(identificacion));
-            model.addAttribute("mascotas", new ArrayList<>(mascotaRepository.findByDuenoId(identificacion)));
+            model.addAttribute("cliente", cliente);
+            model.addAttribute("mascotas", mascotaRepository.findByClienteId(identificacion));
         } else {
             throw new NotFoundException(identificacion);
         }
         return "cliente";
-
     }
 
     // http://localhost:8080/clientes/agregar
     @GetMapping("/agregar")
     public String agregarCliente(Model model) {
-        Cliente cliente = new Cliente(0, "", "", 0, 0);
+        Cliente cliente = new Cliente(0, "", "", 0);
 
         model.addAttribute("cliente", cliente);
 
@@ -65,14 +65,14 @@ public class ClienteController {
 
     // http://localhost:8080/clientes/eliminar/{id}
     @GetMapping("/eliminar/{id}")
-    public String eliminarCliente(@PathVariable("id") int identificacion) {
+    public String eliminarCliente(@PathVariable("id") Long identificacion) {
         service.deleteById(identificacion);
         return "redirect:/clientes/ver";
     }
 
     // http://localhost:8080/clientes/modificar/{id}
     @GetMapping("/modificar/{id}")
-    public String modificarCliente(Model model, @PathVariable("id") int identificacion) {
+    public String modificarCliente(Model model, @PathVariable("id") Long identificacion) {
         model.addAttribute("cliente", service.findById(identificacion));
         return "modificar_cliente";
     }
@@ -83,4 +83,5 @@ public class ClienteController {
         service.update(cliente);
         return "redirect:/clientes/ver";
     }
+
 }

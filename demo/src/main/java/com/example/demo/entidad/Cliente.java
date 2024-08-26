@@ -1,19 +1,48 @@
 package com.example.demo.entidad;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import java.util.ArrayList;
+import java.util.List;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "CLIENT_TABLE")
 public class Cliente {
 
     private String nombre;
     private int cedula;
     private int celular;
     private String email;
-    private Integer id;
 
-    public Cliente(int cedula, String nombre, String email, int celular, Integer id) {
+    @Column(name = "PK_ID")
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    @OneToMany(mappedBy = "cliente")
+    private List<Mascota> mascotas = new ArrayList<>();
+
+    public Cliente(int cedula, String nombre, String email, int celular, Long id) {
+        this.nombre = nombre;
+        this.cedula = cedula;
+        this.celular = celular; 
+        this.email = email;
+        this.id = id;
+    }
+
+    public Cliente(int cedula, String nombre, String email, int celular) {
         this.nombre = nombre;
         this.cedula = cedula;
         this.celular = celular;
         this.email = email;
-        this.id = id;
+    }
+
+    public Cliente() {
+
     }
 
     public String getNombre() {
@@ -48,12 +77,19 @@ public class Cliente {
         this.email = email;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
+    public List<Mascota> getMascotas() {
+        return mascotas;
+    }
+
+    public void setMascotas(List<Mascota> mascotas) {
+        this.mascotas = mascotas;
+    }    
 }

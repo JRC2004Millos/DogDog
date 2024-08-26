@@ -1,5 +1,14 @@
 package com.example.demo.entidad;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "PET_TABLE")
 public class Mascota {
 
     private String nombre;
@@ -8,26 +17,33 @@ public class Mascota {
     private float peso;
     private String fotoURL;
     private boolean estado;
-    private Integer id;
-    private Integer idDueno;
 
-    public Mascota(Integer id, String nombre, String raza, int edad, float peso, String fotoURL,
-            Integer idDueno) {
-        this.id = id;
+    @Column(name = "PK_ID")
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    @ManyToOne
+    private Cliente cliente;
+
+    public Mascota(String nombre, String raza, int edad, float peso, String fotoURL) {
         this.nombre = nombre;
         this.raza = raza;
         this.edad = edad;
         this.peso = peso;
         this.fotoURL = fotoURL;
-        this.idDueno = idDueno;
         this.estado = true;
     }
 
-    public Integer getId() {
+    public Mascota() {
+
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -79,12 +95,12 @@ public class Mascota {
         this.estado = estado;
     }
 
-    public Integer getIdDueno() {
-        return idDueno;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setIdDueno(Integer idDueno) {
-        this.idDueno = idDueno;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
 }
