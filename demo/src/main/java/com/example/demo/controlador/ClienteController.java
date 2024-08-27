@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.entidad.Cliente;
-import com.example.demo.repositorio.MascotaRepository;
 import com.example.demo.servicio.ClienteService;
+import com.example.demo.servicio.MascotaService;
 
 @Controller
 @RequestMapping("/clientes")
@@ -19,9 +19,9 @@ public class ClienteController {
 
     @Autowired
     private ClienteService service;
-
+    
     @Autowired
-    private MascotaRepository mascotaRepository;
+    private MascotaService mascotaService;
 
     @GetMapping("/ver")
     public String mostrarClientes(Model model) {
@@ -33,10 +33,10 @@ public class ClienteController {
     @GetMapping("/ver/{id}")
     public String home(Model model, @PathVariable("id") Long identificacion) {
         Cliente cliente = service.findById(identificacion);
-    
+        
         if (cliente != null) {
             model.addAttribute("cliente", cliente);
-            model.addAttribute("mascotas", mascotaRepository.findByClienteId(identificacion));
+            model.addAttribute("mascotas", mascotaService.findByDuenoId(identificacion));
         } else {
             throw new NotFoundException(identificacion);
         }
