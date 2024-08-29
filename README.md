@@ -47,7 +47,7 @@ Valoramos profundamente la confianza que nuestros clientes depositan en nosotros
 
 # Diagrama de Entidad-Relación
 
-![Diagrama Entidad-Relación](demo/src/main/resources/static/images/entities.jpg)
+![Diagrama Entidad-Relación](demo/src/main/resources/static/images/entities-relation.jpg)
 
 #
 
