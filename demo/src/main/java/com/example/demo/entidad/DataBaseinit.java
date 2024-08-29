@@ -106,7 +106,6 @@ public class DataBaseinit implements ApplicationRunner{
         client_repo.save(new Cliente(951753, "Gilberto Gil", "gilberto.gil4@gmail.com", 456852));
         client_repo.save(new Cliente(456852, "Milton Nascimento", "milton.nascimento3@gmail.com", 852741));
         client_repo.save(new Cliente(852741, "Djavan", "djavan2@gmail.com", 654789));
-        client_repo.save(new Cliente(654789, "Roberto Carlos", "roberto.carlos4@gmail.com", 741852));
         client_repo.save(new Cliente(123789, "Caetano Veloso", "caetano.veloso4@gmail.com", 159753));
         client_repo.save(new Cliente(741852, "Maria Bethânia", "maria.bethania3@gmail.com", 369258));
         client_repo.save(new Cliente(159753, "Chico Buarque", "chico.buarque3@gmail.com", 654789));
@@ -123,14 +122,13 @@ public class DataBaseinit implements ApplicationRunner{
         client_repo.save(new Cliente(789789, "Shawn Mendes", "shawn.mendes@gmail.com", 159753));
         client_repo.save(new Cliente(852852, "Billie Eilish", "billie.eilish@gmail.com", 258963));
         client_repo.save(new Cliente(963963, "Dua Lipa", "dua.lipa@gmail.com", 369852));
-        
 
         mascota_repo.save(new Mascota("Luna", "Beagle", 3, 10.5f, "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Shemsu_Sotis_Perun.jpg/1200px-Shemsu_Sotis_Perun.jpg"));
         mascota_repo.save(new Mascota("Max", "Golden Retriever", 5, 25.3f, "https://www.purina.es/sites/default/files/styles/ttt_image_510/public/2024-02/sitesdefaultfilesstylessquare_medium_440x440public2022-09golden20retriever.jpg?itok=48StbVfe"));
         mascota_repo.save(new Mascota("Bella", "Bulldog Francés", 4, 12.7f, "https://picartpetcare.com/wp-content/uploads/2020/05/BULLDOG-FRANC%C3%89S.jpg"));
         mascota_repo.save(new Mascota("Charlie", "Labrador Retriever", 6, 30.2f, "https://pamipe.com/wiki/wp-content/uploads/2022/09/Labrador-Retriever.jpg"));
         mascota_repo.save(new Mascota("Lucy", "Poodle", 2, 8.4f, "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/My_cousin%27s_poodle_is_perched_and_not_knowing_what_to_make_of_me.%285898350017%29.jpg/640px-My_cousin%27s_poodle_is_perched_and_not_knowing_what_to_make_of_me.%285898350017%29.jpg"));
-        mascota_repo.save(new Mascota("Rocky", "Boxer", 5, 28.9f, "https://example.com/images/boxer1.jpg"));
+        mascota_repo.save(new Mascota("Rocky", "Boxer", 5, 28.9f, "https://cdn.royalcanin-weshare-online.io/ZT-S7XoBRYZmsWpc4beN/v9/bp-lot-2-boxer-bw-ws-2"));
         mascota_repo.save(new Mascota("Daisy", "Cocker Spaniel", 3, 14.1f, "https://blog-static.petlove.com.br/wp-content/uploads/2018/06/cocker-figado-tan.jpg"));
         mascota_repo.save(new Mascota("Cooper", "Border Collie", 4, 20.0f, "https://example.com/images/border_collie1.jpg"));
         mascota_repo.save(new Mascota("Molly", "Chihuahua", 3, 2.5f, "https://example.com/images/chihuahua1.jpg"));
@@ -154,9 +152,9 @@ public class DataBaseinit implements ApplicationRunner{
         mascota_repo.save(new Mascota("Lily", "Shih Tzu", 3, 7.2f, "https://static.wixstatic.com/media/aa8751_1aa95fd67b9e4f13850e5de823d7fb5c~mv2.jpg/v1/fill/w_736,h_1000,al_c,q_85,enc_auto/aa8751_1aa95fd67b9e4f13850e5de823d7fb5c~mv2.jpg"));
         mascota_repo.save(new Mascota("Gus", "Beagle", 4, 11.0f, "https://www.elmueble.com/medio/2023/03/02/perro-de-raza-beagle_67c65dda_230302133829_900x900.jpg"));
         mascota_repo.save(new Mascota("Bruno", "Labrador Retriever", 5, 30.8f, "https://example.com/images/labrador2.jpg"));
-        mascota_repo.save(new Mascota("Ellie", "Cocker Spaniel", 3, 14.5f, "https://example.com/images/cocker_spaniel2.jpg"));
+        mascota_repo.save(new Mascota("Ellie", "Cocker Spaniel", 3, 14.5f, "https://tierarzt-karlsruhe-durlach.de/storage/2024/04/Cocker-Spaniel-Krankheiten.webp"));
         mascota_repo.save(new Mascota("Finn", "Border Collie", 4, 20.4f, "https://example.com/images/border_collie2.jpg"));
-        mascota_repo.save(new Mascota("Nala", "Boxer", 4, 27.9f, "https://example.com/images/boxer2.jpg"));
+        mascota_repo.save(new Mascota("Nala", "Boxer", 4, 27.9f, "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.ecured.cu%2FB%25C3%25B3xer&psig=AOvVaw3zA5cq7cClKyJcvuBSc8Ug&ust=1725056714519000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJCa4Jqfm4gDFQAAAAAdAAAAABAR"));
         mascota_repo.save(new Mascota("Louie", "Pomerania", 2, 3.4f, "https://example.com/images/pomerania2.jpg"));
         mascota_repo.save(new Mascota("Bentley", "Yorkshire Terrier", 3, 3.3f, "https://t1.uc.ltmcdn.com/es/posts/2/0/3/como_cuidar_a_un_yorkshire_terrier_40302_600_square.jpg"));
         mascota_repo.save(new Mascota("Willow", "Bulldog Inglés", 5, 23.5f, "https://example.com/images/bulldog_ingles2.jpg"));
@@ -174,7 +172,59 @@ public class DataBaseinit implements ApplicationRunner{
         mascota_repo.save(new Mascota("Ollie", "Golden Retriever", 5, 26.0f, "https://example.com/images/golden_retriever3.jpg"));
         mascota_repo.save(new Mascota("Harley", "Labrador Retriever", 4, 29.9f, "https://example.com/images/labrador3.jpg"));
         mascota_repo.save(new Mascota("Sam", "Pomerania", 3, 3.5f, "https://example.com/images/pomerania3.jpg"));
-        mascota_repo.save(new Mascota("Nina", "Boxer", 5, 28.3f, "https://example.com/images/boxer3.jpg"));
+        mascota_repo.save(new Mascota("Nina", "Boxer", 5, 28.3f, "https://pamipe.com/wp-content/uploads/2022/09/Boxer-3.jpg"));
+        mascota_repo.save(new Mascota("Bella", "Bulldog Francés", 4, 12.7f, "https://example.com/images/bulldog_frances1.jpg"));
+        mascota_repo.save(new Mascota("Milo", "Yorkshire Terrier", 2, 3.0f, "https://example.com/images/yorkshire_terrier1.jpg"));
+        mascota_repo.save(new Mascota("Lucy", "Poodle", 3, 8.0f, "https://example.com/images/poodle1.jpg"));
+        mascota_repo.save(new Mascota("Duke", "Doberman", 5, 34.0f, "https://example.com/images/doberman2.jpg"));
+        mascota_repo.save(new Mascota("Stella", "Cocker Spaniel", 4, 14.0f, "https://cdn.shopify.com/s/files/1/0268/6861/files/perros-cocker-spaniel_grande.jpg?v=1531136757"));
+        mascota_repo.save(new Mascota("Bentley", "Bichón Frisé", 3, 7.8f, "https://example.com/images/bichon_frise1.jpg"));
+        mascota_repo.save(new Mascota("Toby", "Golden Retriever", 4, 25.0f, "https://example.com/images/golden_retriever4.jpg"));
+        mascota_repo.save(new Mascota("Sophie", "Pastor Alemán", 5, 30.0f, "https://example.com/images/pastor_aleman1.jpg"));
+        mascota_repo.save(new Mascota("Rocky", "Rottweiler", 4, 45.0f, "https://example.com/images/rottweiler3.jpg"));
+        mascota_repo.save(new Mascota("Ruby", "Shih Tzu", 2, 7.5f, "https://example.com/images/shih_tzu1.jpg"));
+        mascota_repo.save(new Mascota("Finn", "Beagle", 3, 11.0f, "https://example.com/images/beagle2.jpg"));
+        mascota_repo.save(new Mascota("Zoe", "Dachshund", 4, 9.9f, "https://example.com/images/dachshund2.jpg"));
+        mascota_repo.save(new Mascota("Riley", "Labrador Retriever", 5, 31.0f, "https://example.com/images/labrador4.jpg"));
+        mascota_repo.save(new Mascota("Chloe", "Pomerania", 3, 3.2f, "https://example.com/images/pomerania4.jpg"));
+        mascota_repo.save(new Mascota("Bruno", "Boxer", 4, 29.0f, "https://example.com/images/boxer4.jpg"));
+        mascota_repo.save(new Mascota("Sadie", "Bulldog Inglés", 5, 25.0f, "https://example.com/images/bulldog_ingles3.jpg"));
+        mascota_repo.save(new Mascota("Gus", "Golden Retriever", 4, 26.5f, "https://example.com/images/golden_retriever5.jpg"));
+        mascota_repo.save(new Mascota("Molly", "Shih Tzu", 3, 7.4f, "https://example.com/images/shih_tzu2.jpg"));
+        mascota_repo.save(new Mascota("Oliver", "Yorkshire Terrier", 2, 3.1f, "https://example.com/images/yorkshire_terrier2.jpg"));
+        mascota_repo.save(new Mascota("Buddy", "Beagle", 4, 11.5f, "https://example.com/images/beagle3.jpg"));
+        mascota_repo.save(new Mascota("Luna", "Chihuahua", 3, 2.6f, "https://example.com/images/chihuahua3.jpg"));
+        mascota_repo.save(new Mascota("Charlie", "Poodle", 5, 8.5f, "https://example.com/images/poodle3.jpg"));
+        mascota_repo.save(new Mascota("Max", "Golden Retriever", 6, 27.0f, "https://example.com/images/golden_retriever6.jpg"));
+        mascota_repo.save(new Mascota("Bailey", "Labrador Retriever", 4, 30.5f, "https://example.com/images/labrador5.jpg"));
+        mascota_repo.save(new Mascota("Roxy", "Boxer", 5, 29.5f, "https://www.creativefabrica.com/wp-content/uploads/2022/09/27/White-Boxer-Dog-With-Nerdy-Glasses-39426639-1-1.png"));
+        mascota_repo.save(new Mascota("Nala", "Cocker Spaniel", 3, 15.0f, "https://www.anicura.es/cdn-cgi/image/f=auto,q=60,fit=cover,w=1536,h=1152,g=auto,sharpen=1/AdaptiveImages/powerinit/9309/Print_AniCura_Dogs_224.jpg?stamp=1c447229c9ba11dcdd8da6d2cb96df53e2f8954d"));
+        mascota_repo.save(new Mascota("Harley", "Rottweiler", 4, 46.0f, "https://example.com/images/rottweiler4.jpg"));
+        mascota_repo.save(new Mascota("Daisy", "Shih Tzu", 2, 7.3f, "https://example.com/images/shih_tzu3.jpg"));
+        mascota_repo.save(new Mascota("Cooper", "Yorkshire Terrier", 3, 3.2f, "https://example.com/images/yorkshire_terrier3.jpg"));
+        mascota_repo.save(new Mascota("Rosie", "Bulldog Francés", 4, 13.0f, "https://example.com/images/bulldog_frances2.jpg"));
+        mascota_repo.save(new Mascota("Bear", "Beagle", 5, 12.0f, "https://example.com/images/beagle4.jpg"));
+        mascota_repo.save(new Mascota("Chico", "Pomerania", 2, 3.6f, "https://example.com/images/pomerania5.jpg"));
+        mascota_repo.save(new Mascota("Leo", "Golden Retriever", 4, 28.0f, "https://example.com/images/golden_retriever7.jpg"));
+        mascota_repo.save(new Mascota("Tucker", "Labrador Retriever", 5, 32.0f, "https://example.com/images/labrador6.jpg"));
+        mascota_repo.save(new Mascota("Riley", "Shih Tzu", 3, 7.7f, "https://example.com/images/shih_tzu4.jpg"));
+        mascota_repo.save(new Mascota("Penny", "Chihuahua", 2, 2.7f, "https://example.com/images/chihuahua4.jpg"));
+        mascota_repo.save(new Mascota("Zoe", "Boxer", 4, 30.0f, "https://soyunperro.com/wp-content/uploads/2019/12/perro-b%C3%B3xer-jugando-en-la-nieve.jpg"));
+        mascota_repo.save(new Mascota("Nina", "Rottweiler", 5, 47.0f, "https://example.com/images/rottweiler5.jpg"));
+        mascota_repo.save(new Mascota("Maggie", "Poodle", 4, 8.6f, "https://example.com/images/poodle4.jpg"));
+        mascota_repo.save(new Mascota("Ellie", "Golden Retriever", 3, 29.5f, "https://example.com/images/golden_retriever8.jpg"));
+        mascota_repo.save(new Mascota("Jack", "Beagle", 4, 12.5f, "https://example.com/images/beagle5.jpg"));
+        mascota_repo.save(new Mascota("Chester", "Labrador Retriever", 5, 33.0f, "https://example.com/images/labrador7.jpg"));
+        mascota_repo.save(new Mascota("Mia", "Pomerania", 2, 3.7f, "https://example.com/images/pomerania6.jpg"));
+        mascota_repo.save(new Mascota("Sadie", "Bulldog Francés", 4,     13.3f, "https://example.com/images/bulldog_frances3.jpg"));
+        mascota_repo.save(new Mascota("Lola", "Shih Tzu", 3, 7.8f, "https://example.com/images/shih_tzu5.jpg"));
+        mascota_repo.save(new Mascota("Sasha", "Yorkshire Terrier", 2, 3.4f, "https://example.com/images/yorkshire_terrier4.jpg"));
+        mascota_repo.save(new Mascota("Baxter", "Golden Retriever", 4, 30.0f, "https://example.com/images/golden_retriever9.jpg"));
+        mascota_repo.save(new Mascota("Rocky", "Cocker Spaniel", 1, 15.2f, "https://http2.mlstatic.com/D_NQ_NP_647528-MCO46758940301_072021-O.webp"));
+        mascota_repo.save(new Mascota("Nina", "Rottweiler", 5, 47.5f, "https://example.com/images/rottweiler6.jpg"));
+        mascota_repo.save(new Mascota("Teddy", "Shih Tzu", 4, 7.9f, "https://example.com/images/shih_tzu6.jpg"));
+        mascota_repo.save(new Mascota("Oscar", "Labrador Retriever", 5, 34.0f, "https://example.com/images/labrador8.jpg"));
+
                 
         // Asociar mascotas a clientes
         List<Mascota> mascotas = mascota_repo.findAll();

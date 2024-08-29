@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class ErrorController {
 
     @ExceptionHandler(NotFoundException.class)
-    public String error(Model model, NotFoundException e) {
-        model.addAttribute("id", e.getId());
+    public String handleNotFoundException(NotFoundException ex, Model model) {
+        model.addAttribute("errorMessage", "Cliente con ID " + ex.getId() + " no fue encontrado.");
         return "pagina_error";
     }
 }
