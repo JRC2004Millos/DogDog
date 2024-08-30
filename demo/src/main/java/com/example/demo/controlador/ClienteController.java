@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.demo.entidad.Cliente;
 import com.example.demo.servicio.ClienteService;
 import com.example.demo.servicio.MascotaService;
-import org.springframework.web.bind.annotation.RequestBody;
-
 
 @Controller
 @RequestMapping("/clientes")

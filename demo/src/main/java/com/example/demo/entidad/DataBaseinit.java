@@ -127,7 +127,7 @@ public class DataBaseinit implements ApplicationRunner{
         mascota_repo.save(new Mascota("Max", "Golden Retriever", 5, 25.3f, "https://www.purina.es/sites/default/files/styles/ttt_image_510/public/2024-02/sitesdefaultfilesstylessquare_medium_440x440public2022-09golden20retriever.jpg?itok=48StbVfe"));
         mascota_repo.save(new Mascota("Bella", "Bulldog Francés", 4, 12.7f, "https://picartpetcare.com/wp-content/uploads/2020/05/BULLDOG-FRANC%C3%89S.jpg"));
         mascota_repo.save(new Mascota("Charlie", "Labrador Retriever", 6, 30.2f, "https://pamipe.com/wiki/wp-content/uploads/2022/09/Labrador-Retriever.jpg"));
-        mascota_repo.save(new Mascota("Lucy", "Poodle", 2, 8.4f, "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/My_cousin%27s_poodle_is_perched_and_not_knowing_what_to_make_of_me.%285898350017%29.jpg/640px-My_cousin%27s_poodle_is_perched_and_not_knowing_what_to_make_of_me.%285898350017%29.jpg"));
+        mascota_repo.save(new Mascota("Lucy", "Poodle", 2, 8.4f, "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQbIyCu-ZrIJlcLWxk9iYlL1ighFx-itgPbzp-VTG3Hma1EVy44"));
         mascota_repo.save(new Mascota("Rocky", "Boxer", 5, 28.9f, "https://cdn.royalcanin-weshare-online.io/ZT-S7XoBRYZmsWpc4beN/v9/bp-lot-2-boxer-bw-ws-2"));
         mascota_repo.save(new Mascota("Daisy", "Cocker Spaniel", 3, 14.1f, "https://blog-static.petlove.com.br/wp-content/uploads/2018/06/cocker-figado-tan.jpg"));
         mascota_repo.save(new Mascota("Cooper", "Border Collie", 4, 20.0f, "https://example.com/images/border_collie1.jpg"));
