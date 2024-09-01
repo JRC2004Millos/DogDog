@@ -1,4 +1,4 @@
-package com.example.demo.servicio;
+package com.example.demo.service;
 
 import java.util.Collection;
 
@@ -6,12 +6,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.entidad.Mascota;
-import com.example.demo.repositorio.MascotaRepository;
+import com.example.demo.model.Mascota;
+import com.example.demo.repository.MascotaRepository;
 
 @Service
 public class MascotaServiceImpl implements MascotaService {
-    
+
     @Autowired
     MascotaRepository repo;
 
@@ -28,7 +28,7 @@ public class MascotaServiceImpl implements MascotaService {
     @Override
     public List<Mascota> findByDuenoId(Long clienteId) {
         return repo.findByClienteId(clienteId);
-    }    
+    }
 
     @Override
     public void add(Mascota mascota) {

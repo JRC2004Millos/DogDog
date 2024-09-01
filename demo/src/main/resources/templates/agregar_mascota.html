@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agregar Mascota</title>
@@ -11,151 +11,165 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/css/styles_add_mascota.css" />
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <img src="../images/Logo2.png" alt="Logo" />
-        <ul>
-            <li><a href="http://localhost:8080/mascotas/ver">Inicio</a></li>
-        </ul>
+      <img src="../images/Logo2.png" alt="Logo" />
+      <ul>
+        <li>
+          <a th:href="@{/mascotas/ver(veterinarioId=${veterinarioId})}"
+            >Inicio</a
+          >
+        </li>
+      </ul>
     </header>
 
     <main>
-        <div id="cuadro">
-            <h1>Registrar Mascota</h1>
-            <form
-                th:object="${mascota}"
-                th:action="@{/mascotas/agregar}"
-                method="post"
-                id="formAgregarMascota"
-            >
-                <div class="row">
-                    <div class="col">
-                        <label for="nombre" class="form-label">Nombre</label>
-                        <input
-                            th:field="*{nombre}"
-                            type="text"
-                            class="form-control"
-                            id="nombre"
-                            placeholder="Ingresa el nombre de la mascota"
-                            required
-                        />
-                    </div>
-                    <div class="col">
-                        <label for="raza" class="form-label">Raza</label>
-                        <input
-                            th:field="*{raza}"
-                            type="text"
-                            class="form-control"
-                            id="raza"
-                            placeholder="Ingresa la raza de la mascota"
-                            required
-                        />
-                    </div>
-                </div>
+      <div id="cuadro">
+        <h1>Registrar Mascota</h1>
+        <form
+          th:object="${mascota}"
+          th:action="@{/mascotas/agregar(veterinarioId=${veterinarioId})}"
+          method="post"
+          id="formAgregarMascota"
+        >
+          <div class="row mb-3">
+            <div class="col">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input
+                th:field="*{nombre}"
+                type="text"
+                class="form-control"
+                id="nombre"
+                placeholder="Ingresa el nombre de la mascota"
+                required
+              />
+            </div>
+            <div class="col">
+              <label for="raza" class="form-label">Raza</label>
+              <input
+                th:field="*{raza}"
+                type="text"
+                class="form-control"
+                id="raza"
+                placeholder="Ingresa la raza de la mascota"
+                required
+              />
+            </div>
+          </div>
 
-                <div class="row">
-                    <div class="col">
-                        <label for="edad" class="form-label">Edad</label>
-                        <input
-                            th:field="*{edad}"
-                            type="number"
-                            class="form-control"
-                            id="edad"
-                            placeholder="Ingresa la edad de la mascota"
-                            required
-                        />
-                    </div>
-                    <div class="col">
-                        <label for="peso" class="form-label">Peso</label>
-                        <input
-                            th:field="*{peso}"
-                            type="number"
-                            class="form-control"
-                            id="peso"
-                            placeholder="Ingresa el peso de la mascota"
-                            required
-                        />
-                    </div>
-                </div>
+          <div class="row mb-3">
+            <div class="col">
+              <label for="edad" class="form-label">Edad</label>
+              <input
+                th:field="*{edad}"
+                type="number"
+                class="form-control"
+                id="edad"
+                placeholder="Ingresa la edad de la mascota"
+                required
+              />
+            </div>
+            <div class="col">
+              <label for="peso" class="form-label">Peso</label>
+              <input
+                th:field="*{peso}"
+                type="number"
+                class="form-control"
+                id="peso"
+                placeholder="Ingresa el peso de la mascota"
+                step="0.1"
+                required
+              />
+            </div>
+          </div>
 
-                <div class="row">
-                    <div class="col">
-                        <label for="fotoURL" class="form-label">Foto</label>
-                        <input
-                            th:field="*{fotoURL}"
-                            type="text"
-                            class="form-control"
-                            id="fotoURL"
-                            placeholder="Ingresa la URL de la imagen de la mascota"
-                            required
-                        />
-                    </div>
-                    <div class="col">
-                        <label for="cliente" class="form-label">Cliente</label>
-                        <select
-                            th:field="*{cliente.id}"
-                            class="form-select"
-                            id="cliente"
-                            required
-                        >
-                            <option value="" disabled selected>Selecciona el cliente</option>
-                            <option
-                                th:each="cliente : ${clientes}"
-                                th:value="${cliente.id}"
-                                th:text="${cliente.nombre}"
-                            ></option>
-                        </select>
-                    </div>
-                </div>
+          <div class="row mb-3">
+            <div class="col">
+              <label for="enfermedad" class="form-label">Enfermedad</label>
+              <input
+                th:field="*{enfermedad}"
+                type="text"
+                class="form-control"
+                id="enfermedad"
+                placeholder="Ingresa la enfermedad de la mascota"
+              />
+            </div>
+            <div class="col">
+              <label for="cliente" class="form-label">Cliente</label>
+              <select
+                th:field="*{cliente.id}"
+                class="form-select"
+                id="cliente"
+                required
+              >
+                <option value="" disabled selected>
+                  Selecciona el cliente
+                </option>
+                <option
+                  th:each="cliente : ${clientes}"
+                  th:value="${cliente.id}"
+                  th:text="${cliente.nombre}"
+                ></option>
+              </select>
+            </div>
+          </div>
 
-                <button class="btn btn-success" type="submit" id="btnAgregarMascota">
-                    Agregar
-                </button>
-            </form>
-        </div>
+          <div class="mb-3">
+            <label for="fotoURL" class="form-label">Foto</label>
+            <input
+              th:field="*{fotoURL}"
+              type="text"
+              class="form-control"
+              id="fotoURL"
+              placeholder="Ingresa la URL de la imagen de la mascota"
+              required
+            />
+          </div>
 
-        <div id="imagen">
-            <img src="../images/perro_addmasc.png" alt="perro" height="500px" />
-        </div>
+          <button class="btn btn-success" type="submit" id="btnAgregarMascota">
+            Agregar
+          </button>
+        </form>
+      </div>
     </main>
 
     <footer>
-        <div id="copyright">
-            <p>Copyright &copy; 2024</p>
-            <p>All rights reserved</p>
-        </div>
-        <div id="contact">
-            <p>Contáctanos</p>
-            <p>+57 301 123 4567</p>
-            <p>dogdog@gmail.com</p>
-        </div>
-        <div id="social">
-            <a href="https://www.facebook.com" target="_blank">
-                <img
-                    src="../images/facebook (1).png"
-                    height="25px"
-                    alt="LogoFacebook"
-                    class="logos"
-                />
-            </a>
-            <a href="https://www.instagram.com" target="_blank">
-                <img
-                    src="../images/logotipo-de-instagram.png"
-                    height="25px"
-                    alt="LogoInstagram"
-                    class="logos"
-                />
-            </a>
-            <a href="https://x.com/home" target="_blank">
-                <img
-                    src="../images/twitter.png"
-                    height="25px"
-                    alt="LogoX"
-                    class="logos"
-                />
-            </a>
-        </div>
+      <div id="copyright">
+        <p>Copyright &copy; 2024</p>
+        <p>All rights reserved</p>
+      </div>
+      <div id="contact">
+        <p>Contáctanos</p>
+        <p>+57 301 123 4567</p>
+        <p>dogdog@gmail.com</p>
+      </div>
+      <div id="social">
+        <a href="https://www.facebook.com" target="_blank">
+          <img
+            src="../images/facebook (1).png"
+            height="25px"
+            alt="LogoFacebook"
+            class="logos"
+          />
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+          <img
+            src="../images/logotipo-de-instagram.png"
+            height="25px"
+            alt="LogoInstagram"
+            class="logos"
+          />
+        </a>
+        <a href="https://x.com/home" target="_blank">
+          <img
+            src="../images/twitter.png"
+            height="25px"
+            alt="LogoX"
+            class="logos"
+          />
+        </a>
+      </div>
     </footer>
-</body>
+  </body>
 </html>

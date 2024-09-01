@@ -16,14 +16,20 @@
     <header class="header">
       <img src="../images/Logo2.png" alt="Logo" />
       <ul>
-        <li><a href="http://localhost:8080/dogdog/veterinario">Inicio</a></li>
+        <li>
+          <a th:href="@{/veterinario/{id}(id=${veterinarioId})}">Inicio</a>
+        </li>
       </ul>
     </header>
 
     <main>
       <div class="titulo">
         <h1>Clientes</h1>
-        <a type="button" th:href="@{/clientes/agregar}" class="btn btn-primary">
+        <a
+          type="button"
+          th:href="@{/clientes/agregar(veterinarioId=${veterinarioId})}"
+          class="btn btn-primary"
+        >
           <img src="../images/agregar.png" alt="Add" height="40px" />
         </a>
       </div>
@@ -51,13 +57,13 @@
             <td class="botones">
               <a
                 class="btn btn-outline-secondary"
-                th:href="@{/clientes/modificar/{id}(id=${cliente.id})}"
+                th:href="@{'/clientes/modificar/' + ${cliente.id} + '?veterinarioId=' + ${veterinarioId}}"
               >
                 <img src="../images/editar.png" alt="Edit" height="40px" />
               </a>
               <a
                 class="btn btn-outline-danger"
-                th:href="@{/clientes/eliminar/{id}(id=${cliente.id})}"
+                th:href="@{'/clientes/eliminar/' + ${cliente.id} + '?veterinarioId=' + ${veterinarioId}}"
               >
                 <img src="../images/eliminar.png" alt="Delete" height="40px" />
               </a>

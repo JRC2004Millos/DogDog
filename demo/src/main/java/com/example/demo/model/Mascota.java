@@ -1,4 +1,4 @@
-package com.example.demo.entidad;
+package com.example.demo.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -16,6 +16,7 @@ public class Mascota {
     private int edad;
     private float peso;
     private String fotoURL;
+    private String enfermedad;
     private boolean estado;
 
     @Column(name = "PK_ID")
@@ -26,11 +27,12 @@ public class Mascota {
     @ManyToOne
     private Cliente cliente;
 
-    public Mascota(String nombre, String raza, int edad, float peso, String fotoURL) {
+    public Mascota(String nombre, String raza, int edad, float peso, String fotoURL, String enfermedad) {
         this.nombre = nombre;
         this.raza = raza;
         this.edad = edad;
         this.peso = peso;
+        this.enfermedad = enfermedad;
         this.fotoURL = fotoURL;
         this.estado = true;
     }
@@ -101,6 +103,14 @@ public class Mascota {
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
+    }
+
+    public String getEnfermedad() {
+        return enfermedad;
+    }
+
+    public void setEnfermedad(String enfermedad) {
+        this.enfermedad = enfermedad;
     }
 
 }

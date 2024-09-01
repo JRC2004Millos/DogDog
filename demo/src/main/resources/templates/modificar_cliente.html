@@ -18,7 +18,9 @@
 
       <ul>
         <li>
-          <a href="http://localhost:8080/clientes/ver">Inicio</a>
+          <a th:href="@{/clientes/ver(veterinarioId=${veterinarioId})}"
+            >Inicio</a
+          >
         </li>
       </ul>
     </header>

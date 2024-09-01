@@ -1,21 +1,26 @@
-package com.example.demo.servicio;
+package com.example.demo.service;
 
 import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.example.demo.entidad.Cliente;
-import com.example.demo.repositorio.ClienteRepository;
+
+import com.example.demo.model.Cliente;
+import com.example.demo.repository.ClienteRepository;
 
 @Service
 public class ClienteServiceImpl implements ClienteService {
 
     @Autowired
-    public
-    ClienteRepository repo;
+    public ClienteRepository repo;
 
     @Override
     public Cliente findById(Long id) {
-        return repo.findById(id).orElse(null); 
+        return repo.findById(id).orElse(null);
+    }
+
+    @Override
+    public Cliente findByCedula(int cedula) {
+        return repo.findByCedula(cedula);
     }
 
     @Override

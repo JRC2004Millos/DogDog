@@ -137,6 +137,8 @@ td,
 th,
 tr {
   text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .titulo {
@@ -148,4 +150,17 @@ tr {
 
 .botones {
   width: fit-content;
+}
+
+.centered-table {
+  width: 80%; /* O el ancho que prefieras */
+  margin: 0 auto; /* Centra la tabla horizontalmente */
+  border-collapse: collapse; /* Opcional: para evitar doble borde */
+}
+
+/* Estilo para centrar el texto dentro de las celdas */
+.centered-table td,
+.centered-table th {
+  text-align: center; /* Centra el texto horizontalmente */
+  vertical-align: middle; /* Centra el texto verticalmente */
 }

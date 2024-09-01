@@ -16,63 +16,75 @@
     <header class="header">
       <img src="../images/Logo2.png" alt="Logo" />
       <ul>
-        <li><a href="http://localhost:8080/dogdog/veterinario">Inicio</a></li>
+        <li>
+          <a th:href="@{/veterinario/{id}(id=${veterinarioId})}">Inicio</a>
+        </li>
       </ul>
     </header>
 
     <main>
       <div class="titulo">
         <h1>Mascotas</h1>
-        <a type="button" th:href="@{/mascotas/agregar}" class="btn btn-primary">
+        <a
+          type="button"
+          th:href="@{/mascotas/agregar(veterinarioId=${veterinarioId})}"
+          class="btn btn-primary"
+        >
           <img src="../images/agregar.png" alt="Add" height="40px" />
         </a>
       </div>
-      <table
-        id="tabla"
-        class="table table-striped table-bordered border-prymarix"
-      >
-        <thead class="table-dark">
-          <tr>
-            <th>#</th>
-            <th>Imagen</th>
-            <th>Nombre</th>
-            <th>Raza</th>
-            <th>Edad</th>
-            <th>Peso</th>
-            <th class="botones">Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr th:each="mascota, stat : ${mascotas}">
-            <td th:text="${stat.index + 1}"></td>
-            <td>
-              <img
-                th:src="${mascota.fotoURL}"
-                alt="Mascota"
-                style="width: 80px; height: 60px"
-              />
-            </td>
-            <td th:text="${mascota.nombre}"></td>
-            <td th:text="${mascota.raza}"></td>
-            <td th:text="${mascota.edad}"></td>
-            <td th:text="${mascota.peso}"></td>
-            <td class="botones">
-              <a
-                class="btn btn-outline-secondary"
-                th:href="@{/mascotas/modificar/{id}(id=${mascota.id})}"
-              >
-                <img src="../images/editar.png" alt="Edit" height="40px" />
-              </a>
-              <a
-                class="btn btn-outline-danger"
-                th:href="@{/mascotas/eliminar/{id}(id=${mascota.id})}"
-              >
-                <img src="../images/eliminar.png" alt="Delete" height="40px" />
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-responsive">
+        <table
+          id="tabla"
+          class="table table-striped table-bordered border-prymarix centered-table"
+        >
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Imagen</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Raza</th>
+              <th scope="col">Edad</th>
+              <th scope="col">Peso</th>
+              <th scope="col">Enfermedad</th>
+              <th scope="col" class="botones">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="mascota : ${mascotas}" class="justify-content-center">
+              <td>
+                <img
+                  th:src="${mascota.fotoURL}"
+                  alt="Mascota"
+                  style="width: 80px; height: 60px"
+                />
+              </td>
+              <td th:text="${mascota.nombre}"></td>
+              <td th:text="${mascota.raza}"></td>
+              <td th:text="${mascota.edad}"></td>
+              <td th:text="${mascota.peso}"></td>
+              <td th:text="${mascota.enfermedad}"></td>
+              <td class="botones">
+                <a
+                  class="btn btn-outline-secondary"
+                  th:href="@{'/mascotas/modificar/' + ${mascota.id} + '?veterinarioId=' + ${veterinarioId}}"
+                >
+                  <img src="../images/editar.png" alt="Edit" height="40px" />
+                </a>
+                <a
+                  class="btn btn-outline-danger"
+                  th:href="@{'/mascotas/eliminar/' + ${mascota.id} + '?veterinarioId=' + ${veterinarioId}}"
+                >
+                  <img
+                    src="../images/eliminar.png"
+                    alt="Delete"
+                    height="40px"
+                  />
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </main>
 
     <footer>

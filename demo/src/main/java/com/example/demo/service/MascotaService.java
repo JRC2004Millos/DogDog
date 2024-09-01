@@ -1,11 +1,11 @@
-package com.example.demo.servicio;
+package com.example.demo.service;
 
 import java.util.Collection;
 
 import java.util.List;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.entidad.Mascota;
+import com.example.demo.model.Mascota;
 
 @Service
 public interface MascotaService {

@@ -17,7 +17,7 @@
     <header class="header">
       <img src="/images/Logo2.png" alt="Logo" />
       <ul>
-        <li><a href="http://localhost:8080/dogdog/home">Inicio</a></li>
+        <li><a href="http://localhost:8080/dogdog/login">Cerrar Sesión</a></li>
       </ul>
     </header>
 
@@ -57,25 +57,43 @@
 
       <br />
       <br />
-      
+
       <!-- Contenedor Flex para el título y el spinner -->
       <div class="header-container">
         <h1 class="tituloSeccion">Datos de las <span>Mascotas</span></h1>
-        
+
         <!-- Spinner de selección de mascotas -->
         <div class="form-group ml-3">
-          <select id="mascotaSelect" class="form-control form-select" onchange="mostrarMascota()">
+          <select
+            id="mascotaSelect"
+            class="form-control form-select"
+            onchange="mostrarMascota()"
+          >
             <!-- La primera mascota se selecciona por defecto -->
-            <option th:each="mascota, iterStat : ${mascotas}" th:value="${mascota.id}" th:text="${mascota.nombre}" th:selected="${iterStat.index == 0}"></option>
+            <option
+              th:each="mascota, iterStat : ${mascotas}"
+              th:value="${mascota.id}"
+              th:text="${mascota.nombre}"
+              th:selected="${iterStat.index == 0}"
+            ></option>
           </select>
         </div>
       </div>
 
       <!-- Información de cada mascota -->
-      <div th:each="mascota, iterStat : ${mascotas}" class="datosMascotaSection seleccionMascota" th:id="'mascota-' + ${mascota.id}" th:style="${iterStat.index != 0} ? 'display: none;' : 'display: flex;'">
+      <div
+        th:each="mascota, iterStat : ${mascotas}"
+        class="datosMascotaSection seleccionMascota"
+        th:id="'mascota-' + ${mascota.id}"
+        th:style="${iterStat.index != 0} ? 'display: none;' : 'display: flex;'"
+      >
         <!-- Contenedor de la imagen -->
         <div class="mascota-img-container">
-          <img th:src="${mascota.fotoURL}" alt="Foto de la Mascota" class="mascota" />
+          <img
+            th:src="${mascota.fotoURL}"
+            alt="Foto de la Mascota"
+            class="mascota"
+          />
         </div>
 
         <!-- Contenedor de los datos de la mascota -->
@@ -123,13 +141,28 @@
       </div>
       <div id="social">
         <a href="https://www.facebook.com" target="_blank">
-          <img src="/images/facebook (1).png" height="25px" alt="LogoFacebook" class="logos" />
+          <img
+            src="/images/facebook (1).png"
+            height="25px"
+            alt="LogoFacebook"
+            class="logos"
+          />
         </a>
         <a href="https://www.instagram.com" target="_blank">
-          <img src="/images/logotipo-de-instagram.png" height="25px" alt="LogoInstagram" class="logos" />
+          <img
+            src="/images/logotipo-de-instagram.png"
+            height="25px"
+            alt="LogoInstagram"
+            class="logos"
+          />
         </a>
         <a href="https://x.com/home" target="_blank">
-          <img src="/images/twitter.png" height="25px" alt="LogoX" class="logos" />
+          <img
+            src="/images/twitter.png"
+            height="25px"
+            alt="LogoX"
+            class="logos"
+          />
         </a>
       </div>
     </footer>

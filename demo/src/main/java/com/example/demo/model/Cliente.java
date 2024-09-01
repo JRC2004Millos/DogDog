@@ -1,4 +1,4 @@
-package com.example.demo.entidad;
+package com.example.demo.model;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -30,7 +30,7 @@ public class Cliente {
     public Cliente(int cedula, String nombre, String email, int celular, Long id) {
         this.nombre = nombre;
         this.cedula = cedula;
-        this.celular = celular; 
+        this.celular = celular;
         this.email = email;
         this.id = id;
     }
@@ -92,5 +92,5 @@ public class Cliente {
 
     public void setMascotas(List<Mascota> mascotas) {
         this.mascotas = mascotas;
-    }    
+    }
 }

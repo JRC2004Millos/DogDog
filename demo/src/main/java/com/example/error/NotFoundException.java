@@ -1,10 +1,11 @@
-package com.example.demo.controlador;
+package com.example.error;
 
 public class NotFoundException extends RuntimeException {
     private Long id;
 
-    public NotFoundException(Long identificacion) {
-        this.id = identificacion;
+    public NotFoundException(Long id) {
+        super("No se encontró el recurso con ID: " + id);
+        this.id = id;
     }
 
     public Long getId() {

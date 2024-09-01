@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/styles_error.css" />
-    <title>Document</title>
+    <title>Error - Página no encontrada</title>
   </head>
   <body>
     <div>
-      <img src="/images/error1.png" alt="Error" class="background-image" />
+      <h1>¡Oops! Algo salió mal.</h1>
+      <p th:text="${errorMessage}"></p>
+      <a href="/dogdog/home">Volver a la página principal</a>
     </div>
   </body>
 </html>
