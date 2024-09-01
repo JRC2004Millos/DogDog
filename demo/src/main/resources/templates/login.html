@@ -15,21 +15,22 @@
   </head>
   <body>
     <header>
-      <img src="../images/Logo2.png" alt="Logo" />
+      <img src="../images/LogoFin.png" alt="Logo" />
 
       <ul>
+        <li><a href="register">Registrarse</a></li>
         <li><a href="home">Inicio</a></li>
       </ul>
     </header>
 
     <main>
-      <div id="cuadro">
-        <h1>Iniciar Sesión</h1>
-
+      <div class="container">
         <form id="loginForm" method="post">
           <div class="mb-3">
-            <label for="type" class="form-label">Tipo de usuario</label>
+            <h2 class>Iniciar Sesión</h2>
+            <label for="type" class="form-label"></label>
             <select class="form-select" name="type" id="type">
+              <option value="" disabled selected>Tipo de usuario:</option>
               <option value="1">Veterinario</option>
               <option value="2">Administrador</option>
               <option value="3">Cliente</option>
@@ -39,22 +40,24 @@
           <!-- Fields for Veterinario -->
           <div id="veterinarioFields" class="dynamic-fields">
             <div class="mb-3">
-              <label for="cedulaVeterinario" class="form-label">Cédula</label>
+              <label for="cedulaVeterinario" class="form-label"></label>
               <input
                 type="number"
                 class="form-control"
                 name="cedulaVeterinario"
                 id="cedulaVeterinario"
+                placeholder="Cedula"
               />
             </div>
 
             <div class="mb-3">
-              <label for="passwordVet" class="form-label">Contraseña</label>
+              <label for="passwordVet" class="form-label"></label>
               <input
                 type="password"
                 class="form-control"
                 name="passwordVet"
                 id="passwordVet"
+                placeholder="Contraseña"
               />
             </div>
           </div>
@@ -62,22 +65,24 @@
           <!-- Fields for Administrador -->
           <div id="administradorFields" class="dynamic-fields">
             <div class="mb-3">
-              <label for="usuario" class="form-label">Usuario</label>
+              <label for="usuario" class="form-label"></label>
               <input
                 type="text"
                 class="form-control"
                 name="usuario"
                 id="usuario"
+                placeholder="Usuario"
               />
             </div>
 
             <div class="mb-3">
-              <label for="password" class="form-label">Contraseña</label>
+              <label for="password" class="form-label"></label>
               <input
                 type="password"
                 class="form-control"
                 name="password"
                 id="password"
+                placeholder="Contraseña"
               />
             </div>
           </div>
@@ -85,41 +90,39 @@
           <!-- Fields for Cliente -->
           <div id="clienteFields" class="dynamic-fields">
             <div class="mb-3">
-              <label for="cedula" class="form-label">Cédula</label>
+              <label for="cedula" class="form-label"></label>
               <input
                 type="number"
                 class="form-control"
                 name="cedula"
                 id="cedula"
+                placeholder="Cedula"
               />
             </div>
           </div>
 
           <div class="mb-3">
-            <button type="submit" class="btn btn-info">Iniciar Sesión</button>
+            <button type="button" class="btn btn-dark">Iniciar Sesión</button>
           </div>
         </form>
       </div>
-
-      <div id="imagen">
-        <img src="../images/perro_login.png" alt="perro" height="500px" />
-      </div>
     </main>
 
-    <footer>
-      <div id="copyright">
-        <p>Copyright &copy; 2024</p>
-        <p>All rights reserved</p>
-      </div>
+    <footer id="footer">
       <div id="contact">
-        <p>Contáctanos</p>
-        <p>+57 301 123 4567</p>
-        <p>dogdog@gmail.com</p>
+        <p>Contáctanos:</p>
+        <a href="https://accounts.google.com/" target="_blank">
+          <p>dogdog@gmail.com</p>
+        </a>
+
+        <a href="https://web.whatsapp.com/" target="_blank">
+          <p>+57 301 123 4567</p>
+        </a>
       </div>
       <div id="social">
         <a href="https://www.facebook.com" target="_blank">
           <img
-            src="../images/facebook (1).png"
+            src="../images/facebook-fb-social-icon-svgrepo-com.svg"
             height="25px"
             alt="LogoFacebook"
             class="logos"
@@ -127,15 +130,15 @@
         </a>
         <a href="https://www.instagram.com" target="_blank">
           <img
-            src="../images/logotipo-de-instagram.png"
+            src="../images/instagram-socials-social-media-icon-svgrepo-com.svg"
             height="25px"
             alt="LogoInstagram"
             class="logos"
           />
         </a>
-        <a href="https://x.com/home" target="_blank">
+        <a href="https://web.whatsapp.com/" target="_blank">
           <img
-            src="../images/twitter.png"
+            src="../images/whats-app-whatsapp-whatsapp-icon-svgrepo-com.svg"
             height="25px"
             alt="LogoX"
             class="logos"

@@ -8,7 +8,7 @@
   /* Centra los elementos a lo largo del eje transversal */
   align-items: center;
   /* Establece el color de fondo del encabezado */
-  background-color: #6673e1;
+  background: linear-gradient(to right, #064469, #5790ab, #74aabf);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -91,12 +91,19 @@ a {
   position: absolute;
 }
 
+/* Estilo base para los logos */
 .logos {
-  border-radius: 5px;
+  transition: transform 0.3s ease; /* Transición suave para el zoom */
+  border-radius: 10px;
+}
+
+/* Efecto de zoom al pasar el ratón */
+.logos:hover {
+  transform: scale(1.5);
 }
 
 .sec1 {
-  background-image: url(../images/FondoSec1.jpeg);
+  background-image: url(../images/FondoOficial.png);
   height: 85vh; /* Ajusta la altura de la sección según tus necesidades */
   background-size: cover; /* Asegura que la imagen cubra toda la sección */
   background-position: center; /* Centra la imagen de fondo */
@@ -118,6 +125,9 @@ a {
   display: flex;
   align-items: center;
   width: 100%;
+  padding: 10px;
+  background-color: #5790ab;
+  color: #ffffff;
 }
 
 .imgSec2 {
@@ -136,7 +146,7 @@ a {
 }
 
 .textSec2 h2 span {
-  color: #7d5ba6; /* Color del texto "Somos?" */
+  color: #064469; /* Color del texto "Somos?" */
 }
 
 .textSec2 p {
@@ -147,7 +157,7 @@ a {
 }
 
 .textSecComents h2 span {
-  color: #7d5ba6; /* Color del texto "Somos?" */
+  color: #064469; /* Color del texto "Somos?" */
 }
 
 .panaApolo {
@@ -182,8 +192,9 @@ a {
 
 .testimonials {
   width: 100%; /* Ajusta el ancho según tus necesidades */
-  background-color: #dde1ff;
+  background-color: #7dc7d4;
   padding: 20px;
+  color: #ffffff;
 }
 
 .testimonials p {
@@ -195,7 +206,8 @@ a {
 
 #footer {
   /* Establece el color de fondo del pie de página */
-  background-color: #6673e1;
+  background: linear-gradient(to right, #064469, #5790ab, #74aabf);
+
   /* Define el pie de página como un contenedor flexible */
   display: flex;
   /* Establece la dirección del eje principal en fila */
@@ -203,7 +215,7 @@ a {
   /* Establece el color del texto en blanco */
   color: white;
 
-  height: 100px;
+  height: 120px;
 
   bottom: 0;
 
@@ -212,21 +224,30 @@ a {
   width: 100%;
 }
 
+#contact a:hover {
+  /* Subraya el texto al pasar el cursor */
+  text-decoration: underline;
+}
+
 #footer img {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 }
 
 #copyright {
-  margin: 0 10px;
+  margin: 30px 10px;
   display: grid;
   place-items: center;
 }
 
 #contact {
-  margin: 0 50px;
+  margin: 8px 50px;
   display: grid;
   place-items: center;
+}
+
+#contact a {
+  margin-top: 0px;
 }
 
 #social {
@@ -278,25 +299,6 @@ html {
   font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
 }
-/*
-::-webkit-scrollbar {
-  width: 1.3rem;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 1rem;
-  background: #797979;
-  transition: all 0.5s ease-in-out;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #222224;
-}
-
-::-webkit-scrollbar-track {
-  background: #f9f9f9;
-}
-*/
 
 .container {
   max-width: 124rem;
@@ -310,60 +312,26 @@ html {
 }
 
 .text-center span {
-  color: #7d5ba6; /* Color del texto "Somos?" */
+  color: #064469; /* Color del texto "Somos?" */
 }
-
-/*
-.section-heading {
-  font-size: 3rem;
-  color: var(--primary);
-  padding: 2rem 0;
-}
-*/
 
 #tranding {
   padding: 4rem 0;
-  background-color: #a4abec;
+  background-color: #7dc7d4;
+  color: #ffffff;
 }
-
-/*
-@media (max-width:1440px) {
-  #tranding {
-    padding: 7rem 0;
-  }
-}
-*/
 
 #tranding .tranding-slider {
   height: 52rem;
   padding: 2rem 0;
   position: relative;
 }
-/*
-@media (max-width:500px) {
-  #tranding .tranding-slider {
-    height: 45rem;
-  }
-}
-*/
+
 .tranding-slide {
   width: 37rem;
   height: 42rem;
   position: relative;
 }
-
-/*
-@media (max-width:500px) {
-  .tranding-slide {
-    width: 28rem !important;
-    height: 36rem !important;
-  }
-  .tranding-slide .tranding-slide-img img {
-    width: 28rem !important;
-    height: 36rem !important;
-  }
-}
-*/
 
 .tranding-slide .tranding-slide-img img {
   width: 37rem;
@@ -371,34 +339,13 @@ html {
   border-radius: 2rem;
   object-fit: cover;
 }
-/*
-.tranding-slide .tranding-slide-content {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-}
-*/
+
 .tranding-slide-content .tranding-slide-content-bottom {
   position: absolute;
   bottom: 2rem;
   left: 2rem;
   color: var(--white);
 }
-/*
-.food-rating {
-  padding-top: 1rem;
-  display: flex;
-  gap: 1rem;
-}
-*/
-/*
-.swiper-slide-shadow-left,
-.swiper-slide-shadow-right {
-  display: none;
-}
-*/
 .tranding-slider-control {
   position: relative;
   bottom: 2rem;
@@ -418,29 +365,7 @@ html {
     transform: translateX(-70%) !important;
   }
 }
-/*
-@media (max-width:450px) {
-  .tranding-slider-control .swiper-button-next {
-    left: 80% !important;
-    transform: translateX(-80%) !important;
-  }
-}
 
-@media (max-width:990px) {
-  .tranding-slider-control .swiper-button-prev {
-    left: 30% !important;
-    transform: translateX(-30%) !important;
-  }
-}
-*/
-/*
-@media (max-width:450px) {
-  .tranding-slider-control .swiper-button-prev {
-    left: 20% !important;
-    transform: translateX(-20%) !important;
-  }
-}
-*/
 .tranding-slider-control .slider-arrow {
   background: var(--white);
   width: 3.5rem;
@@ -465,11 +390,7 @@ html {
   width: 15rem;
   bottom: 1rem;
 }
-/*
-.tranding-slider-control .swiper-pagination .swiper-pagination-bullet {
-  filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
-}
-*/
+
 .tranding-slider-control .swiper-pagination .swiper-pagination-bullet-active {
   background: var(--primary);
 }
