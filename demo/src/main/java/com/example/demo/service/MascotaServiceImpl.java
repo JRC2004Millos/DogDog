@@ -44,4 +44,9 @@ public class MascotaServiceImpl implements MascotaService {
     public void update(Mascota mascota) {
         repo.save(mascota);
     }
+
+    @Override
+    public int mascotasEnTratamiento() {
+        return repo.mascotasEnTratamiento();
+    }
 }

@@ -22,4 +22,6 @@ public interface MascotaService {
 
     public void update(Mascota mascota);
 
+    public int mascotasEnTratamiento();
+
 }

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/styles_veterinario.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <img src="../images/Logo2.png" alt="Logo" />
+      <ul>
+        <li>
+          <a href="/admin/home">Inicio</a>
+        </li>
+      </ul>
+    </header>
+
+    <main>
+      <div class="titulo">
+        <h1>Veterinarios</h1>
+        <a type="button" href="/veterinario/agregar" class="btn btn-primary">
+          <img src="../images/agregar.png" alt="Add" height="40px" />
+        </a>
+      </div>
+      <div class="table-responsive">
+        <table
+          id="tabla"
+          class="table table-striped table-bordered border-prymarix centered-table"
+        >
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Imagen</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Cédula</th>
+              <th scope="col">Especialidad</th>
+              <th scope="col">Atenciones</th>
+              <th scope="col" class="botones">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              th:each="veterinario: ${veterinarios}"
+              class="justify-content-center"
+            >
+              <td>
+                <img
+                  th:src="${veterinario.fotoURL}"
+                  alt="veterinario"
+                  style="width: 80px; height: 60px"
+                />
+              </td>
+              <td th:text="${veterinario.nombre}"></td>
+              <td th:text="${veterinario.cedula}"></td>
+              <td th:text="${veterinario.especialidad}"></td>
+              <td th:text="${veterinario.numAtenciones}"></td>
+              <td class="botones">
+                <a
+                  class="btn btn-outline-secondary"
+                  th:href="@{/veterinario/modificar/{id}(id=${veterinario.id})}"
+                >
+                  <img src="../images/editar.png" alt="Edit" height="40px" />
+                </a>
+                <a
+                  class="btn btn-outline-danger"
+                  th:href="@{/veterinario/eliminar/{id}(id=${veterinario.id})}"
+                >
+                  <img
+                    src="../images/eliminar.png"
+                    alt="Delete"
+                    height="40px"
+                  />
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <footer>
+      <div id="copyright">
+        <p>Copyright &copy; 2024</p>
+        <p>All rights reserved</p>
+      </div>
+      <div id="contact">
+        <p>Contáctanos</p>
+        <p>+57 301 123 4567</p>
+        <p>dogdog@gmail.com</p>
+      </div>
+      <div id="social">
+        <a href="https://www.facebook.com" target="_blank">
+          <img
+            src="../images/facebook (1).png"
+            height="25px"
+            alt="LogoFacebook"
+            class="logos"
+          />
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+          <img
+            src="../images/logotipo-de-instagram.png"
+            height="25px"
+            alt="LogoInstagram"
+            class="logos"
+          />
+        </a>
+        <a href="https://x.com/home" target="_blank">
+          <img
+            src="../images/twitter.png"
+            height="25px"
+            alt="LogoX"
+            class="logos"
+          />
+        </a>
+      </div>
+    </footer>
+  </body>
+</html>

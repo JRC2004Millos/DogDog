@@ -61,23 +61,20 @@ public class HomeController {
                     return new ModelAndView("redirect:/veterinario/" + veterinario.getId());
                 }
 
-                errorMessage = "Veterinario no encontrado";
+                errorMessage = "Credenciales incorrectas";
                 break;
 
-            // case "2": // Administrador
-            // if (usuario == null || password == null) {
-            // errorMessage = "Datos de administrador incompletos.";
-            // break;
-            // }
+            case "2": // Administrador
+                if (usuario == null || password == null) {
+                    errorMessage = "Datos de administrador incompletos.";
+                    break;
+                }
 
-            // Administrador administrador =
-            // administradorService.findByUsuarioAndClave(usuario, password);
-            // if (administrador != null) {
-            // return new ModelAndView("redirect:/administrador");
-            // }
+                if (usuario.equals("admin") && password.equals("123"))
+                    return new ModelAndView("redirect:/admin/home");
 
-            // errorMessage = "Administrador no encontrado";
-            // break;
+                errorMessage = "Credenciales incorrectas";
+                break;
 
             case "3": // Cliente
                 if (cedula == null) {

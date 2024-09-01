@@ -19,4 +19,6 @@ public interface VeterinarioService {
     public void deleteById(Long id);
 
     public void update(Veterinario veterinario);
+
+    public int getNumAtenciones();
 }
