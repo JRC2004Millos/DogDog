@@ -27,7 +27,7 @@
         <br />
         <br />
       </h1>
-      
+
       <table class="datosPersonales">
         <thead>
           <tr>
@@ -57,7 +57,7 @@
 
       <br />
       <br />
-      
+
       <!-- Contenedor Flex para el título y el spinner -->
       <div class="header-container">
         <h1 class="tituloSeccion">Datos de las <span>Mascotas</span></h1>
@@ -65,8 +65,7 @@
         <!-- Spinner de selección de mascotas -->
         <div class="form-group ml-3">
           <select
-            id="mascotaSelect"
-            class="form-control form-select"
+            class="mascota-select form-control form-select"
             onchange="mostrarMascota()"
           >
             <!-- La primera mascota se selecciona por defecto -->
@@ -79,7 +78,7 @@
           </select>
         </div>
       </div>
-      
+
       <!-- Información de cada mascota -->
       <div
         th:each="mascota, iterStat : ${mascotas}"
@@ -129,7 +128,7 @@
     </main>
     <br />
     <br />
-    
+
     <footer id="footer">
       <div id="contact">
         <p>Contáctanos:</p>
@@ -141,10 +140,17 @@
           <p>+57 301 123 4567</p>
         </a>
       </div>
+
+      <img
+        src="/images/fotoFooter-removebg-preview.png"
+        alt=" Foto"
+        class="fotoFooter"
+      />
       <div id="social">
         <a href="https://www.facebook.com" target="_blank">
           <img
             src="/images/facebook-fb-social-icon-svgrepo-com.svg"
+            height="25px"
             alt="LogoFacebook"
             class="logos"
           />
@@ -152,6 +158,7 @@
         <a href="https://www.instagram.com" target="_blank">
           <img
             src="/images/instagram-socials-social-media-icon-svgrepo-com.svg"
+            height="25px"
             alt="LogoInstagram"
             class="logos"
           />
@@ -159,7 +166,8 @@
         <a href="https://web.whatsapp.com/" target="_blank">
           <img
             src="/images/whats-app-whatsapp-whatsapp-icon-svgrepo-com.svg"
-            alt="LogoX"
+            height="25px"
+            alt="LogoWhatsApp"
             class="logos"
           />
         </a>

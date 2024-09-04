@@ -17,9 +17,7 @@
       <img src="../images/LogoFin.png" alt="Logo" />
       <ul>
         <li>
-          <a th:href="@{/mascotas/ver(veterinarioId=${veterinarioId})}"
-            >Inicio</a
-          >
+          <a th:href="@{/veterinario/{id}(id=${veterinarioId})}">Inicio</a>
         </li>
       </ul>
     </header>
@@ -31,7 +29,12 @@
           type="button"
           th:href="@{/clientes/agregar(veterinarioId=${veterinarioId})}"
         >
-          <img src="../images/agregar.png" alt="Add" height="40px" class="add"/>
+          <img
+            src="../images/agregar.png"
+            alt="Add"
+            height="40px"
+            class="add"
+          />
         </a>
       </div>
       <div class="container">
@@ -52,14 +55,28 @@
               <td th:text="${cliente.celular}"></td>
               <td th:text="${cliente.email}"></td>
               <td>
-                <a href="#" class="btn btn-edit">Editar</a>
-                <a href="#" class="btn btn-delete">Eliminar</a>
-            </td>
+                <a
+                  class="btn btn-outline-secondary"
+                  th:href="@{'/clientes/modificar/' + ${cliente.id} + '?veterinarioId=' + ${veterinarioId}}"
+                >
+                  <img src="../images/editar.png" alt="Edit" height="40px" />
+                </a>
+                <a
+                  class="btn btn-outline-danger"
+                  th:href="@{'/clientes/eliminar/' + ${cliente.id} + '?veterinarioId=' + ${veterinarioId}}"
+                >
+                  <img
+                    src="../images/eliminar.png"
+                    alt="Delete"
+                    height="40px"
+                  />
+                </a>
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
-      
+
       <!--
       <table
         id="tabla"
@@ -113,7 +130,11 @@
           <p>+57 301 123 4567</p>
         </a>
       </div>
-      <img src="../images/fotoFooter-removebg-preview.png" alt="foto" class="fotoFooter">
+      <img
+        src="../images/fotoFooter-removebg-preview.png"
+        alt="foto"
+        class="fotoFooter"
+      />
 
       <div id="social">
         <a href="https://www.facebook.com" target="_blank">

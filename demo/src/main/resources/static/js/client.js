@@ -1,5 +1,6 @@
 function mostrarMascota() {
-  var select = document.getElementById("mascotaSelect");
+  // Selecciona el primer elemento con la clase 'mascota-select'
+  var select = document.querySelector(".mascota-select");
   var mascotaId = select.value;
 
   // Ocultar todas las secciones de mascotas
@@ -8,14 +9,18 @@ function mostrarMascota() {
     section.style.display = "none";
   });
 
+
   // Mostrar la sección seleccionada
-  if (mascotaId) {
-    document.getElementById("mascota-" + mascotaId).style.display = "block";
+  var sectionToShow = document.getElementById("mascota-" + mascotaId);
+  
+  if (sectionToShow) {
+    sectionToShow.style.display = "flex";
   }
 }
 
-// Mostrar la primera mascota por defecto
+// Mostrar la primera mascota por defecto al cargar la página
 window.onload = function () {
-  document.getElementById("mascotaSelect").selectedIndex = 0; // Selecciona la primera opción
+  var select = document.querySelector(".mascota-select");
+  select.selectedIndex = 0; 
   mostrarMascota(); // Llama a la función para mostrar la primera mascota
 };

@@ -5,34 +5,15 @@ html {
 
 body {
   margin: 0;
-  padding-bottom: 100px; /* Espacio suficiente para el footer */
+  padding-bottom: 120px; /* Espacio suficiente para el footer */
   box-sizing: border-box;
   background: linear-gradient(to bottom, #064469, #54859a);
-
-}
-
-footer {
-  background: linear-gradient(to bottom, #54859a, #064469);
-  display: flex;
-  z-index: 1000;
-  margin: 0px 0px;
-  overflow: hidden;
-  flex-direction: row;
-  color: white;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
 }
 
 header {
-  /* Define el encabezado como un contenedor flexible */
   display: flex;
-  /* Distribuye el espacio entre los elementos secundarios */
   justify-content: space-between;
-  /* Añade un relleno de 10px alrededor del contenido */
-  /* Centra los elementos a lo largo del eje transversal */
   align-items: center;
-  /* Establece el color de fondo del encabezado */
   background-color: #155274;
   height: 100px;
 }
@@ -43,21 +24,10 @@ header img {
 }
 
 a {
-  /* Añade un margen de 10px alrededor de los enlaces */
   margin: 10px;
 }
 
-.indice {
-  justify-content: end;
-}
-
-body {
-  margin: 0;
-  margin-bottom: 100px;
-}
-
 header > ul {
-  /* Define la lista dentro del encabezado como un contenedor flexible */
   display: flex;
   justify-content: end;
   margin: 0;
@@ -67,20 +37,13 @@ header > ul {
 header ul li {
   align-items: center;
   display: flex;
-  /* Establece el tamaño de la fuente a 18px */
   font-size: 18px;
-  /* Elimina el estilo de lista predeterminado */
   list-style-type: none;
-  /* Elimina la subrayado predeterminado */
-  text-decoration: none;
-  /* Establece el color del texto en negro */
   color: white;
 }
 
 header li a:hover {
-  /* Cambia el color del texto a rojo al pasar el cursor */
   color: red;
-  /* Subraya el texto al pasar el cursor */
   text-decoration: underline;
 }
 
@@ -88,11 +51,6 @@ header a {
   padding: 3px;
   color: white;
   text-decoration: none;
-}
-
-footer img {
-  width: 50px;
-  height: 50px;
 }
 
 #copyright {
@@ -108,24 +66,16 @@ footer img {
 }
 
 #social {
-  /* Alinea el contenido al final del contenedor */
   justify-content: end;
-  /* Define la sección de redes sociales como un contenedor flexible */
   display: flex;
-  /* Permite que la sección crezca para llenar el espacio disponible */
   flex-grow: 1;
 }
 
 #social a {
-  /* Define los enlaces en la sección de redes sociales como contenedores flexibles */
   display: flex;
-  /* Establece la dirección del eje principal en columna */
   flex-direction: column;
-  /* Centra los elementos a lo largo del eje transversal */
   align-items: center;
-  /* Centra los elementos a lo largo del eje principal */
   justify-content: center;
-  /* Establece el color del texto en blanco */
   color: white;
 }
 
@@ -142,7 +92,6 @@ h1 {
   width: 70%;
   border-collapse: collapse;
   margin-top: 10px;
-  margin-left: 300px;
   font-size: 30px;
   margin: 0 auto;
 }
@@ -166,7 +115,6 @@ th {
   color: black;
   font-weight: bold;
   font-size: 30px;
-
 }
 
 tr:nth-child(even) {
@@ -175,7 +123,7 @@ tr:nth-child(even) {
 }
 
 tr:nth-child(odd) {
-  background-color: #3D728C;
+  background-color: #3d728c;
   color: black;
 }
 
@@ -184,110 +132,91 @@ tr:nth-child(odd) {
   font-size: 40px;
   color: white;
 }
-/*
-.header-container {
-  display: flex; /* Flexbox para alinear el título y el spinner en una fila 
-  align-items: center; /* Centra verticalmente el spinner con el título 
-  gap: 200px; /* Espacio entre el título y el spinner 
-  margin-bottom: 20px; /* Espacio inferior entre el encabezado y la siguiente sección 
-}
 
-.form-group {
-  margin: 0; /* Elimina márgenes 
-}
-
-.form-select {
-  height: 40px; /* Ajusta la altura del spinner *
-  width: 200px; /* Ajusta el ancho del spinner *
-  font-size: 16px; /* Ajusta el tamaño de la fuente *
-}
-
-
-.seleccionMascota {
-  justify-content: flex-start; /* Alinea los elementos a la izquierda *
-  align-items: center; /* Centra verticalmente *
-  padding: 20px;
-  margin: 20px auto; /* Centra el contenedor y añade margen superior e inferior 
-  width: 80%; /* Ajusta el ancho del contenedor 
-  max-width: 1000px; /* Ancho máximo para controlar el tamaño 
-  border-radius: 20px; /* Bordes redondeados 
-}
-
-.mascota-img-container {
-  width: 250px; /* Ajusta el ancho de la imagen 
-  margin-right: 20px; /* Añade espacio a la derecha de la imagen 
-}
-
-.mascota {
-  width: 100%; /* Imagen toma todo el ancho del contenedor 
-  height: 200px; /* Mantiene la proporción de la imagen 
-  border-radius: 10px; /* Bordes redondeados 
-  border: #000000 3px solid; /* Borde negro para la imagen 
-}
-
-
-
-/*Tabla*/
-/*
-.datosMascota {
-  border-collapse: collapse;
-  width: 100%;
-  margin: 0; /* Elimina márgenes 
-}
-*/
-
-
-.contenidoIzq{
+.contenidoIzq {
   text-align: center;
 }
 
-footer a{
+.infoMascota {
+  display: flex;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 200px;
+  margin-bottom: 20px;
+}
+
+.mascota-img-container {
+  width: 50%;
+  margin-right: 20px;
+}
+
+.datosMascotaSection {
+  display: flex;
+}
+
+.mascota {
+  width: 50%;
+  border-radius: 50px;
+  margin-left: 50px;
+  border: 3px solid black;
+}
+
+.mascotas-datos-container {
+  display: flex;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(to bottom, #74aabf, #74aabf, white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 120px;
+  padding: 0 20px;
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#contact a {
   text-decoration: none;
-  color: white;
+  color: black;
+  margin: 0;
+}
+
+#contact p {
+  color: #000;
+}
+
+.fotoFooter {
+  height: 100px; /* Ajusta la altura de la imagen si es necesario */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+  display: block; /* Asegura que la imagen se trate como un bloque */
+}
+
+#social {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px; /* Espacio entre los logos */
 }
 
 .logos {
   transition: transform 0.3s ease;
   border-radius: 10px;
+  height: 50px;
+  width: 50px;
 }
 
 .logos:hover {
   transform: scale(1.5);
 }
-
-footer a:hover{
-  text-decoration: underline;
-
-}
-
-.infoMascota{
-  display: flex;
-}
-
-/*------------------------------------------------------------------  -------------------------------*/
-.header-container {
-  display: flex; /* Flexbox para alinear el título y el spinner en una fila */
-  align-items: center; /* Centra verticalmente el spinner con el título */
-  gap: 200px; /* Espacio entre el título y el spinner */
-  margin-bottom: 20px; /* Espacio inferior entre el encabezado y la siguiente sección */
-}
-
-.mascota-img-container {
-  width: 50%; /* Ajusta el ancho de la imagen */
-  margin-right: 20px; /* Añade espacio a la derecha de la imagen */
-}
-
-.datosMascotaSection{
-  display: flex;
-}
-
-.mascota{
-  width: 50%;
-}
-
-.mascotas-datos-container{
-  display: flex;
-}
-
-
-
