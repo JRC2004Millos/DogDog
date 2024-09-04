@@ -2,14 +2,41 @@ html,
 body {
   height: 100%;
   margin: 0;
-  display: flex;
-  flex-direction: column;
 }
 
 body {
-  margin: 0;
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Asegúrate de que sea 100vh */
   background: linear-gradient(to bottom, #064469, #5790ab, #74aabf);
+}
+
+main {
+  flex: 1; /* Hace que main ocupe el espacio disponible */
+  padding: 20px; /* Agrega un poco de espacio alrededor del contenido de main */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#cuadro {
+  background: radial-gradient(circle, #74aabf, #5790ab, #064469);
+  padding: 3em;
+  height: auto;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 20px;
+  border: 1px solid black;
+  backdrop-filter: blur(10px);
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  color: white;
 }
 
 header {
@@ -29,10 +56,6 @@ a {
   margin: 10px;
   text-decoration: none;
   color: white;
-}
-
-.indice {
-  justify-content: end;
 }
 
 header > ul {
@@ -68,45 +91,28 @@ form {
   text-align: center;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.col {
   margin-top: 10px;
-  margin-bottom: 10px;
 }
 
-#cuadro {
-  background: radial-gradient(circle, #74aabf, #5790ab, #064469);
-  padding: 3em;
-  height: auto;
-  width: 100%;
-  max-width: 600px;
-  border-radius: 20px;
-  border: 1px solid black;
-  backdrop-filter: blur(10px);
-  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  transition: all 0.2s ease-in-out;
-  color: white;
+.col label {
+  font-size: 20px;
 }
 
-main {
-  flex: 1; /* Permite que el contenido de 'main' ocupe el espacio restante */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.mb-3 {
+  font-size: 20px;
 }
 
 #footer {
   background: linear-gradient(to bottom, #74AABF, #74aabf, white);
   display: flex;
-  justify-content: space-between; /* Distribuye los elementos en 3 columnas: izquierda, centro, derecha */
-  align-items: center; /* Centra verticalmente los elementos */
+  justify-content: space-between;
+  align-items: center;
   color: white;
   width: 100%;
   padding: 20px 50px;
-  position: relative; /* Permite que el footer se mantenga al final */
+  position: relative; /* Cambiado para que el footer se mantenga al final */
+  bottom: 0;
 }
 
 /* Estilos para la sección de contacto a la izquierda */
@@ -114,7 +120,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start; /* Alinea el contenido del contacto a la izquierda */
+  align-items: flex-start;
 }
 
 #contact p {
@@ -136,10 +142,6 @@ main {
   align-items: center;
 }
 
-#social a {
-  margin-left: 10px; /* Añade espacio entre los logos */
-}
-
 #contact a {
   text-decoration: none;
   color: black;
@@ -158,14 +160,11 @@ main {
   transform: scale(1.5);
 }
 
-img {
-  margin-left: 10px;
-}
-
-.col {
-  margin-top: 20px;
-}
-
-.col label {
-  font-size: 20px;
-}
+.container {
+    display: flex;
+    justify-content: center; /* Centra la tabla horizontalmente */
+    align-items: center; /* Centra la tabla verticalmente */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+  }

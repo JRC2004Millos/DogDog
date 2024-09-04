@@ -8,19 +8,23 @@ body {
 }
 
 body {
-  background: linear-gradient(to bottom, #064469, #54859a);
+  background: linear-gradient(to bottom, #064469, #5790ab, #74aabf);
 }
 
 main {
   flex: 1; /* Hace que el contenido principal ocupe todo el espacio disponible */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
   display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
+  justify-content: center;
+  align-items: center;
   margin-top: 10px;
   margin-bottom: 10px;
+  flex-wrap: wrap; /* Asegura que los elementos dentro se ajusten adecuadamente */
 }
 
 form {
@@ -28,7 +32,7 @@ form {
   padding: 3em;
   height: auto;
   width: 100%;
-  max-width: 600px; /* Opcional: establece un ancho máximo */
+  max-width: 600px;
   border-radius: 20px;
   border-left: 1px solid black;
   border-top: 1px solid black;
@@ -38,6 +42,18 @@ form {
   box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
   text-align: center;
   transition: all 0.2s ease-in-out;
+}
+
+footer {
+  background: linear-gradient(to bottom, #74aabf, #74aabf, white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  width: 100%;
+  padding: 20px 50px;
+  position: relative; /* Hace que el footer quede bajo el contenido, pero no se superponga */
+  bottom: 0;
 }
 
 form p {
@@ -127,47 +143,49 @@ header a {
   padding: 3px;
 }
 
-#footer {
-  background: linear-gradient(to bottom, #54859a, #064469);
-  display: flex;
-  flex-direction: row;
-  color: white;
-  width: 100%;
-  padding: 10px 0;
-}
-
-#footer img {
-  width: 40px;
-  height: 40px;
-}
-
+/* Estilos para la sección de contacto a la izquierda */
 #contact {
-  margin: 8px 50px;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#contact p {
+  margin: 5px 0;
+  color: black;
+}
+
+/* Centrar la imagen en el footer */
+.fotoFooter {
+  margin: 0 auto;
+  border-radius: 50%;
+  height: 150px;
+}
+
+/* Sección de redes sociales a la derecha */
+#social {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 #contact a {
-  margin-top: 0px;
-}
-
-#social {
-  justify-content: end;
-  display: flex;
-  flex-grow: 1;
-}
-
-#social a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-#social p {
+  text-decoration: none;
+  color: black;
   margin: 0;
-  font-size: 15px;
+}
+
+.logos {
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+  height: 50px;
+  width: 50px;
+}
+
+/* Efecto zoom en hover */
+.logos:hover {
+  transform: scale(1.5);
 }
 
 #imagen {

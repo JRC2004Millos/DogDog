@@ -13,11 +13,13 @@
     />
   </head>
   <body>
-    <header class="header">
-      <img src="../images/Logo2.png" alt="Logo" />
+    <header>
+      <img src="../images/LogoFin.png" alt="Logo" />
       <ul>
         <li>
-          <a th:href="@{/veterinario/{id}(id=${veterinarioId})}">Inicio</a>
+          <a th:href="@{/mascotas/ver(veterinarioId=${veterinarioId})}"
+            >Inicio</a
+          >
         </li>
       </ul>
     </header>
@@ -28,11 +30,37 @@
         <a
           type="button"
           th:href="@{/clientes/agregar(veterinarioId=${veterinarioId})}"
-          class="btn btn-primary"
         >
-          <img src="../images/agregar.png" alt="Add" height="40px" />
+          <img src="../images/agregar.png" alt="Add" height="40px" class="add"/>
         </a>
       </div>
+      <div class="container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Cédula</th>
+              <th>Celular</th>
+              <th>Correo</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="cliente, stat : ${clientes}">
+              <td th:text="${cliente.nombre}"></td>
+              <td th:text="${cliente.cedula}"></td>
+              <td th:text="${cliente.celular}"></td>
+              <td th:text="${cliente.email}"></td>
+              <td>
+                <a href="#" class="btn btn-edit">Editar</a>
+                <a href="#" class="btn btn-delete">Eliminar</a>
+            </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <!--
       <table
         id="tabla"
         class="table table-striped table-bordered border-prymarix"
@@ -71,22 +99,26 @@
           </tr>
         </tbody>
       </table>
+      -->
     </main>
 
-    <footer>
-      <div id="copyright">
-        <p>Copyright &copy; 2024</p>
-        <p>All rights reserved</p>
-      </div>
+    <footer id="footer">
       <div id="contact">
-        <p>Contáctanos</p>
-        <p>+57 301 123 4567</p>
-        <p>dogdog@gmail.com</p>
+        <p>Contáctanos:</p>
+        <a href="https://accounts.google.com/" target="_blank">
+          <p>dogdog@gmail.com</p>
+        </a>
+
+        <a href="https://web.whatsapp.com/" target="_blank">
+          <p>+57 301 123 4567</p>
+        </a>
       </div>
+      <img src="../images/fotoFooter-removebg-preview.png" alt="foto" class="fotoFooter">
+
       <div id="social">
         <a href="https://www.facebook.com" target="_blank">
           <img
-            src="../images/facebook (1).png"
+            src="../images/facebook-fb-social-icon-svgrepo-com.svg"
             height="25px"
             alt="LogoFacebook"
             class="logos"
@@ -94,17 +126,17 @@
         </a>
         <a href="https://www.instagram.com" target="_blank">
           <img
-            src="../images/logotipo-de-instagram.png"
+            src="../images/instagram-socials-social-media-icon-svgrepo-com.svg"
             height="25px"
             alt="LogoInstagram"
             class="logos"
           />
         </a>
-        <a href="https://x.com/home" target="_blank">
+        <a href="https://web.whatsapp.com/" target="_blank">
           <img
-            src="../images/twitter.png"
+            src="../images/whats-app-whatsapp-whatsapp-icon-svgrepo-com.svg"
             height="25px"
-            alt="LogoX"
+            alt="LogoWhatsApp"
             class="logos"
           />
         </a>

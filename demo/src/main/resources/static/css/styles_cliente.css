@@ -7,10 +7,12 @@ body {
   margin: 0;
   padding-bottom: 100px; /* Espacio suficiente para el footer */
   box-sizing: border-box;
+  background: linear-gradient(to bottom, #064469, #54859a);
+
 }
 
 footer {
-  background-color: #6673e1;
+  background: linear-gradient(to bottom, #54859a, #064469);
   display: flex;
   z-index: 1000;
   margin: 0px 0px;
@@ -31,12 +33,13 @@ header {
   /* Centra los elementos a lo largo del eje transversal */
   align-items: center;
   /* Establece el color de fondo del encabezado */
-  background-color: #6673e1;
+  background-color: #155274;
   height: 100px;
 }
 
 header img {
   height: 80%;
+  margin-left: 20px;
 }
 
 a {
@@ -88,8 +91,8 @@ header a {
 }
 
 footer img {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
 }
 
 #copyright {
@@ -145,8 +148,9 @@ h1 {
 }
 
 .headerTabla {
-  background-color: #6673e1;
+  background-color: #064469;
   color: white;
+  text-align: center;
 }
 
 td {
@@ -159,84 +163,131 @@ td {
 th {
   border: 1px solid #000000;
   padding: 8px;
-  text-align: center;
   color: black;
   font-weight: bold;
   font-size: 30px;
+
 }
 
 tr:nth-child(even) {
-  background-color: white;
+  background-color: #84b9cf;
   color: black;
 }
 
 tr:nth-child(odd) {
-  background-color: #c5c9f3;
+  background-color: #3D728C;
   color: black;
 }
 
 .tituloSeccion {
   margin-left: 50px;
   font-size: 40px;
+  color: white;
 }
-
+/*
 .header-container {
-  display: flex; /* Flexbox para alinear el título y el spinner en una fila */
-  align-items: center; /* Centra verticalmente el spinner con el título */
-  gap: 15px; /* Espacio entre el título y el spinner */
-  margin-bottom: 20px; /* Espacio inferior entre el encabezado y la siguiente sección */
+  display: flex; /* Flexbox para alinear el título y el spinner en una fila 
+  align-items: center; /* Centra verticalmente el spinner con el título 
+  gap: 200px; /* Espacio entre el título y el spinner 
+  margin-bottom: 20px; /* Espacio inferior entre el encabezado y la siguiente sección 
 }
 
 .form-group {
-  margin: 0; /* Elimina márgenes */
+  margin: 0; /* Elimina márgenes 
 }
 
 .form-select {
-  height: 40px; /* Ajusta la altura del spinner */
-  width: 200px; /* Ajusta el ancho del spinner */
-  font-size: 16px; /* Ajusta el tamaño de la fuente */
+  height: 40px; /* Ajusta la altura del spinner *
+  width: 200px; /* Ajusta el ancho del spinner *
+  font-size: 16px; /* Ajusta el tamaño de la fuente *
 }
 
 
 .seleccionMascota {
-  display: flex; /* Flexbox para alinear elementos en una fila */
-  justify-content: flex-start; /* Alinea los elementos a la izquierda */
-  align-items: center; /* Centra verticalmente */
-  gap: 20px; /* Espacio entre la imagen y la tabla */
+  justify-content: flex-start; /* Alinea los elementos a la izquierda *
+  align-items: center; /* Centra verticalmente *
   padding: 20px;
-  margin: 20px auto; /* Centra el contenedor y añade margen superior e inferior */
-  width: 80%; /* Ajusta el ancho del contenedor */
-  max-width: 1000px; /* Ancho máximo para controlar el tamaño */
-  border-radius: 10px; /* Bordes redondeados */
+  margin: 20px auto; /* Centra el contenedor y añade margen superior e inferior 
+  width: 80%; /* Ajusta el ancho del contenedor 
+  max-width: 1000px; /* Ancho máximo para controlar el tamaño 
+  border-radius: 20px; /* Bordes redondeados 
 }
 
 .mascota-img-container {
-  flex: 0 0 auto; /* Imagen de tamaño fijo */
-  width: 250px; /* Ajusta el ancho de la imagen */
-  margin-right: 20px; /* Añade espacio a la derecha de la imagen */
+  width: 250px; /* Ajusta el ancho de la imagen 
+  margin-right: 20px; /* Añade espacio a la derecha de la imagen 
 }
 
 .mascota {
-  width: 100%; /* Imagen toma todo el ancho del contenedor */
-  height: 200px; /* Mantiene la proporción de la imagen */
-  border-radius: 10px; /* Bordes redondeados */
-  border: #000000 3px solid; /* Borde negro para la imagen */
+  width: 100%; /* Imagen toma todo el ancho del contenedor 
+  height: 200px; /* Mantiene la proporción de la imagen 
+  border-radius: 10px; /* Bordes redondeados 
+  border: #000000 3px solid; /* Borde negro para la imagen 
 }
 
-.mascota-datos-container {
-  flex: 1 1 auto; /* Tabla de datos ajustable */
-}
 
+
+/*Tabla*/
+/*
 .datosMascota {
   border-collapse: collapse;
   width: 100%;
-  margin: 0; /* Elimina márgenes */
+  margin: 0; /* Elimina márgenes 
+}
+*/
+
+
+.contenidoIzq{
+  text-align: center;
 }
 
-.datosMascota th,
-.datosMascota td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-  font-size: 16px; /* Ajusta el tamaño de la fuente */
+footer a{
+  text-decoration: none;
+  color: white;
 }
+
+.logos {
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+}
+
+.logos:hover {
+  transform: scale(1.5);
+}
+
+footer a:hover{
+  text-decoration: underline;
+
+}
+
+.infoMascota{
+  display: flex;
+}
+
+/*------------------------------------------------------------------  -------------------------------*/
+.header-container {
+  display: flex; /* Flexbox para alinear el título y el spinner en una fila */
+  align-items: center; /* Centra verticalmente el spinner con el título */
+  gap: 200px; /* Espacio entre el título y el spinner */
+  margin-bottom: 20px; /* Espacio inferior entre el encabezado y la siguiente sección */
+}
+
+.mascota-img-container {
+  width: 50%; /* Ajusta el ancho de la imagen */
+  margin-right: 20px; /* Añade espacio a la derecha de la imagen */
+}
+
+.datosMascotaSection{
+  display: flex;
+}
+
+.mascota{
+  width: 50%;
+}
+
+.mascotas-datos-container{
+  display: flex;
+}
+
+
+

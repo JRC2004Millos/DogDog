@@ -45,6 +45,7 @@ body {
 .header ul li {
   align-items: center;
   display: flex;
+  margin: 5px;
   /* Establece el tamaño de la fuente a 18px */
   font-size: 18px;
   /* Elimina el estilo de lista predeterminado */
@@ -53,14 +54,15 @@ body {
 
 .header li a:hover {
   /* Cambia el color del texto a rojo al pasar el cursor */
-  color: red;
+  color: blue;
   /* Subraya el texto al pasar el cursor */
   text-decoration: underline;
+  transform: scale(1.2); /* Mantiene la posición centrada y aumenta el tamaño al pasar el cursor */
 }
 
 a {
   /* Añade un margen de 10px alrededor de los enlaces */
-  margin: 10px;
+  margin: 5px;
   /* Elimina la subrayado predeterminado */
   text-decoration: none;
   /* Establece el color del texto en negro */
@@ -77,24 +79,11 @@ a {
 
 a {
   /* Añade un margen de 10px alrededor de los enlaces */
-  margin: 10px;
+  margin: 5px;
   /* Elimina la subrayado predeterminado */
   text-decoration: none;
   /* Establece el color del texto en negro */
   color: white;
-}
-
-#logoD {
-  top: 10px;
-  left: 10px;
-  width: 400px;
-  position: absolute;
-}
-
-/* Estilo base para los logos */
-.logos {
-  transition: transform 0.3s ease; /* Transición suave para el zoom */
-  border-radius: 10px;
 }
 
 /* Efecto de zoom al pasar el ratón */
@@ -204,77 +193,61 @@ a {
   width: 80%; /* Ajusta el ancho según tus necesidades */
 }
 
+/* Footer corregido */
 #footer {
-  /* Establece el color de fondo del pie de página */
-  background: linear-gradient(to right, #064469, #5790ab, #74aabf);
-
-  /* Define el pie de página como un contenedor flexible */
+  background: linear-gradient(to bottom, #74AABF, #74aabf, white);
   display: flex;
-  /* Establece la dirección del eje principal en fila */
-  flex-direction: row;
-  /* Establece el color del texto en blanco */
+  justify-content: space-between; /* Distribuye los elementos */
+  align-items: center; /* Centra verticalmente los elementos */
   color: white;
-
-  height: 120px;
-
-  bottom: 0;
-
-  position: absolute;
-
   width: 100%;
+  padding: 20px 50px; /* Añade un relleno a los laterales */
+  position: absolute; /* Cambiado a relative para que se mantenga al final del contenido */
 }
 
-#contact a:hover {
-  /* Subraya el texto al pasar el cursor */
-  text-decoration: underline;
-}
-
-#footer img {
-  width: 40px;
-  height: 40px;
-}
-
-#copyright {
-  margin: 30px 10px;
-  display: grid;
-  place-items: center;
-}
-
+/* Estilos para la sección de contacto a la izquierda */
 #contact {
-  margin: 8px 50px;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column; /* Muestra el contenido en columna */
+  justify-content: center;
+  align-items: flex-start; /* Alinea a la izquierda */
+}
+
+#contact p {
+  margin: 5px 0;
+  color: black;
+}
+
+/* Centrar la imagen en el footer */
+.fotoFooter {
+  margin: 0 auto;
+  border-radius: 50%;
+  height: 150px;
+}
+
+/* Sección de redes sociales a la derecha */
+#social {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 #contact a {
-  margin-top: 0px;
-}
-
-#social {
-  /* Alinea el contenido al final del contenedor */
-  justify-content: end;
-  /* Define la sección de redes sociales como un contenedor flexible */
-  display: flex;
-  /* Permite que la sección crezca para llenar el espacio disponible */
-  flex-grow: 1;
-}
-
-#social a {
-  /* Define los enlaces en la sección de redes sociales como contenedores flexibles */
-  display: flex;
-  /* Establece la dirección del eje principal en columna */
-  flex-direction: column;
-  /* Centra los elementos a lo largo del eje transversal */
-  align-items: center;
-  /* Centra los elementos a lo largo del eje principal */
-  justify-content: center;
-  /* Establece el color del texto en blanco */
-  color: white;
-}
-
-#social p {
+  text-decoration: none;
+  color: black;
   margin: 0;
-  font-size: 15px;
+}
+
+.logos {
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+  height: 50px;
+  width: 50px;
+}
+
+/* Efecto zoom en hover */
+.logos:hover {
+  transform: scale(1.5);
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
@@ -346,6 +319,7 @@ html {
   left: 2rem;
   color: var(--white);
 }
+
 .tranding-slider-control {
   position: relative;
   bottom: 2rem;

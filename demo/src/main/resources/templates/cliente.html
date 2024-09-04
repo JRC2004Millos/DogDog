@@ -15,7 +15,7 @@
   </head>
   <body>
     <header class="header">
-      <img src="/images/Logo2.png" alt="Logo" />
+      <img src="/images/LogoFin.png" alt="Logo" />
       <ul>
         <li><a href="http://localhost:8080/dogdog/login">Cerrar Sesión</a></li>
       </ul>
@@ -27,7 +27,7 @@
         <br />
         <br />
       </h1>
-
+      
       <table class="datosPersonales">
         <thead>
           <tr>
@@ -37,19 +37,19 @@
         </thead>
         <tbody>
           <tr>
-            <th>Nombre</th>
+            <th class="contenidoIzq">Nombre</th>
             <td th:text="${cliente.nombre}"></td>
           </tr>
           <tr>
-            <th>Cédula</th>
+            <th class="contenidoIzq">Cédula</th>
             <td th:text="${cliente.cedula}"></td>
           </tr>
           <tr>
-            <th>Correo</th>
+            <th class="contenidoIzq">Correo</th>
             <td th:text="${cliente.email}"></td>
           </tr>
           <tr>
-            <th>Teléfono</th>
+            <th class="contenidoIzq">Teléfono</th>
             <td th:text="${cliente.celular}"></td>
           </tr>
         </tbody>
@@ -57,7 +57,7 @@
 
       <br />
       <br />
-
+      
       <!-- Contenedor Flex para el título y el spinner -->
       <div class="header-container">
         <h1 class="tituloSeccion">Datos de las <span>Mascotas</span></h1>
@@ -79,11 +79,11 @@
           </select>
         </div>
       </div>
-
+      
       <!-- Información de cada mascota -->
       <div
         th:each="mascota, iterStat : ${mascotas}"
-        class="datosMascotaSection seleccionMascota"
+        class="datosMascotaSection"
         th:id="'mascota-' + ${mascota.id}"
         th:style="${iterStat.index != 0} ? 'display: none;' : 'display: flex;'"
       >
@@ -129,37 +129,36 @@
     </main>
     <br />
     <br />
-    <footer>
-      <div id="copyright">
-        <p>Copyright &copy; 2024</p>
-        <p>All rights reserved</p>
-      </div>
+    
+    <footer id="footer">
       <div id="contact">
-        <p>Contáctanos</p>
-        <p>+57 301 123 4567</p>
-        <p>dogdog@gmail.com</p>
+        <p>Contáctanos:</p>
+        <a href="https://accounts.google.com/" target="_blank">
+          <p>dogdog@gmail.com</p>
+        </a>
+
+        <a href="https://web.whatsapp.com/" target="_blank">
+          <p>+57 301 123 4567</p>
+        </a>
       </div>
       <div id="social">
         <a href="https://www.facebook.com" target="_blank">
           <img
-            src="/images/facebook (1).png"
-            height="25px"
+            src="/images/facebook-fb-social-icon-svgrepo-com.svg"
             alt="LogoFacebook"
             class="logos"
           />
         </a>
         <a href="https://www.instagram.com" target="_blank">
           <img
-            src="/images/logotipo-de-instagram.png"
-            height="25px"
+            src="/images/instagram-socials-social-media-icon-svgrepo-com.svg"
             alt="LogoInstagram"
             class="logos"
           />
         </a>
-        <a href="https://x.com/home" target="_blank">
+        <a href="https://web.whatsapp.com/" target="_blank">
           <img
-            src="/images/twitter.png"
-            height="25px"
+            src="/images/whats-app-whatsapp-whatsapp-icon-svgrepo-com.svg"
             alt="LogoX"
             class="logos"
           />

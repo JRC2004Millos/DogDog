@@ -14,7 +14,7 @@
   </head>
   <body>
     <header>
-      <img src="../images/Logo2.png" alt="Logo" />
+      <img src="../images/LogoFin.png" alt="Logo" />
       <ul>
         <li>
           <a href="ver">Inicio</a>
@@ -23,113 +23,119 @@
     </header>
 
     <main>
-      <div id="cuadro">
-        <h1 class="mb-3">Registrar veterinario</h1>
-        <form
-          th:object="${veterinario}"
-          th:action="@{/veterinario/agregar}"
-          method="post"
-          id="formAgregarVeterinario"
-        >
-          <div class="row mb-3">
-            <div class="col">
-              <label for="nombre" class="form-label">Nombre</label>
-              <input
-                th:field="*{nombre}"
-                type="text"
-                class="form-control"
-                id="nombre"
-                placeholder="Ingresa el nombre del veterinario"
-                required
-              />
+      <div class="container">
+        <div id="cuadro">
+          <h1 class="titulo">Registrar veterinario</h1>
+          <form
+            th:object="${veterinario}"
+            th:action="@{/veterinario/agregar}"
+            method="post"
+            id="formAgregarVeterinario"
+          >
+            <div class="row mb-3">
+              <div class="col">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input
+                  th:field="*{nombre}"
+                  type="text"
+                  class="form-control"
+                  id="nombre"
+                  placeholder="Nombre"
+                  required
+                />
+              </div>
+              <div class="col">
+                <label for="cedula" class="form-label">Cédula</label>
+                <input
+                  th:field="*{cedula}"
+                  type="number"
+                  class="form-control"
+                  id="cedula"
+                  placeholder="Cédula"
+                  required
+                />
+              </div>
             </div>
-            <div class="col">
-              <label for="cedula" class="form-label">Cédula</label>
-              <input
-                th:field="*{cedula}"
-                type="number"
-                class="form-control"
-                id="cedula"
-                placeholder="Ingresa la cédula del veterinario"
-                required
-              />
+  
+            <div class="row mb-3">
+              <div class="col">
+                <label for="especialidad" class="form-label">Especialidad</label>
+                <input
+                  th:field="*{especialidad}"
+                  type="text"
+                  class="form-control"
+                  id="especialidad"
+                  placeholder="Especialidad"
+                  required
+                />
+              </div>
+              <div class="col">
+                <label for="numAtenciones" class="form-label"
+                  ># de Atenciones</label
+                >
+                <input
+                  th:field="*{numAtenciones}"
+                  type="number"
+                  class="form-control"
+                  id="numAtenciones"
+                  placeholder="Número de Atenciones"
+                  step="0.1"
+                  required
+                />
+              </div>
             </div>
-          </div>
+  
+            <div class="row mb-3">
+              <div class="col">
+                <label for="fotoURL" class="form-label">Foto</label>
+                <input
+                  th:field="*{fotoURL}"
+                  type="text"
+                  class="form-control"
+                  id="fotoURL"
+                  placeholder="URL foto del veterinario"
+                  required
+                />
+              </div>
+              <div class="col">
+                <label for="clave" class="form-label">Contraseña</label>
+                <input
+                  th:field="*{clave}"
+                  type="text"
+                  class="form-control"
+                  id="clave"
+                  placeholder="Contraseña del veterinario"
+                  required
+                />
+              </div>
+            </div>
+  
+            <button type="submit" class="btn btn-dark">Agregar</button>
 
-          <div class="row mb-3">
-            <div class="col">
-              <label for="especialidad" class="form-label">Especialidad</label>
-              <input
-                th:field="*{especialidad}"
-                type="text"
-                class="form-control"
-                id="especialidad"
-                placeholder="Ingresa la especialidad del veterinario"
-                required
-              />
-            </div>
-            <div class="col">
-              <label for="numAtenciones" class="form-label"
-                ># de Atenciones</label
-              >
-              <input
-                th:field="*{numAtenciones}"
-                type="number"
-                class="form-control"
-                id="numAtenciones"
-                placeholder="Ingresa el # de atenciones del veterinario"
-                step="0.1"
-                required
-              />
-            </div>
-          </div>
-
-          <div class="row mb-3">
-            <div class="col">
-              <label for="fotoURL" class="form-label">Foto</label>
-              <input
-                th:field="*{fotoURL}"
-                type="text"
-                class="form-control"
-                id="fotoURL"
-                placeholder="Ingresa la URL de la imagen del veterinario"
-                required
-              />
-            </div>
-            <div class="col">
-              <label for="clave" class="form-label">Contraseña</label>
-              <input
-                th:field="*{clave}"
-                type="text"
-                class="form-control"
-                id="clave"
-                placeholder="Ingresa la contraseña del veterinario"
-                required
-              />
-            </div>
-          </div>
-
-          <button class="btn btn-success" type="submit" id="btnAgregarVet">
-            Agregar
-          </button>
-        </form>
+          </form>
+        </div>
       </div>
+      
     </main>
 
-    <footer>
-      <div id="copyright">
-        <p>Copyright &copy; 2024</p>
-        <p>All rights reserved</p>
-      </div>
+    <footer id="footer">
+      
       <div id="contact">
-        <p>Contáctanos</p>
-        <p>+57 301 123 4567</p>
-        <p>dogdog@gmail.com</p>
+        <p>Contáctanos:</p>
+        <a href="https://accounts.google.com/" target="_blank">
+          <p>dogdog@gmail.com</p>
+        </a>
+
+        <a href="https://web.whatsapp.com/" target="_blank">
+          <p>+57 301 123 4567</p>
+        </a>
       </div>
+      <img src="../images/fotoFooter-removebg-preview.png" alt="foto" class="fotoFooter">
+
       <div id="social">
         <a href="https://www.facebook.com" target="_blank">
           <img
-            src="../images/facebook (1).png"
+            src="../images/facebook-fb-social-icon-svgrepo-com.svg"
             height="25px"
             alt="LogoFacebook"
             class="logos"
@@ -137,15 +143,15 @@
         </a>
         <a href="https://www.instagram.com" target="_blank">
           <img
-            src="../images/logotipo-de-instagram.png"
+            src="../images/instagram-socials-social-media-icon-svgrepo-com.svg"
             height="25px"
             alt="LogoInstagram"
             class="logos"
           />
         </a>
-        <a href="https://x.com/home" target="_blank">
+        <a href="https://web.whatsapp.com/" target="_blank">
           <img
-            src="../images/twitter.png"
+            src="../images/whats-app-whatsapp-whatsapp-icon-svgrepo-com.svg"
             height="25px"
             alt="LogoX"
             class="logos"

@@ -14,7 +14,7 @@
   </head>
   <body>
     <header>
-      <img src="../images/Logo2.png" alt="Logo" />
+      <img src="../images/LogoFin.png" alt="Logo" />
 
       <ul>
         <li>
@@ -26,91 +26,88 @@
     </header>
 
     <main>
-      <div id="cuadro">
-        <h1>Registrar Cliente</h1>
-        <form
-          th:object="${cliente}"
-          th:action="@{/clientes/agregar(veterinarioId=${veterinarioId})}"
-          method="post"
-          id="formAgregarCliente"
-        >
-          <div class="row mb-3">
-            <div class="col">
-              <label for="nombre" class="form-label">Nombre</label>
-              <input
-                th:field="*{nombre}"
-                type="text"
-                class="form-control"
-                id="nombre"
-                placeholder="Ingresa el nombre del cliente"
-                required
-              />
+      <div class="container">
+        <div id="cuadro">
+          <h1 class="titulo">Registrar Cliente</h1>
+          <form
+            th:object="${cliente}"
+            th:action="@{/clientes/agregar(veterinarioId=${veterinarioId})}"
+            method="post"
+            id="formAgregarCliente"
+          >
+            <div class="row mb-3">
+              <div class="col">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input
+                  th:field="*{nombre}"
+                  type="text"
+                  class="form-control"
+                  id="nombre"
+                  required
+                />
+              </div>
+  
+              <div class="col">
+                <label for="cedula" class="form-label">Cédula</label>
+                <input
+                  th:field="*{cedula}"
+                  type="text"
+                  class="form-control"
+                  id="cedula"
+                  required
+                />
+              </div>
             </div>
-
-            <div class="col">
-              <label for="cedula" class="form-label">Cédula</label>
-              <input
-                th:field="*{cedula}"
-                type="number"
-                class="form-control"
-                id="cedula"
-                placeholder="Ingresa la cédula del cliente"
-                required
-              />
+  
+            <div class="row mb-3">
+              <div class="col">
+                <label for="celular" class="form-label">Celular</label>
+                <input
+                  th:field="*{celular}"
+                  type="number"
+                  class="form-control"
+                  id="celular"
+                  required
+                />
+              </div>
+  
+              <div class="col">
+                <label for="email" class="form-label">Correo</label>
+                <input
+                  th:field="*{email}"
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  required
+                />
+              </div>
             </div>
-          </div>
-
-          <div class="row mb-3">
-            <div class="col">
-              <label for="celular" class="form-label">Celular</label>
-              <input
-                th:field="*{celular}"
-                type="number"
-                class="form-control"
-                id="celular"
-                placeholder="Ingresa el celular del cliente"
-                required
-              />
-            </div>
-
-            <div class="col">
-              <label for="email" class="form-label">Correo</label>
-              <input
-                th:field="*{email}"
-                type="email"
-                class="form-control"
-                id="email"
-                placeholder="Ingresa el correo del cliente"
-                required
-              />
-            </div>
-          </div>
-
-          <button class="btn btn-success" type="submit" id="btnAgregarCliente">
-            Agregar
-          </button>
-        </form>
+  
+            <button type="submit" class="btn btn-dark">Agregar</button>
+          </form>
+        </div>
       </div>
+      
 
-      <div id="imagen">
-        <img src="../images/perro_addclt.png" alt="perro" height="500px" />
-      </div>
+      
     </main>
 
-    <footer>
-      <div id="copyright">
-        <p>Copyright &copy; 2024</p>
-        <p>All rights reserved</p>
-      </div>
+    <div id="footer">
       <div id="contact">
-        <p>Contáctanos</p>
-        <p>+57 301 123 4567</p>
-        <p>dogdog@gmail.com</p>
+        <p>Contáctanos:</p>
+        <a href="https://accounts.google.com/" target="_blank">
+          <p>dogdog@gmail.com</p>
+        </a>
+
+        <a href="https://web.whatsapp.com/" target="_blank">
+          <p>+57 301 123 4567</p>
+        </a>
       </div>
+      <img src="../images/fotoFooter-removebg-preview.png" alt="foto" class="fotoFooter">
       <div id="social">
         <a href="https://www.facebook.com" target="_blank">
           <img
-            src="../images/facebook (1).png"
+            src="../images/facebook-fb-social-icon-svgrepo-com.svg"
             height="25px"
             alt="LogoFacebook"
             class="logos"
@@ -118,21 +115,21 @@
         </a>
         <a href="https://www.instagram.com" target="_blank">
           <img
-            src="../images/logotipo-de-instagram.png"
+            src="../images/instagram-socials-social-media-icon-svgrepo-com.svg"
             height="25px"
             alt="LogoInstagram"
             class="logos"
           />
         </a>
-        <a href="https://x.com/home" target="_blank">
+        <a href="https://web.whatsapp.com/" target="_blank">
           <img
-            src="../images/twitter.png"
+            src="../images/whats-app-whatsapp-whatsapp-icon-svgrepo-com.svg"
             height="25px"
             alt="LogoX"
             class="logos"
           />
         </a>
       </div>
-    </footer>
+    </div>
   </body>
 </html>
