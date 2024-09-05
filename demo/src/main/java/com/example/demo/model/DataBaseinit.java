@@ -98,7 +98,7 @@ public class DataBaseinit implements ApplicationRunner {
                 mascota_repo.save(new Mascota("Bella", "Bulldog Francés", 4, 12.7f,
                                 "https://picartpetcare.com/wp-content/uploads/2020/05/BULLDOG-FRANC%C3%89S.jpg",
                                 "Infección respiratoria"));
-                mascota_repo.save(new Mascota("Charlie", "Labrador Retriever", 6, 30.2f,
+                mascota_repo.save(new Mascota("Charlie", "Labrador Retriever", 1, 30.2f,
                                 "https://pamipe.com/wiki/wp-content/uploads/2022/09/Labrador-Retriever.jpg",
                                 "Oído externo inflamado"));
                 mascota_repo.save(new Mascota("Lucy", "Poodle", 2, 8.4f,
@@ -111,7 +111,7 @@ public class DataBaseinit implements ApplicationRunner {
                                 "https://blog-static.petlove.com.br/wp-content/uploads/2018/06/cocker-figado-tan.jpg",
                                 "Otitis"));
                 mascota_repo.save(new Mascota("Cooper", "Border Collie", 4, 20.0f,
-                                "https://example.com/images/border_collie1.jpg", "Epilepsia"));
+                                "https://perronalidad.com.co/wp-content/uploads/2022/07/COMO-SE-COMPORTA-UN-BORDER-COLIE.jpg", "Epilepsia"));
                 mascota_repo.save(new Mascota("Molly", "Chihuahua", 3, 2.5f,
                                 "https://example.com/images/chihuahua1.jpg", "Problemas dentales"));
                 mascota_repo.save(new Mascota("Buddy", "Siberian Husky", 4, 22.8f,
@@ -124,8 +124,8 @@ public class DataBaseinit implements ApplicationRunner {
                                 "Conjuntivitis"));
                 mascota_repo.save(new Mascota("Oliver", "Pomerania", 3, 3.2f,
                                 "https://example.com/images/pomerania1.jpg", "Enfermedad periodontal"));
-                mascota_repo.save(new Mascota("Sadie", "Bulldog Inglés", 4, 24.5f,
-                                "https://example.com/images/bulldog_ingles1.jpg", "Dificultad para respirar"));
+                mascota_repo.save(new Mascota("Sadie", "Bulldog Inglés", 6, 24.5f,
+                                "https://lucasylola.es/blog/wp-content/uploads/2019/04/bulldog-1.jpg", "Dificultad para respirar"));
                 mascota_repo.save(new Mascota("Toby", "Bichón Frisé", 5, 7.9f,
                                 "https://blog.mascotaysalud.com/wp-content/uploads/2020/03/Bich%C3%B3n-Fris%C3%A9-rostro.jpg",
                                 "Alergia cutánea"));
@@ -160,79 +160,79 @@ public class DataBaseinit implements ApplicationRunner {
                                 "https://www.elmueble.com/medio/2023/03/02/perro-de-raza-beagle_67c65dda_230302133829_900x900.jpg",
                                 "Infección en el oído"));
                 mascota_repo.save(new Mascota("Bruno", "Labrador Retriever", 5, 30.8f,
-                                "https://example.com/images/labrador2.jpg", "Displasia de cadera"));
+                                "https://www.vidavetcare.com/wp-content/uploads/sites/234/2022/04/labrador-retriever-dog-breed-info.jpeg", "Displasia de cadera"));
                 mascota_repo.save(new Mascota("Ellie", "Cocker Spaniel", 3, 14.5f,
                                 "https://tierarzt-karlsruhe-durlach.de/storage/2024/04/Cocker-Spaniel-Krankheiten.webp",
                                 "Infección ocular"));
                 mascota_repo.save(new Mascota("Finn", "Border Collie", 4, 20.4f,
-                                "https://example.com/images/border_collie2.jpg", "Alergias"));
-                mascota_repo.save(new Mascota("Nala", "Boxer", 4, 27.9f,
-                                "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.ecured.cu%2FB%25C3%25B3xer&psig=AOvVaw3zA5cq7cClKyJcvuBSc8Ug&ust=1725056714519000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJCa4Jqfm4gDFQAAAAAdAAAAABAR",
+                                "https://es.mypet.com/wp-content/uploads/sites/23/2021/03/no-lo-dejes-al-azar-border-collie.jpg", "Alergias"));
+                mascota_repo.save(new Mascota("Purina", "Boxer", 1, 27.9f,
+                                "https://www.purina.es/sites/default/files/styles/ttt_image_510/public/2024-02/sitesdefaultfilesstylessquare_medium_440x440public2022-07Boxer1.jpg?itok=Y2i45vCP",
                                 "Problemas en el corazón"));
                 mascota_repo.save(new Mascota("Louie", "Pomerania", 2, 3.4f,
                                 "https://example.com/images/pomerania2.jpg", "Alergias cutáneas"));
                 mascota_repo.save(new Mascota("Mia", "Yorkshire Terrier", 4, 3.6f,
                                 "https://example.com/images/yorkshire_terrier1.jpg", "Cataratas"));
                 mascota_repo.save(new Mascota("Bear", "Golden Retriever", 6, 32.5f,
-                                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyVeJ8Ko5FZoxS58WMCwRoVjNKrfiZTC5bBQ&usqp=CAU",
+                                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmI7Mdzsj_yuC0JLzVf6XEtK5A0yOKM9xGUg&s",
                                 "Problemas en las articulaciones"));
                 mascota_repo.save(new Mascota("Lucy", "Chihuahua", 3, 2.2f, "https://example.com/images/chihuahua3.jpg",
                                 "Problemas dentales"));
-                mascota_repo.save(new Mascota("Zoe", "Poodle", 2, 6.5f, "https://example.com/images/poodle1.jpg",
+                mascota_repo.save(new Mascota("Kaiser", "Pastor Alemán", 3, 6.5f, "https://es.mypet.com/wp-content/uploads/sites/23/2021/03/razas-de-perros-pastor-aleman-570x455-1.jpg",
                                 "Enfermedad respiratoria"));
                 mascota_repo.save(new Mascota("Rocky", "Beagle", 4, 10.8f,
-                                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRloD2Xxj5x4oI3wGAs2X5iyOwj3akvRhRvUw&usqp=CAU",
+                                "https://www.animalbehaviorcollege.com/wp-content/uploads/2015/03/beagle.jpg",
                                 "Problemas en la piel"));
                 mascota_repo.save(new Mascota("Sophie", "Dachshund", 5, 9.1f,
                                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm_lSuPfR0FIkU8bP7W7O97pylK6Wyupzq8K-TpYw&iTHyPvCEyw&usqp=CAU",
                                 "Problemas digestivos"));
-                mascota_repo.save(new Mascota("Charlie", "Boxer", 4, 27.5f, "https://example.com/images/boxer2.jpg",
+                mascota_repo.save(new Mascota("Charlie", "Boxer", 4, 27.5f, "https://www.ecured.cu/images/thumb/1/1b/Boxer.jpg/260px-Boxer.jpg",
                                 "Problemas respiratorios"));
-                mascota_repo.save(new Mascota("Maggie", "Shih Tzu", 3, 8.2f, "https://example.com/images/shih_tzu2.jpg",
+                mascota_repo.save(new Mascota("Maggie", "Shih Tzu", 3, 8.2f, "https://www.parashihtzu.top/wp-content/uploads/2022/09/dog-gf1fb5789d_1280.jpg",
                                 "Infección en la piel"));
                 mascota_repo.save(new Mascota("Rosie", "Dachshund", 5, 10.2f,
                                 "https://example.com/images/dachshund2.jpg", "Problemas digestivos"));
                 mascota_repo.save(new Mascota("Roxy", "Cocker Spaniel", 4, 15.4f,
-                                "https://example.com/images/cocker_spaniel2.jpg", "Alergias cutáneas"));
-                mascota_repo.save(new Mascota("Lily", "Shih Tzu", 2, 6.0f, "https://example.com/images/shih_tzu3.jpg",
+                                "https://www.hundeo.com/wp-content/uploads/2019/09/Amerikanischer-Cocker-Spaniel-seitlich.jpg", "Alergias cutáneas"));
+                mascota_repo.save(new Mascota("Lily", "Shih Tzu", 1, 6.0f, "https://i.pinimg.com/originals/4f/ce/9c/4fce9c38b6ee07b2831c7df2a83ecf14.jpg",
                                 "Infección ocular"));
                 mascota_repo.save(new Mascota("Finn", "Yorkshire Terrier", 5, 4.2f,
                                 "https://example.com/images/yorkshire_terrier2.jpg", "Problemas dentales"));
                 mascota_repo.save(new Mascota("Bella", "Siberian Husky", 6, 25.6f,
                                 "https://example.com/images/siberian_husky2.jpg", "Problemas en las articulaciones"));
-                mascota_repo.save(new Mascota("Buddy", "Beagle", 2, 9.5f, "https://example.com/images/beagle2.jpg",
+                mascota_repo.save(new Mascota("Buddy", "Beagle", 2, 9.5f, "https://www.zooplus.es/magazine/wp-content/uploads/2023/12/Beagle-harrier.jpg",
                                 "Enfermedad respiratoria"));
-                mascota_repo.save(new Mascota("Jack", "Pug", 3, 8.2f, "https://example.com/images/pug3.jpg",
+                mascota_repo.save(new Mascota("Jack", "Pastor Alemán", 1, 4.2f, "https://www.tiendanimal.es/articulos/wp-content/uploads/2017/11/Como-educar-y-entrenar-a-un-pastor-aleman.jpg",
                                 "Problemas articulares"));
-                mascota_repo.save(new Mascota("Nala", "Shih Tzu", 4, 7.5f, "https://example.com/images/shih_tzu4.jpg",
+                mascota_repo.save(new Mascota("Nala", "Shih Tzu", 12, 7.5f, "https://www.hundeo.com/wp-content/uploads/2019/01/Shih-Tzu-1.jpg",
                                 "Problemas digestivos"));
-                mascota_repo.save(new Mascota("Rosie", "Poodle", 3, 6.8f, "https://example.com/images/poodle2.jpg",
+                mascota_repo.save(new Mascota("Rosie", "Poodle", 3, 6.8f, "https://cdn.shopify.com/s/files/1/0268/6861/files/2771407690_36c542893e_b_480x480.jpg?v=1684857441",
                                 "Alergia a la comida"));
                 mascota_repo.save(new Mascota("Oscar", "Yorkshire Terrier", 5, 3.0f,
                                 "https://example.com/images/yorkshire_terrier3.jpg", "Infección en la piel"));
-                mascota_repo.save(new Mascota("Sophie", "Cocker Spaniel", 6, 15.2f,
-                                "https://example.com/images/cocker_spaniel3.jpg", "Problemas en los ojos"));
-                mascota_repo.save(new Mascota("Mia", "Beagle", 3, 10.9f, "https://example.com/images/beagle3.jpg",
+                mascota_repo.save(new Mascota("Marinet", "Cocker Spaniel", 6, 15.2f,
+                                "https://images.ctfassets.net/550nf1gumh01/4AocMzBpp93n9pmqzTepjo/e2159f5c418a774d4975c6716269eb3d/iStock-513937472.jpg?q=90&w=1240", "Problemas en los ojos"));
+                mascota_repo.save(new Mascota("Mia", "Beagle", 3, 10.9f, "https://images.ctfassets.net/550nf1gumh01/6zwLKAfltciBljUmEdYP3n/21191083f31cb0a43647cddbf29de913/iStock-1411469044.jpg?q=90&w=1240",
                                 "Problemas respiratorios"));
-                mascota_repo.save(new Mascota("Rocky", "Boxer", 4, 29.3f, "https://example.com/images/boxer3.jpg",
+                mascota_repo.save(new Mascota("Dante", "Boxer", 9, 29.3f, "https://www.publicdomainpictures.net/pictures/40000/nahled/boxer-dog.jpg",
                                 "Enfermedad cardíaca"));
                 mascota_repo.save(new Mascota("Toby", "Dachshund", 3, 9.5f, "https://example.com/images/dachshund3.jpg",
                                 "Alergias cutáneas"));
-                mascota_repo.save(new Mascota("Rosie", "Shih Tzu", 4, 8.2f, "https://example.com/images/shih_tzu5.jpg",
+                mascota_repo.save(new Mascota("Rosie", "Shih Tzu", 4, 8.2f, "https://img.freepik.com/foto-gratis/perro-shih-tzu-relajandose-sofa-sala-estar_637285-4652.jpg",
                                 "Problemas de piel"));
                 mascota_repo.save(new Mascota("Finn", "Pomerania", 2, 3.6f, "https://example.com/images/pomerania5.jpg",
                                 "Enfermedad respiratoria"));
                 mascota_repo.save(new Mascota("Lily", "Siberian Husky", 6, 24.8f,
                                 "https://example.com/images/siberian_husky3.jpg", "Problemas articulares"));
                 mascota_repo.save(new Mascota("Bella", "Labrador Retriever", 5, 33.2f,
-                                "https://example.com/images/labrador_retriever3.jpg", "Problemas en la piel"));
+                                "https://static.a-alvarez.com/img/ybc_blog/post/labrador-retriever.jpg", "Problemas en la piel"));
                 mascota_repo.save(new Mascota("Zoe", "Golden Retriever", 4, 30.5f,
-                                "https://example.com/images/golden_retriever4.jpg", "Enfermedad respiratoria"));
+                                "https://gosbi.com/wp-content/uploads/2023/06/stephen-andrews-lEe3-hTg4Vg-unsplash-1080x675.jpg", "Enfermedad respiratoria"));
                 mascota_repo.save(new Mascota("Maggie", "Border Collie", 3, 18.0f,
-                                "https://example.com/images/border_collie3.jpg", "Problemas en los ojos"));
-                mascota_repo.save(new Mascota("Sophie", "Poodle", 4, 6.5f, "https://example.com/images/poodle3.jpg",
+                                "https://www.wasky.es/wp-content/uploads/pexels-alois-moubax-3523317-scaled.jpg", "Problemas en los ojos"));
+                mascota_repo.save(new Mascota("Sof", "Poodle", 4, 6.5f, "https://cdn.royalcanin-weshare-online.io/rj-393oBRYZmsWpc6bf3/v5/bp-lot-1-poodle-couleur-portrait",
                                 "Alergia alimentaria"));
-                mascota_repo.save(new Mascota("Oscar", "Beagle", 5, 11.5f, "https://example.com/images/beagle4.jpg",
+                mascota_repo.save(new Mascota("Oscar", "Beagle", 14, 11.5f, "https://thumbs.dreamstime.com/b/un-perro-viejo-del-beagle-16953148.jpg",
                                 "Problemas digestivos"));
                 mascota_repo.save(new Mascota("Buddy", "Siberian Husky", 4, 22.0f,
                                 "https://example.com/images/siberian_husky4.jpg", "Alergia a la comida"));
@@ -240,14 +240,14 @@ public class DataBaseinit implements ApplicationRunner {
                                 "Problemas de piel"));
                 mascota_repo.save(new Mascota("Nala", "Dachshund", 4, 9.0f, "https://example.com/images/dachshund4.jpg",
                                 "Enfermedad respiratoria"));
-                mascota_repo.save(new Mascota("Rosie", "Cocker Spaniel", 6, 16.0f,
-                                "https://example.com/images/cocker_spaniel4.jpg", "Problemas de piel"));
-                mascota_repo.save(new Mascota("Gus", "Shih Tzu", 5, 7.7f, "https://example.com/images/shih_tzu6.jpg",
+                mascota_repo.save(new Mascota("Rosie", "Cocker Spaniel", 9, 16.0f,
+                                "https://i0.wp.com/www.kennelclubargentino.org.ar/storage/2020/04/cocker-spaniel-con-hoja-en-la-boca.jpg", "Problemas de piel"));
+                mascota_repo.save(new Mascota("Gus", "Shih Tzu", 5, 7.7f, "https://cdn.pixabay.com/photo/2022/05/02/20/43/shih-tzu-7170411_640.jpg",
                                 "Problemas dentales"));
                 mascota_repo.save(new Mascota("Lily", "Pomerania", 3, 3.0f, "https://example.com/images/pomerania6.jpg",
                                 "Alergias cutáneas"));
                 mascota_repo.save(new Mascota("Rosie", "Border Collie", 4, 21.5f,
-                                "https://example.com/images/border_collie4.jpg", "Problemas respiratorios"));
+                                "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Blue_Merle_Border_Collie._Female.jpg/1200px-Blue_Merle_Border_Collie._Female.jpg", "Problemas respiratorios"));
                 mascota_repo.save(new Mascota("Oscar", "Pug", 5, 9.0f, "https://example.com/images/pug5.jpg",
                                 "Enfermedad cardíaca"));
                 mascota_repo.save(new Mascota("Roxy", "Pomerania", 3, 3.2f, "https://example.com/images/pomerania7.jpg",
@@ -257,84 +257,84 @@ public class DataBaseinit implements ApplicationRunner {
                 mascota_repo.save(new Mascota("Mia", "Yorkshire Terrier", 2, 3.4f,
                                 "https://example.com/images/yorkshire_terrier4.jpg", "Enfermedad de piel"));
                 mascota_repo.save(new Mascota("Toby", "Labrador Retriever", 5, 32.0f,
-                                "https://example.com/images/labrador_retriever4.jpg", "Problemas articulares"));
-                mascota_repo.save(new Mascota("Finn", "Shih Tzu", 4, 7.8f, "https://example.com/images/shih_tzu7.jpg",
+                                "https://traindee.com/wp-content/uploads/labrador-retriever-black-dog-breed-1-400x400.jpg", "Problemas articulares"));
+                mascota_repo.save(new Mascota("Finn", "Shih Tzu", 2, 7.8f, "https://cdn.britannica.com/05/234205-050-F8D2E018/Shih-tzu-dog.jpg",
                                 "Problemas respiratorios"));
                 mascota_repo.save(new Mascota("Sophie", "Pomerania", 2, 3.6f,
                                 "https://example.com/images/pomerania8.jpg", "Alergias respiratorias"));
                 mascota_repo.save(new Mascota("Rosie", "Golden Retriever", 4, 31.5f,
-                                "https://example.com/images/golden_retriever5.jpg", "Problemas dentales"));
+                                "https://www.animalfiel.com/wp-content/uploads/2022/12/precio-de-un-golden-retriever.jpg", "Problemas dentales"));
                 mascota_repo.save(new Mascota("Gus", "Pug", 5, 8.4f, "https://example.com/images/pug6.jpg",
                                 "Problemas digestivos"));
-                mascota_repo.save(new Mascota("Buddy", "Shih Tzu", 4, 6.9f, "https://example.com/images/shih_tzu8.jpg",
+                mascota_repo.save(new Mascota("Buddy", "Shih Tzu", 3, 6.9f, "https://images2-mega.cdn.mdstrm.com/meganoticias/2024/05/14/_447481_3_66436a3a4a882.jpg",
                                 "Problemas respiratorios"));
-                mascota_repo.save(new Mascota("Bella", "Cocker Spaniel", 5, 14.0f,
-                                "https://example.com/images/cocker_spaniel5.jpg", "Problemas dentales"));
-                mascota_repo.save(new Mascota("Max", "Labrador Retriever", 3, 29.4f,
-                                "https://example.com/images/labrador_retriever5.jpg", "Infección en la piel"));
-                mascota_repo.save(new Mascota("Rocky", "Beagle", 4, 11.3f, "https://example.com/images/beagle6.jpg",
+                mascota_repo.save(new Mascota("Bella", "Cocker Spaniel", 3, 14.0f,
+                                "https://wawapedia.wawasfood.com/wp-content/uploads/2022/11/46.-Cocker-Spaniel.jpg", "Problemas dentales"));
+                mascota_repo.save(new Mascota("Max", "Labrador Retriever", 1, 29.4f,
+                                "https://www.rover.com/blog/wp-content/uploads/2018/11/lab1.jpg", "Infección en la piel"));
+                mascota_repo.save(new Mascota("Genya", "Beagle", 12, 11.3f, "https://t1.ea.ltmcdn.com/es/posts/2/0/2/enfermedades_metabolicas_23202_7_600.jpg",
                                 "Problemas articulares"));
                 mascota_repo.save(new Mascota("Nala", "Pug", 5, 7.9f, "https://example.com/images/pug7.jpg",
                                 "Problemas digestivos"));
-                mascota_repo.save(new Mascota("Maggie", "Golden Retriever", 4, 30.0f,
-                                "https://example.com/images/golden_retriever6.jpg", "Problemas respiratorios"));
-                mascota_repo.save(new Mascota("Oscar", "Shih Tzu", 6, 7.1f, "https://example.com/images/shih_tzu9.jpg",
+                mascota_repo.save(new Mascota("Cesar", "Golden Retriever", 6, 30.0f,
+                                "https://static.wixstatic.com/media/34e812_826572739aa14ecaa00291399634f9f1~mv2.jpg/v1/fill/w_1000,h_1000,al_c,q_85,usm_0.66_1.00_0.01/34e812_826572739aa14ecaa00291399634f9f1~mv2.jpg", "Problemas respiratorios"));
+                mascota_repo.save(new Mascota("Marco", "Shih Tzu", 6, 7.1f, "https://cloudfront-us-east-1.images.arcpublishing.com/elespectador/U3XHVG4MXFGPLC4PKBO7NZUV6E.jpg",
                                 "Enfermedad de piel"));
-                mascota_repo.save(new Mascota("Roxy", "Beagle", 3, 10.9f, "https://example.com/images/beagle7.jpg",
+                mascota_repo.save(new Mascota("Roxy", "Beagle", 3, 10.9f, "https://img-rpba.s3.ap-southeast-2.amazonaws.com/wp-content/uploads/2023/01/27135918/beagle.jpeg",
                                 "Alergias cutáneas"));
                 mascota_repo.save(new Mascota("Sophie", "Pomerania", 4, 3.5f,
                                 "https://example.com/images/pomerania9.jpg", "Problemas dentales"));
                 mascota_repo.save(new Mascota("Finn", "Siberian Husky", 6, 26.5f,
                                 "https://example.com/images/siberian_husky6.jpg", "Alergias respiratorias"));
                 mascota_repo.save(new Mascota("Mia", "Labrador Retriever", 4, 33.0f,
-                                "https://example.com/images/labrador_retriever6.jpg", "Problemas dentales"));
+                                "https://www.purina.es/sites/default/files/styles/ttt_image_510/public/2024-02/sitesdefaultfilesstylessquare_medium_440x440public2022-09labrador20retriever.jpg?itok=VVWHGD7o", "Problemas dentales"));
                 mascota_repo.save(new Mascota("Toby", "Pug", 3, 7.6f, "https://example.com/images/pug8.jpg",
                                 "Infección ocular"));
                 mascota_repo.save(new Mascota("Rosie", "Pomerania", 2, 3.7f,
                                 "https://example.com/images/pomerania10.jpg", "Enfermedad respiratoria"));
-                mascota_repo.save(new Mascota("Gus", "Beagle", 5, 11.1f, "https://example.com/images/beagle8.jpg",
+                mascota_repo.save(new Mascota("Gus", "Beagle", 7, 11.1f, "https://media-be.chewy.com/wp-content/uploads/2021/04/24140608/GettyImages-1714338737-923x615.jpg",
                                 "Problemas digestivos"));
-                mascota_repo.save(new Mascota("Sophie", "Golden Retriever", 4, 32.5f,
-                                "https://example.com/images/golden_retriever7.jpg", "Problemas respiratorios"));
-                mascota_repo.save(new Mascota("Max", "Boxer", 4, 27.8f, "https://example.com/images/boxer4.jpg",
+                mascota_repo.save(new Mascota("Sophie", "Golden Retriever", 10, 32.5f,
+                                "https://www.terranea.es/assets/images/razas/golden_retriever2.jpg", "Problemas respiratorios"));
+                mascota_repo.save(new Mascota("Maximiliano", "Boxer", 4, 27.8f, "https://www.aon.es/personales/seguro-perro-gato/wp-content/uploads/sites/2/2021/05/perro-boxer.jpg",
                                 "Problemas en los ojos"));
                 mascota_repo.save(new Mascota("Maggie", "Dachshund", 3, 9.7f,
                                 "https://example.com/images/dachshund5.jpg", "Infección en la piel"));
-                mascota_repo.save(new Mascota("Rosie", "Poodle", 6, 6.2f, "https://example.com/images/poodle4.jpg",
+                mascota_repo.save(new Mascota("Rosie", "Poodle", 6, 6.2f, "https://thumbs.dreamstime.com/b/caniche-est%C3%A1ndar-albaricoque-33442566.jpg",
                                 "Alergias cutáneas"));
                 mascota_repo.save(new Mascota("Oscar", "Siberian Husky", 5, 25.0f,
                                 "https://example.com/images/siberian_husky7.jpg", "Problemas articulares"));
-                mascota_repo.save(new Mascota("Nala", "Golden Retriever", 4, 31.7f,
-                                "https://example.com/images/golden_retriever8.jpg", "Problemas respiratorios"));
+                mascota_repo.save(new Mascota("Maca", "Golden Retriever", 9, 31.7f,
+                                "https://heronscrossing.vet/wp-content/uploads/Golden-Retriever.jpg", "Problemas respiratorios"));
                 mascota_repo.save(new Mascota("Toby", "Pug", 3, 7.2f, "https://example.com/images/pug9.jpg",
                                 "Problemas en los ojos"));
-                mascota_repo.save(new Mascota("Finn", "Shih Tzu", 4, 7.4f, "https://example.com/images/shih_tzu11.jpg",
+                mascota_repo.save(new Mascota("Harley", "Shih Tzu", 8, 7.4f, "https://i0.wp.com/mascooriente.co/wp-content/uploads/2020/02/mascooriente_shih-tzu.jpg?fit=520%2C355&ssl=1",
                                 "Enfermedad de piel"));
                 mascota_repo.save(new Mascota("Mia", "Yorkshire Terrier", 2, 3.5f,
                                 "https://example.com/images/yorkshire_terrier6.jpg", "Problemas respiratorios"));
-                mascota_repo.save(new Mascota("Daisy", "Labrador Retriever", 3, 31.2f,
-                                "https://example.com/images/labrador_retriever7.jpg", "Enfermedad respiratoria"));
+                mascota_repo.save(new Mascota("Daisy", "Labrador Retriever", 1, 31.2f,
+                                "https://canbotey.com/wp-content/uploads/2022/06/cachorro-labrador-amarillo-sentado.webp", "Enfermedad respiratoria"));
                 mascota_repo.save(new Mascota("Rosie", "Pomerania", 5, 3.8f,
                                 "https://example.com/images/pomerania11.jpg", "Problemas dentales"));
                 mascota_repo.save(new Mascota("Oscar", "Siberian Husky", 4, 24.0f,
                                 "https://example.com/images/siberian_husky8.jpg", "Alergias respiratorias"));
                 mascota_repo.save(new Mascota("Maggie", "Dachshund", 6, 9.2f,
                                 "https://example.com/images/dachshund6.jpg", "Problemas digestivos"));
-                mascota_repo.save(new Mascota("Nala", "Beagle", 4, 11.2f, "https://example.com/images/beagle9.jpg",
+                mascota_repo.save(new Mascota("Narnia", "Beagle", 4, 11.2f, "https://www.richardancheta.com/cart/htdocs/big/dog/Beagle.gif",
                                 "Problemas en los ojos"));
-                mascota_repo.save(new Mascota("Sophie", "Poodle", 5, 6.1f, "https://example.com/images/poodle5.jpg",
+                mascota_repo.save(new Mascota("Atenea", "Poodle", 2, 6.1f, "https://i.pinimg.com/474x/1c/86/ff/1c86ffbd30f51d97751652e78aeca91d.jpg",
                                 "Enfermedad de piel"));
                 mascota_repo.save(new Mascota("Rosie", "Pug", 3, 7.3f, "https://example.com/images/pug10.jpg",
                                 "Problemas respiratorios"));
                 mascota_repo.save(new Mascota("Gus", "Cocker Spaniel", 4, 14.0f,
-                                "https://example.com/images/cocker_spaniel6.jpg", "Problemas dentales"));
-                mascota_repo.save(new Mascota("Toby", "Labrador Retriever", 5, 33.1f,
-                                "https://example.com/images/labrador_retriever8.jpg", "Problemas articulares"));
+                                "https://content.speakup.es/medio/2024/06/09/english-cocker-spaniel_d9fc20fe_240609114930_1280x720.jpg", "Problemas dentales"));
+                mascota_repo.save(new Mascota("Stain", "Labrador Retriever", 5, 33.1f,
+                                "https://www.perrolabrador.net/wp-content/uploads/2015/12/labrador_chocolate.jpg", "Problemas articulares"));
                 mascota_repo.save(new Mascota("Finn", "Yorkshire Terrier", 2, 3.8f,
                                 "https://example.com/images/yorkshire_terrier7.jpg", "Enfermedad respiratoria"));
                 mascota_repo.save(new Mascota("Maggie", "Pomerania", 4, 3.7f,
                                 "https://example.com/images/pomerania12.jpg", "Alergias cutáneas"));
-                mascota_repo.save(new Mascota("Rosie", "Shih Tzu", 5, 6.7f, "https://example.com/images/shih_tzu12.jpg",
+                mascota_repo.save(new Mascota("Rosie", "Shih Tzu", 1, 6.7f, "https://www.parashihtzu.top/wp-content/uploads/2020/08/20200813_210700_0000-801x1024.png",
                                 "Problemas respiratorios"));
 
                 vet_repo.save(new Veterinario("Dr. Juan Pérez", 111111, "clave123", "Cirugía",

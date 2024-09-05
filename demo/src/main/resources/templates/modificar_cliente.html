@@ -30,7 +30,7 @@
         <h1>Modificar Cliente</h1>
         <form
           th:object="${cliente}"
-          th:action="@{/clientes/modificar/{id}(id=${cliente.id})}"
+          th:action="@{'/clientes/modificar/' + ${cliente.id} + '?veterinarioId=' + ${veterinarioId}}"
           method="post"
           id="formAgregarMascota"
         >
