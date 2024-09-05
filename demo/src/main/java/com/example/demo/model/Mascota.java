@@ -1,10 +1,14 @@
 package com.example.demo.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -26,6 +30,9 @@ public class Mascota {
 
     @ManyToOne
     private Cliente cliente;
+
+    @OneToMany(mappedBy = "mascota")
+    private List<Consulta> consulta = new ArrayList<>();
 
     public Mascota(String nombre, String raza, int edad, float peso, String fotoURL, String enfermedad) {
         this.nombre = nombre;
@@ -113,4 +120,11 @@ public class Mascota {
         this.enfermedad = enfermedad;
     }
 
+    public List<Consulta> getConsulta() {
+        return consulta;
+    }
+
+    public void setConsulta(List<Consulta> consulta) {
+        this.consulta = consulta;
+    }
 }

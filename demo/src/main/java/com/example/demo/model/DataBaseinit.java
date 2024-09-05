@@ -1,12 +1,17 @@
 package com.example.demo.model;
 
+import java.util.Calendar;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Controller;
 
 import com.example.demo.repository.ClienteRepository;
+import com.example.demo.repository.ConsultaRepository;
+import com.example.demo.repository.DrogaRepository;
 import com.example.demo.repository.MascotaRepository;
 import com.example.demo.repository.VeterinarioRepository;
 
@@ -24,6 +29,12 @@ public class DataBaseinit implements ApplicationRunner {
 
         @Autowired
         VeterinarioRepository vet_repo;
+
+        @Autowired
+        DrogaRepository droga_repo;
+
+        @Autowired
+        ConsultaRepository consulta_repo;
 
         @Override
         public void run(ApplicationArguments args) throws Exception {
@@ -355,6 +366,37 @@ public class DataBaseinit implements ApplicationRunner {
                                 "https://bogota.gov.co/sites/default/files/styles/1050px/public/2024-05/vertinario-1.jpg",
                                 220));
 
+                droga_repo.save(new Droga("Ibuprofeno", "Anti-inflamatorio utilizado para tratar el dolor."));
+                droga_repo.save(new Droga("Paracetamol", "Analgésico y antipirético utilizado para tratar la fiebre."));
+                droga_repo.save(new Droga("Amoxicilina", "Antibiótico utilizado para tratar infecciones bacterianas."));
+                droga_repo.save(new Droga("Aspirina", "Analgésico utilizado para aliviar dolores y reducir la fiebre."));
+                droga_repo.save(new Droga("Ciprofloxacino", "Antibiótico utilizado para tratar infecciones graves."));
+                droga_repo.save(new Droga("Metformina", "Medicamento utilizado para controlar los niveles de azúcar en sangre."));
+                droga_repo.save(new Droga("Furosemida", "Diurético utilizado para tratar la retención de líquidos."));
+                droga_repo.save(new Droga("Clorfenamina", "Antihistamínico utilizado para aliviar alergias."));
+                droga_repo.save(new Droga("Diazepam", "Ansiolítico utilizado para tratar la ansiedad y los espasmos musculares."));
+                droga_repo.save(new Droga("Omeprazol", "Inhibidor de ácido utilizado para tratar el reflujo ácido y las úlceras."));
+                droga_repo.save(new Droga("Hidrocortisona", "Corticosteroide utilizado para tratar la inflamación y alergias."));
+                droga_repo.save(new Droga("Lidocaína", "Anestésico local utilizado para aliviar el dolor."));
+                droga_repo.save(new Droga("Diclofenaco", "Analgésico y antiinflamatorio utilizado para el dolor y la inflamación."));
+                droga_repo.save(new Droga("Tramadol", "Analgésico opioide utilizado para tratar el dolor moderado a severo."));
+                droga_repo.save(new Droga("Cefalexina", "Antibiótico utilizado para tratar infecciones bacterianas."));
+                droga_repo.save(new Droga("Salbutamol", "Broncodilatador utilizado para el tratamiento del asma."));
+                droga_repo.save(new Droga("Metoclopramida", "Medicamento utilizado para tratar el reflujo gastroesofágico y náuseas."));
+                droga_repo.save(new Droga("Naproxeno", "Analgésico y antiinflamatorio utilizado para tratar el dolor y la inflamación."));
+                droga_repo.save(new Droga("Ketorolaco", "Analgésico utilizado para el tratamiento del dolor agudo."));
+                droga_repo.save(new Droga("Captopril", "Inhibidor de la ECA utilizado para tratar la hipertensión arterial."));
+                droga_repo.save(new Droga("Enalapril", "Medicamento utilizado para tratar la hipertensión y la insuficiencia cardíaca."));
+                droga_repo.save(new Droga("Fentanilo", "Analgésico opioide utilizado para tratar el dolor severo."));
+                droga_repo.save(new Droga("Prednisona", "Corticosteroide utilizado para tratar enfermedades inflamatorias."));
+                droga_repo.save(new Droga("Dexametasona", "Corticosteroide utilizado para tratar la inflamación y las enfermedades autoinmunes."));
+                droga_repo.save(new Droga("Ranitidina", "Medicamento utilizado para reducir el ácido estomacal."));
+                droga_repo.save(new Droga("Alprazolam", "Ansiolítico utilizado para tratar la ansiedad y los trastornos del pánico."));
+                droga_repo.save(new Droga("Clindamicina", "Antibiótico utilizado para tratar infecciones bacterianas."));
+                droga_repo.save(new Droga("Levotiroxina", "Medicamento utilizado para tratar el hipotiroidismo."));
+                droga_repo.save(new Droga("Tamsulosina", "Medicamento utilizado para mejorar la micción en hombres con agrandamiento de la próstata."));
+                droga_repo.save(new Droga("Warfarina", "Anticoagulante utilizado para prevenir la formación de coágulos de sangre."));
+                
                 // Asociar mascotas a clientes
                 List<Mascota> mascotas = mascota_repo.findAll();
                 List<Cliente> clientes = client_repo.findAll();
@@ -369,5 +411,54 @@ public class DataBaseinit implements ApplicationRunner {
                         }
                 }
 
+                Calendar calendar = Calendar.getInstance();
+
+                calendar.set(2023, Calendar.MAY, 10);
+                consulta_repo.save(new Consulta(calendar.getTime()));
+                
+                calendar.set(2023, Calendar.JUNE, 15);
+                consulta_repo.save(new Consulta(calendar.getTime()));
+                
+                calendar.set(2023, Calendar.JULY, 20);
+                consulta_repo.save(new Consulta(calendar.getTime()));
+                
+                calendar.set(2023, Calendar.AUGUST, 25);
+                consulta_repo.save(new Consulta(calendar.getTime()));
+                
+                calendar.set(2023, Calendar.SEPTEMBER, 30);
+                consulta_repo.save(new Consulta(calendar.getTime()));
+                
+                calendar.set(2023, Calendar.OCTOBER, 5);
+                consulta_repo.save(new Consulta(calendar.getTime()));
+                
+                calendar.set(2023, Calendar.NOVEMBER, 10);
+                consulta_repo.save(new Consulta(calendar.getTime()));
+                
+                calendar.set(2023, Calendar.DECEMBER, 15);
+                consulta_repo.save(new Consulta(calendar.getTime()));
+                
+                calendar.set(2024, Calendar.JANUARY, 20);
+                consulta_repo.save(new Consulta(calendar.getTime()));
+                
+                calendar.set(2024, Calendar.FEBRUARY, 25);
+                consulta_repo.save(new Consulta(calendar.getTime()));                
+
+                int cantidad_mascota = mascota_repo.findAll().size();
+                int cantidad_vet = vet_repo.findAll().size();
+                int cantidad_droga = droga_repo.findAll().size();
+
+                for (Consulta consulta: consulta_repo.findAll()){
+                        int mascota_id = ThreadLocalRandom.current().nextInt(1, cantidad_mascota);
+                        int vet_id = ThreadLocalRandom.current().nextInt(1, cantidad_vet);
+                        int droga_id = ThreadLocalRandom.current().nextInt(1, cantidad_droga);
+
+                        Mascota mascota = mascota_repo.findById(Long.valueOf(mascota_id)).get(); 
+                        Veterinario veterinario = vet_repo.findById(Long.valueOf(vet_id)).get();
+                        Droga droga = droga_repo.findById(Long.valueOf(droga_id)).get();
+
+                        consulta.setMascota(mascota);
+                        consulta.setVeterinario(veterinario);
+                        consulta.setDroga(droga);
+                }
         }
 }
