@@ -1,14 +1,63 @@
 html,
 body {
-  margin: 0; /* Elimina el margen por defecto */
-  height: 100%; /* Asegura que html y body ocupen toda la altura de la ventana */
-  overflow: hidden; /* Evita barras de desplazamiento */
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Asegura que el html y el body ocupen el 100% de la altura de la ventana */
+  min-height: 100vh; /* Garantiza que el body ocupe al menos el 100% de la altura de la ventana */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(to bottom, #064469, #2b8ab6, #5790ab, #74aabf); 
+  background-size: cover; /* Asegura que el fondo cubra toda la pantalla */
+  box-sizing: border-box; /* Asegura que el padding y border se calculen dentro del tamaño total */
 }
 
-.background-image {
-  position: absolute; /* Posiciona la imagen en relación a la ventana del navegador */
-  top: 0;
-  left: 0;
-  width: 100%; /* Asegura que la imagen tenga el ancho total de la ventana */
-  object-fit: cover; /* Ajusta el tamaño de la imagen para cubrir el área sin distorsión */
+
+image{
+  width: 70%;
+  height: 50%;
+  object-fit: contain; /* Asegura que la imagen mantenga su proporción dentro de su tamaño */
+}
+
+.container {
+  color: white;
+  width: 80%;
+  height: 20%;
+  border-radius: 50px;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  text-align: center; /* Centra el texto dentro del div */
+  padding: 20px; /* Añade un poco de espacio dentro del contenedor */
+}
+
+.container a {
+  color: white;
+  text-decoration: none;
+}
+
+.container h1 {
+  font-size: 3.5em;
+}
+
+.container p {
+  font-size: 2.2em;
+}
+
+.button {
+  display: inline-block;
+  background-color: #064469;
+  padding: 10px 20px;
+  border-radius: 30px;
+  color: white;
+  text-align: center;
+}
+
+.button:hover{
+  transform: scale(1.5);
+}
+
+.button span {
+  font-size: 16px;
+  font-weight: bold;
 }

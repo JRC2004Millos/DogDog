@@ -7,10 +7,15 @@
     <title>Error - Página no encontrada</title>
   </head>
   <body>
-    <div>
-      <h1>¡Oops! Algo salió mal.</h1>
-      <p th:text="${errorMessage}"></p>
-      <a href="/dogdog/home">Volver a la página principal</a>
-    </div>
+    <img src="../images/PerroError1.png" alt="Error" class="image">
+      <div class="container">
+        <h1>¡Oops! Algo salió mal.</h1>
+        <p th:text="${errorMessage}"></p>
+        <a href="/dogdog/home">
+          <div class="button"> 
+            <span>Volver al inicio</span>
+          </div>
+        </a>
+      </div>
   </body>
 </html>
