@@ -14,16 +14,16 @@ public class Consulta {
     @GeneratedValue
     private Long id;
     
-    @ManyToOne
-    @JoinColumn(name = "veterinario_id")
+    @ManyToOne(optional = true)
+    @JoinColumn(name = "veterinario_id", nullable = true)
     private Veterinario veterinario;
 
-    @ManyToOne
-    @JoinColumn(name = "mascota_id")
-    private Mascota mascota;
+    @ManyToOne(optional = true)
+    @JoinColumn(name = "mascota_id", nullable = true)
+    private Mascota mascota;    
 
-    @ManyToOne
-    @JoinColumn(name = "droga_id")
+    @ManyToOne(optional = true)
+    @JoinColumn(name = "droga_id", nullable = true)
     private Droga droga;
 
 

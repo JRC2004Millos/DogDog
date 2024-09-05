@@ -3,6 +3,7 @@ package com.example.demo.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,7 +32,7 @@ public class Mascota {
     @ManyToOne
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "mascota")
+    @OneToMany(mappedBy = "mascota", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Consulta> consulta = new ArrayList<>();
 
     public Mascota(String nombre, String raza, int edad, float peso, String fotoURL, String enfermedad) {
