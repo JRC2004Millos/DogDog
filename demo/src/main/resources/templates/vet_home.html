@@ -28,9 +28,23 @@
         <div class="textSecComents"></div>
 
         <div class="testimonial-box-container row">
-          <a
-            th:href="@{/mascotas/ver(veterinarioId=${veterinario.id})}"
+          <!-- Formulario oculto para Ver Mascotas -->
+          <form
+            th:action="@{/mascotas/ver}"
+            method="post"
+            style="display: none"
+            id="formVerMascotas"
+          >
+            <input
+              type="hidden"
+              name="veterinarioId"
+              th:value="${veterinario.id}"
+            />
+          </form>
+          <!-- Card de Ver Mascotas -->
+          <div
             class="col"
+            onclick="document.getElementById('formVerMascotas').submit();"
           >
             <div class="testimonial-box">
               <div class="box-top">
@@ -40,7 +54,6 @@
                   </div>
                 </div>
               </div>
-
               <div class="client-comment">
                 <p>
                   Acá puedes ver los perros que se tienen registrados dentro de
@@ -48,7 +61,7 @@
                 </p>
               </div>
             </div>
-          </a>
+          </div>
 
           <a
             th:href="@{/clientes/ver(veterinarioId=${veterinario.id})}"

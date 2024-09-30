@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import java.util.Collection;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
@@ -13,7 +13,7 @@ public interface ClienteService {
 
     public Cliente findByCedula(int cedula);
 
-    public Collection<Cliente> findAll();
+    public List<Cliente> findAll();
 
     public void add(Cliente cliente);
 

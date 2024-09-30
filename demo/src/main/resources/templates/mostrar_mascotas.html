@@ -19,9 +19,26 @@
     <main>
       <div class="titulo">
         <h1>Mascotas</h1>
+
+        <!-- Formulario oculto para agregar una nueva mascota -->
+        <form
+          th:action="@{/mascotas/agregar}"
+          method="post"
+          style="display: none"
+          id="formAgregarMascota"
+        >
+          <!-- Puedes añadir inputs ocultos si necesitas enviar más información -->
+          <input
+            type="hidden"
+            name="veterinarioId"
+            th:value="${veterinarioId}"
+          />
+        </form>
+
+        <!-- Enlace con la imagen que dispara el formulario -->
         <a
-          type="button"
-          th:href="@{/mascotas/agregar(veterinarioId=${veterinarioId})}"
+          href="#"
+          onclick="document.getElementById('formAgregarMascota').submit();"
         >
           <img src="../images/add2.png" alt="Add" height="60px" class="add" />
         </a>

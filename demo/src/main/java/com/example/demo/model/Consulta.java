@@ -2,6 +2,8 @@ package com.example.demo.model;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -13,27 +15,28 @@ public class Consulta {
     @Id
     @GeneratedValue
     private Long id;
-    
-    @ManyToOne(optional = true)
-    @JoinColumn(name = "veterinario_id", nullable = true)
+
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "veterinario_id")
     private Veterinario veterinario;
 
-    @ManyToOne(optional = true)
-    @JoinColumn(name = "mascota_id", nullable = true)
-    private Mascota mascota;    
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "mascota_id")
+    private Mascota mascota;
 
-    @ManyToOne(optional = true)
-    @JoinColumn(name = "droga_id", nullable = true)
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "droga_id")
     private Droga droga;
 
-
     private Date fechaConsulta;
-
 
     public Consulta() {
     }
 
-    public Consulta(Date fechaConsulta){
+    public Consulta(Date fechaConsulta) {
         this.fechaConsulta = fechaConsulta;
     }
 
@@ -56,15 +59,15 @@ public class Consulta {
     public Date getFechaConsulta() {
         return fechaConsulta;
     }
-    
+
     public void setFechaConsulta(Date fechaConsulta) {
         this.fechaConsulta = fechaConsulta;
     }
-    
+
     public Mascota getMascota() {
         return mascota;
     }
-    
+
     public void setMascota(Mascota mascota) {
         this.mascota = mascota;
     }
@@ -72,7 +75,7 @@ public class Consulta {
     public Droga getDroga() {
         return droga;
     }
-    
+
     public void setDroga(Droga droga) {
         this.droga = droga;
     }

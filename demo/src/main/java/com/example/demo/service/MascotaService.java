@@ -1,7 +1,5 @@
 package com.example.demo.service;
 
-import java.util.Collection;
-
 import java.util.List;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +10,7 @@ public interface MascotaService {
 
     public Mascota findById(Long id);
 
-    public Collection<Mascota> findAll();
+    public List<Mascota> findAll();
 
     public List<Mascota> findByDuenoId(Long clienteId);
 

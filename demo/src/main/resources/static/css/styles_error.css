@@ -8,13 +8,12 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: linear-gradient(to bottom, #064469, #2b8ab6, #5790ab, #74aabf); 
+  background: linear-gradient(to bottom, #064469, #2b8ab6, #5790ab, #74aabf);
   background-size: cover; /* Asegura que el fondo cubra toda la pantalla */
   box-sizing: border-box; /* Asegura que el padding y border se calculen dentro del tamaño total */
 }
 
-
-image{
+image {
   width: 70%;
   height: 50%;
   object-fit: contain; /* Asegura que la imagen mantenga su proporción dentro de su tamaño */
@@ -53,7 +52,7 @@ image{
   text-align: center;
 }
 
-.button:hover{
+.button:hover {
   transform: scale(1.5);
 }
 

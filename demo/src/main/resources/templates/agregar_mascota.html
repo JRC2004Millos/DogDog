@@ -17,9 +17,14 @@
       <img src="../images/LogoFin.png" alt="Logo" />
       <ul>
         <li>
-          <a th:href="@{/mascotas/ver(veterinarioId=${veterinarioId})}"
-            >Inicio</a
-          >
+          <form th:action="@{/mascotas/ver}" method="post">
+            <input
+              type="hidden"
+              name="veterinarioId"
+              th:value="${veterinarioId}"
+            />
+            <button type="submit" class="btn btn-primary">Volver</button>
+          </form>
         </li>
       </ul>
     </header>
@@ -30,10 +35,15 @@
           <h1>Registrar Mascota</h1>
           <form
             th:object="${mascota}"
-            th:action="@{/mascotas/agregar(veterinarioId=${veterinarioId})}"
+            th:action="@{/mascotas/guardar}"
             method="post"
             id="formAgregarMascota"
           >
+            <input
+              type="hidden"
+              name="veterinarioId"
+              th:value="${veterinarioId}"
+            />
             <div class="row mb-3">
               <div class="col">
                 <label for="nombre" class="form-label">Nombre</label>
@@ -58,7 +68,7 @@
                 />
               </div>
             </div>
-  
+
             <div class="row mb-3">
               <div class="col">
                 <label for="edad" class="form-label">Edad</label>
@@ -84,7 +94,7 @@
                 />
               </div>
             </div>
-  
+
             <div class="row mb-3">
               <div class="col">
                 <label for="enfermedad" class="form-label">Enfermedad</label>
@@ -104,9 +114,7 @@
                   id="cliente"
                   required
                 >
-                  <option value="" disabled selected>
-                    Selecciona el cliente
-                  </option>
+                  <option value="">Selecciona el cliente</option>
                   <option
                     th:each="cliente : ${clientes}"
                     th:value="${cliente.id}"
@@ -115,7 +123,7 @@
                 </select>
               </div>
             </div>
-  
+
             <div class="mb-3">
               <label for="fotoURL" class="form-label">Foto</label>
               <input
@@ -127,12 +135,11 @@
                 required
               />
             </div>
-  
+
             <button type="submit" class="btn btn-dark">Agregar</button>
           </form>
         </div>
       </div>
-      
     </main>
 
     <div id="footer">
@@ -146,7 +153,11 @@
           <p>+57 301 123 4567</p>
         </a>
       </div>
-      <img src="../images/fotoFooter-removebg-preview.png" alt="foto" class="fotoFooter">
+      <img
+        src="../images/fotoFooter-removebg-preview.png"
+        alt="foto"
+        class="fotoFooter"
+      />
       <div id="social">
         <a href="https://www.facebook.com" target="_blank">
           <img

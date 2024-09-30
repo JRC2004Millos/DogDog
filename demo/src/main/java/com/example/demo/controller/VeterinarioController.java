@@ -1,18 +1,20 @@
 package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Veterinario;
 import com.example.demo.service.VeterinarioService;
 
-@Controller
+@RestController
 @RequestMapping("/veterinario")
+@CrossOrigin("http://localhost:4200")
 public class VeterinarioController {
 
     @Autowired
@@ -20,17 +22,11 @@ public class VeterinarioController {
 
     // http://localhost:8080/veterinario/{id}
     @GetMapping("/{id}")
-    public String home(@PathVariable("id") Long id, Model model) {
-        model.addAttribute("veterinario", veterinarioService.findById(id));
-        return "vet_home";
+    public Veterinario home(@PathVariable("id") Long id) {
+        return veterinarioService.findById(id);
     }
 
-    // http://localhost:8080/veterinario/ver
-    @GetMapping("/ver")
-    public String ver(Model model) {
-        model.addAttribute("veterinarios", veterinarioService.findAll());
-        return "mostrar_veterinarios";
-    }
+    // CRUD VETERINARIO -> Pasar a JSON para entrega 9
 
     // http://localhost:8080/veterinario/agregar
     @GetMapping("/agregar")

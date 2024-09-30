@@ -1,22 +1,28 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Cliente;
+import com.example.demo.model.Mascota;
 import com.example.demo.service.ClienteService;
 import com.example.demo.service.MascotaService;
-import com.example.error.NotFoundException;
 
-@Controller
+@RestController
 @RequestMapping("/clientes")
+@CrossOrigin("http://localhost:4200")
 public class ClienteController {
 
     @Autowired
@@ -26,24 +32,20 @@ public class ClienteController {
     private MascotaService mascotaService;
 
     @GetMapping("/ver")
-    public String mostrarClientes(Model model, @RequestParam("veterinarioId") Long veterinarioId) {
-        model.addAttribute("clientes", service.findAll());
-        model.addAttribute("veterinarioId", veterinarioId);
-        return "mostrar_clientes";
+    public List<Cliente> mostrarClientes() {
+        return service.findAll();
     }
 
     // http://localhost:8080/clientes/ver/{id}
     @GetMapping("/ver/{id}")
-    public String home(Model model, @PathVariable("id") Long identificacion) {
-        Cliente cliente = service.findById(identificacion);
+    public Cliente mostrarCliente(@PathVariable("id") Long identificacion) {
+        return service.findById(identificacion);
+    }
 
-        if (cliente != null) {
-            model.addAttribute("cliente", cliente);
-            model.addAttribute("mascotas", mascotaService.findByDuenoId(identificacion));
-        } else {
-            throw new NotFoundException(identificacion);
-        }
-        return "cliente";
+    // http://localhost:8080/clientes/ver/{id}/mascotas
+    @GetMapping("/ver/{id}/mascotas")
+    public List<Mascota> mostrarMascotasCliente(@PathVariable("id") Long identificacion) {
+        return mascotaService.findByDuenoId(identificacion);
     }
 
     // http://localhost:8080/clientes/agregar
@@ -59,18 +61,14 @@ public class ClienteController {
 
     // http://localhost:8080/clientes/agregar
     @PostMapping("/agregar")
-    public String agregarCliente(@ModelAttribute("Cliente") Cliente cliente,
-            @RequestParam("veterinarioId") Long veterinarioId) {
+    public void agregarCliente(@RequestBody Cliente cliente) {
         service.add(cliente);
-        return "redirect:/clientes/ver?veterinarioId=" + veterinarioId;
     }
 
     // http://localhost:8080/clientes/eliminar/{id}
-    @GetMapping("/eliminar/{id}")
-    public String eliminarCliente(@PathVariable("id") Long identificacion,
-            @RequestParam("veterinarioId") Long veterinarioId) {
+    @DeleteMapping("/eliminar/{id}")
+    public void eliminarCliente(@PathVariable("id") Long identificacion) {
         service.deleteById(identificacion);
-        return "redirect:/clientes/ver?veterinarioId=" + veterinarioId;
     }
 
     // http://localhost:8080/clientes/modificar/{id}
@@ -82,12 +80,10 @@ public class ClienteController {
         return "modificar_cliente";
     }
 
-    // http://localhost:8080/clientes/modificar
-    @PostMapping("/modificar/{id}")
-    public String modificarCliente(@ModelAttribute("cliente") Cliente cliente,
-            @RequestParam("veterinarioId") Long veterinarioId) {
+    // http://localhost:8080/clientes/modificar/{id}
+    @PutMapping("/modificar/{id}")
+    public void modificarCliente(@RequestBody Cliente cliente) {
         service.update(cliente);
-        return "redirect:/clientes/ver?veterinarioId=" + veterinarioId;
     }
 
 }
