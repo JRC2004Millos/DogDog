@@ -17,15 +17,22 @@ public class Droga {
     private Long id;
 
     private String nombre;
-    private String descripcion;
+    private double precioVenta;
+    private double precioCompra;
+    private int unidadesDisponibles;
+    private int unidadesVendidas;
 
     @JsonIgnore
     @OneToMany(mappedBy = "droga")
     private List<Consulta> consulta = new ArrayList<>();
 
-    public Droga(String nombre, String descripcion) {
+    public Droga(String nombre, double precioVenta, double precioCompra, int unidadesDisponibles,
+            int unidadesVendidas) {
         this.nombre = nombre;
-        this.descripcion = descripcion;
+        this.precioVenta = precioVenta;
+        this.precioCompra = precioCompra;
+        this.unidadesDisponibles = unidadesDisponibles;
+        this.unidadesVendidas = unidadesVendidas;
     }
 
     public Droga() {
@@ -47,12 +54,20 @@ public class Droga {
         this.nombre = nombre;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public double getPrecioVenta() {
+        return precioVenta;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setPrecioVenta(double precioVenta) {
+        this.precioVenta = precioVenta;
+    }
+
+    public double getPrecioCompra() {
+        return precioCompra;
+    }
+
+    public void setPrecioCompra(double precioCompra) {
+        this.precioCompra = precioCompra;
     }
 
     public List<Consulta> getConsulta() {
@@ -62,4 +77,21 @@ public class Droga {
     public void setConsulta(List<Consulta> consulta) {
         this.consulta = consulta;
     }
+
+    public int getUnidadesDisponibles() {
+        return unidadesDisponibles;
+    }
+
+    public void setUnidadesDisponibles(int unidadesDisponibles) {
+        this.unidadesDisponibles = unidadesDisponibles;
+    }
+
+    public int getUnidadesVendidas() {
+        return unidadesVendidas;
+    }
+
+    public void setUnidadesVendidas(int unidadesVendidas) {
+        this.unidadesVendidas = unidadesVendidas;
+    }
+
 }
