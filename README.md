@@ -37,10 +37,6 @@ Valoramos profundamente la confianza que nuestros clientes depositan en nosotros
 - Juan David Rincón
 - Julián Rodríguez
 
-# Paleta de Colores
-
-![Paleta](demo/src/main/resources/static/images/paleta_colores.png)
-
 # Diagrama de Clases
 
 ![Diagrama UML](demo/src/main/resources/static/images/UML.jpg)
