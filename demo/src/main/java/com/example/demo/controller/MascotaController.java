@@ -72,7 +72,7 @@ public class MascotaController {
         return "modificar_mascota";
     }
 
-    @PutMapping("/modificar/{id}")
+    @PutMapping("/modificar")
     public void modificarMascota(@RequestBody Mascota mascota) {
         mascotaService.update(mascota);
     }
