@@ -81,7 +81,7 @@ public class ClienteController {
     }
 
     // http://localhost:8080/clientes/modificar/{id}
-    @PutMapping("/modificar/{id}")
+    @PutMapping("/modificar")
     public void modificarCliente(@RequestBody Cliente cliente) {
         service.update(cliente);
     }
