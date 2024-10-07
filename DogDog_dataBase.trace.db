@@ -1378,3 +1378,7 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Web/Temp/DogD
 	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
 	... 66 more
+2024-10-07 11:37:47.280017-05:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLDataException: Valor demasiado largo para la columna "FOTOURL CHARACTER VARYING(255)": "'data:image/webp;base64,UklGRggiAABXRUJQVlA4IPwhAADwwwCdASo4ATgBPplGnUulo6KvJfJr... (1024)"
+Value too long for column "FOTOURL CHARACTER VARYING(255)": "'data:image/webp;base64,UklGRggiAABXRUJQVlA4IPwhAADwwwCdASo4ATgBPplGnUulo6KvJfJr... (1024)"; SQL statement:
+insert into pet_table (cliente_id,edad,enfermedad,estado,fotourl,nombre,peso,raza,pk_id) values (?,?,?,?,?,?,?,?,?) [22001-224]

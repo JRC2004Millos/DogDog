@@ -2,6 +2,9 @@ package com.example.demo.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -51,8 +54,15 @@ public class MascotaController {
         return "agregar_mascota";
     }
 
+    private static final Logger logger = LoggerFactory.getLogger(MascotaController.class);
+
     @PostMapping("/agregar")
     public void agregarMascotaForm(@RequestBody Mascota mascota) {
+        // Usar el logger para imprimir los detalles de la mascota
+        logger.info("Mascota recibida: {}", mascota);
+        logger.info("Cliente: {}", mascota.getCliente());
+
+        // Guardar la mascota
         mascotaService.add(mascota);
     }
 

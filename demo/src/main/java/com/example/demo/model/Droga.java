@@ -3,7 +3,7 @@ package com.example.demo.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,7 +22,7 @@ public class Droga {
     private int unidadesDisponibles;
     private int unidadesVendidas;
 
-    @JsonIgnore
+    @JsonIgnoreProperties("droga")
     @OneToMany(mappedBy = "droga")
     private List<Consulta> consulta = new ArrayList<>();
 
