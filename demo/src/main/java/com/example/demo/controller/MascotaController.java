@@ -63,12 +63,10 @@ public class MascotaController {
 
     // http://localhost:8080/mascotas/modificar/{id}
     @GetMapping("/modificar/{id}")
-    public String modificarMascota(Model model, @PathVariable("id") Long identificacion,
-            @ModelAttribute("veterinarioId") Long veterinarioId) {
+    public String modificarMascota(Model model, @PathVariable("id") Long identificacion) {
         Mascota mascota = mascotaService.findById(identificacion);
         model.addAttribute("mascota", mascota);
         model.addAttribute("clientes", clienteService.findAll());
-        model.addAttribute("veterinarioId", identificacion);
         return "modificar_mascota";
     }
 
