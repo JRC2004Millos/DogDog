@@ -1,6 +1,5 @@
 package com.example.demo.model;
 
-import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Calendar;
 import java.util.Iterator;
@@ -374,9 +373,8 @@ public class DataBaseinit implements ApplicationRunner {
                                 220));
 
                 // Ruta al archivo Excel
-                String excelFilePath = "demo\\src\\main\\resources\\static\\excel\\MEDICAMENTOS_VETERINARIA.xlsx";
-                InputStream inputStream = new FileInputStream(excelFilePath);
-
+                InputStream inputStream = getClass().getResourceAsStream("/static/excel/MEDICAMENTOS_VETERINARIA.xlsx");
+        
                 // Leer el archivo Excel
                 Workbook workbook = new XSSFWorkbook(inputStream);
                 Sheet sheet = workbook.getSheetAt(0); // Leer la primera hoja
