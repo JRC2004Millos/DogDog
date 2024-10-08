@@ -27,6 +27,11 @@ public class VeterinarioController {
     }
 
     // CRUD VETERINARIO -> Pasar a JSON para entrega 9
+    // http://localhost:8080/veterinario/id}
+    @GetMapping("/cedula/{cedula}")
+    public Veterinario mostrarClienteByCedula(@PathVariable("cedula") int cedula) {
+        return veterinarioService.findByCedula(cedula);
+    }
 
     // http://localhost:8080/veterinario/agregar
     @GetMapping("/agregar")

@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,9 +40,9 @@ public class MascotaServiceImpl implements MascotaService {
     }
 
     @Override
-    public void update(Mascota mascota) {
-        repo.save(mascota);
-    }
+    public Mascota update(Mascota mascota) {
+        return repo.save(mascota);  // Retorna la mascota actualizada
+    } 
 
     @Override
     public int mascotasEnTratamiento() {

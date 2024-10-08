@@ -42,6 +42,12 @@ public class ClienteController {
         return service.findById(identificacion);
     }
 
+    // http://localhost:8080/clientes/ver/{id}
+    @GetMapping("/cedula/{cedula}")
+    public Cliente mostrarClienteByCedula(@PathVariable("cedula") int cedula) {
+        return service.findByCedula(cedula);
+    }
+
     // http://localhost:8080/clientes/ver/{id}/mascotas
     @GetMapping("/ver/{id}/mascotas")
     public List<Mascota> mostrarMascotasCliente(@PathVariable("id") Long identificacion) {

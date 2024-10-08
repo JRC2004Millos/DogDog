@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.example.demo.model.Mascota;
@@ -18,7 +19,7 @@ public interface MascotaService {
 
     public void deleteById(Long id);
 
-    public void update(Mascota mascota);
+    public Mascota update(Mascota mascota);
 
     public int mascotasEnTratamiento();
 

@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import java.util.Collection;
+
 import org.springframework.stereotype.Service;
 
 import com.example.demo.model.Veterinario;
@@ -10,7 +11,7 @@ public interface VeterinarioService {
 
     public Veterinario findById(Long id);
 
-    public Veterinario findByCedulaAndClave(int cedula, String clave);
+    public Veterinario findByCedula(int cedula);
 
     public Collection<Veterinario> findAll();
 

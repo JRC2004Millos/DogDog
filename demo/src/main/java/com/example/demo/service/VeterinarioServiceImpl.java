@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,8 +20,8 @@ public class VeterinarioServiceImpl implements VeterinarioService {
     }
 
     @Override
-    public Veterinario findByCedulaAndClave(int cedula, String clave) {
-        return repo.findByCedulaAndClave(cedula, clave);
+    public Veterinario findByCedula(int cedula) {
+        return repo.findByCedula(cedula);
     }
 
     @Override

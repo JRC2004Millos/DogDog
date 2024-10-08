@@ -52,7 +52,7 @@ public class MascotaController {
     }
 
     @PostMapping("/agregar")
-    public void agregarMascotaForm(@RequestBody Mascota mascota) {
+    public void agregarMascotaForm(@RequestBody Mascota mascota) {   
         mascotaService.add(mascota);
     }
 
@@ -73,7 +73,9 @@ public class MascotaController {
     }
 
     @PutMapping("/modificar/{id}")
-    public void modificarMascota(@RequestBody Mascota mascota) {
-        mascotaService.update(mascota);
-    }
+    public Mascota modificarMascota(@PathVariable Long id, @RequestBody Mascota mascota) {
+        // Verifica que la mascota existe en la base de datos
+        mascota.setId(id);  // Asegúrate de que el ID sea el correcto
+        return mascotaService.update(mascota);  // Devuelve la mascota actualizada
+    }    
 }
