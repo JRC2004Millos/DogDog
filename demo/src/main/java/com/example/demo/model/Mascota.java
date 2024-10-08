@@ -3,12 +3,13 @@ package com.example.demo.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -30,11 +31,12 @@ public class Mascota {
     @GeneratedValue
     private Long id;
 
-    @JsonIgnore
+    @JsonIgnoreProperties("mascotas")
     @ManyToOne
+    @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
-    @JsonIgnore
+    @JsonIgnoreProperties("mascota")
     @OneToMany(mappedBy = "mascota")
     private List<Consulta> consulta = new ArrayList<>();
 

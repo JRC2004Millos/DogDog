@@ -5,7 +5,7 @@ Bienvenido a la página web oficial de la veterinaria Dog Dog, un lugar donde ca
 # Descripción
 La veterinaria Dog Dog se dedica a proporcionar la mejor atención médica y de bienestar para nuestros amigos peludos. Nuestro equipo de veterinarios y personal especializado se compromete a ofrecer servicios de alta calidad, asegurando que cada perro reciba el amor y cuidado que merece.
 
-![Logo](demo/src/main/resources/static/images/Logo.png)
+![Logo](demo/src/main/resources/static/images/LogoFin.png)
 
 # Características del Sitio Web
 ## Quiénes Somos
@@ -36,10 +36,6 @@ Valoramos profundamente la confianza que nuestros clientes depositan en nosotros
 - Nicolás Hincapié
 - Juan David Rincón
 - Julián Rodríguez
-
-# Paleta de Colores
-
-![Paleta](demo/src/main/resources/static/images/paleta_colores.png)
 
 # Diagrama de Clases
 

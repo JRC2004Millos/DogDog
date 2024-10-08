@@ -2,6 +2,9 @@ package com.example.demo.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -51,8 +54,15 @@ public class MascotaController {
         return "agregar_mascota";
     }
 
+    private static final Logger logger = LoggerFactory.getLogger(MascotaController.class);
+
     @PostMapping("/agregar")
-    public void agregarMascotaForm(@RequestBody Mascota mascota) {   
+    public void agregarMascotaForm(@RequestBody Mascota mascota) {
+        // Usar el logger para imprimir los detalles de la mascota
+        logger.info("Mascota recibida: {}", mascota);
+        logger.info("Cliente: {}", mascota.getCliente());
+
+        // Guardar la mascota
         mascotaService.add(mascota);
     }
 
@@ -63,19 +73,15 @@ public class MascotaController {
 
     // http://localhost:8080/mascotas/modificar/{id}
     @GetMapping("/modificar/{id}")
-    public String modificarMascota(Model model, @PathVariable("id") Long identificacion,
-            @ModelAttribute("veterinarioId") Long veterinarioId) {
+    public String modificarMascota(Model model, @PathVariable("id") Long identificacion) {
         Mascota mascota = mascotaService.findById(identificacion);
         model.addAttribute("mascota", mascota);
         model.addAttribute("clientes", clienteService.findAll());
-        model.addAttribute("veterinarioId", identificacion);
         return "modificar_mascota";
     }
 
-    @PutMapping("/modificar/{id}")
-    public Mascota modificarMascota(@PathVariable Long id, @RequestBody Mascota mascota) {
-        // Verifica que la mascota existe en la base de datos
-        mascota.setId(id);  // Asegúrate de que el ID sea el correcto
-        return mascotaService.update(mascota);  // Devuelve la mascota actualizada
-    }    
+    @PutMapping("/modificar")
+    public void modificarMascota(@RequestBody Mascota mascota) {
+        mascotaService.update(mascota);
+    }
 }
