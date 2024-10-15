@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -25,7 +26,7 @@ public class Veterinario {
     private int numAtenciones;
 
     @JsonIgnoreProperties("veterinario")
-    @OneToMany(mappedBy = "veterinario")
+    @OneToMany(mappedBy = "veterinario", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Consulta> consulta = new ArrayList<>();
 
     public Veterinario(String nombre, int cedula, String clave, String especialidad, String fotoURL,

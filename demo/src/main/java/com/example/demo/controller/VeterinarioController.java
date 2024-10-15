@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -55,9 +56,8 @@ public class VeterinarioController {
 
     // http://localhost:8080/veterinario/agregar
     @PostMapping("/agregar")
-    public String agregar(Veterinario veterinario) {
+    public void agregar(@RequestBody Veterinario veterinario) {
         veterinarioService.add(veterinario);
-        return "redirect:/veterinario/ver";
     }
 
     // http://localhost:8080/veterinario/modificar/{id}
@@ -68,8 +68,8 @@ public class VeterinarioController {
     }
 
     // http://localhost:8080/veterinario/modificar/{id}
-    @PutMapping("/modificar/{id}")
-    public void modificar(Veterinario veterinario) {
+    @PutMapping("/modificar")
+    public void modificar(@RequestBody Veterinario veterinario) {
         veterinarioService.update(veterinario);
     }
 

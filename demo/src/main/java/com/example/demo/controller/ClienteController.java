@@ -89,6 +89,8 @@ public class ClienteController {
     // http://localhost:8080/clientes/modificar/{id}
     @PutMapping("/modificar")
     public void modificarCliente(@RequestBody Cliente cliente) {
+        Cliente original = service.findById(cliente.getId());
+        cliente.setMascotas(original.getMascotas());
         service.update(cliente);
     }
 
