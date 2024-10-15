@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import java.util.Collection;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
@@ -13,7 +13,7 @@ public interface VeterinarioService {
 
     public Veterinario findByCedula(int cedula);
 
-    public Collection<Veterinario> findAll();
+    public List<Veterinario> findAll();
 
     public void add(Veterinario veterinario);
 

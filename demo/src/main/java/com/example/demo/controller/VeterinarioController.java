@@ -1,11 +1,15 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,6 +31,12 @@ public class VeterinarioController {
     }
 
     // CRUD VETERINARIO -> Pasar a JSON para entrega 9
+
+    @GetMapping("/ver")
+    public List<Veterinario> mostrarVeterinarios() {
+        return veterinarioService.findAll();
+    }
+
     // http://localhost:8080/veterinario/id}
     @GetMapping("/cedula/{cedula}")
     public Veterinario mostrarClienteByCedula(@PathVariable("cedula") int cedula) {
@@ -58,16 +68,14 @@ public class VeterinarioController {
     }
 
     // http://localhost:8080/veterinario/modificar/{id}
-    @PostMapping("/modificar/{id}")
-    public String modificar(Veterinario veterinario) {
+    @PutMapping("/modificar/{id}")
+    public void modificar(Veterinario veterinario) {
         veterinarioService.update(veterinario);
-        return "redirect:/veterinario/ver";
     }
 
     // http://localhost:8080/veterinario/eliminar/{id}
-    @GetMapping("/eliminar/{id}")
-    public String eliminar(@PathVariable("id") Long id) {
+    @DeleteMapping("/eliminar/{id}")
+    public void eliminar(@PathVariable("id") Long id) {
         veterinarioService.deleteById(id);
-        return "redirect:/veterinario/ver";
     }
 }
