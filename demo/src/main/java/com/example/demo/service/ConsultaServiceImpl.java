@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +20,7 @@ public class ConsultaServiceImpl implements ConsultaService {
     }
 
     @Override
-    public Collection<Consulta> findAll() {
+    public List<Consulta> findAll() {
         return consultaRepository.findAll();
     }
 

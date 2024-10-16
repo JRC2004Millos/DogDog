@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import java.util.Collection;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
@@ -11,7 +11,7 @@ public interface ConsultaService {
 
     public Consulta findById(Long id);
 
-    public Collection<Consulta> findAll();
+    public List<Consulta> findAll();
 
     public void add(Consulta consulta);
 
