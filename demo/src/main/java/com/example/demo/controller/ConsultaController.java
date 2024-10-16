@@ -51,4 +51,9 @@ public class ConsultaController {
         consultaService.update(consulta);
 
     }
+
+    @GetMapping("/mascota/{mascotaId}")
+    public List<Consulta> getConsultasByMascota(@PathVariable Long mascotaId) {
+        return consultaService.findByMascotaId(mascotaId);
+    }
 }

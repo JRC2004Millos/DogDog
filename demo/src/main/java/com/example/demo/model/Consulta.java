@@ -16,6 +16,8 @@ public class Consulta {
     @GeneratedValue
     private Long id;
 
+    private int cantidad;
+
     @JsonIgnoreProperties("consulta")
     @ManyToOne
     @JoinColumn(name = "veterinario_id")
@@ -79,4 +81,13 @@ public class Consulta {
     public void setDroga(Droga droga) {
         this.droga = droga;
     }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
 }

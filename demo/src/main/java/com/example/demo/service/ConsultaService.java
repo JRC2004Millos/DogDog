@@ -18,4 +18,6 @@ public interface ConsultaService {
     public void deleteById(Long id);
 
     public void update(Consulta consulta);
+
+    public List<Consulta> findByMascotaId(Long mascotaId);
 }

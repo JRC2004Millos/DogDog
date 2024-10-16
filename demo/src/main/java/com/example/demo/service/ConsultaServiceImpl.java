@@ -40,4 +40,9 @@ public class ConsultaServiceImpl implements ConsultaService {
             consultaRepository.save(consulta);
         }
     }
+
+    @Override
+    public List<Consulta> findByMascotaId(Long mascotaId) {
+        return consultaRepository.findByMascotaId(mascotaId);
+    }
 }

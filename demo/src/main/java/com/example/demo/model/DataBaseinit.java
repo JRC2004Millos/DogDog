@@ -121,7 +121,8 @@ public class DataBaseinit implements ApplicationRunner {
                 mascota_repo.save(new Mascota("Molly", "Chihuahua", 3, 2.5f,
                                 "https://example.com/images/chihuahua1.jpg", "Problemas dentales"));
                 mascota_repo.save(new Mascota("Buddy", "Siberian Husky", 4, 22.8f,
-                                "https://dogtime.com/wp-content/uploads/sites/12/2023/11/GettyImages-1454565264-e1701120522406.jpg", "Alergia a la comida"));
+                                "https://dogtime.com/wp-content/uploads/sites/12/2023/11/GettyImages-1454565264-e1701120522406.jpg",
+                                "Alergia a la comida"));
                 mascota_repo.save(new Mascota("Zoe", "Dachshund", 5, 9.8f,
                                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa3ewvi6qjaUE5Z87OXoKlxqHu83Tc8u5bnA&s",
                                 "Problemas de columna"));
@@ -184,7 +185,8 @@ public class DataBaseinit implements ApplicationRunner {
                                 "Problemas en las articulaciones"));
                 mascota_repo.save(new Mascota("Lucy", "Chihuahua", 3, 2.2f, "https://example.com/images/chihuahua3.jpg",
                                 "Problemas dentales"));
-                mascota_repo.save(new Mascota("Zoe", "Poodle", 2, 6.5f, "https://www.dondemiveterinario.com/wp-content/uploads/2022/10/poodle-estandar-principal.jpg",
+                mascota_repo.save(new Mascota("Zoe", "Poodle", 2, 6.5f,
+                                "https://www.dondemiveterinario.com/wp-content/uploads/2022/10/poodle-estandar-principal.jpg",
                                 "Enfermedad respiratoria"));
                 mascota_repo.save(new Mascota("Rocky", "Beagle", 4, 10.8f,
                                 "https://t1.uc.ltmcdn.com/es/posts/9/3/9/caracteristicas_fisicas_del_beagle_50939_1_600.jpg",
@@ -205,20 +207,24 @@ public class DataBaseinit implements ApplicationRunner {
                 mascota_repo.save(new Mascota("Finn", "Yorkshire Terrier", 5, 4.2f,
                                 "https://example.com/images/yorkshire_terrier2.jpg", "Problemas dentales"));
                 mascota_repo.save(new Mascota("Bella", "Siberian Husky", 6, 25.6f,
-                                "https://www.anicura.es/cdn-cgi/image/f=auto,q=60,fit=cover,w=1536,h=1152,g=auto,sharpen=1/AdaptiveImages/powerinit/15458/Print_AniCura_Dogs_352_Siberian%20husky.jpg?stamp=9cee4d21ea154efc36aa55248d02fa894a93c10e", "Problemas en las articulaciones"));
-                mascota_repo.save(new Mascota("Buddy", "Beagle", 2, 9.5f, "https://hips.hearstapps.com/hmg-prod/images/beagle-dog-breed-66697acf1e1b8.jpg?crop=0.893xw:1.00xh;0.0554xw,0&resize=768:*",
+                                "https://www.anicura.es/cdn-cgi/image/f=auto,q=60,fit=cover,w=1536,h=1152,g=auto,sharpen=1/AdaptiveImages/powerinit/15458/Print_AniCura_Dogs_352_Siberian%20husky.jpg?stamp=9cee4d21ea154efc36aa55248d02fa894a93c10e",
+                                "Problemas en las articulaciones"));
+                mascota_repo.save(new Mascota("Buddy", "Beagle", 2, 9.5f,
+                                "https://hips.hearstapps.com/hmg-prod/images/beagle-dog-breed-66697acf1e1b8.jpg?crop=0.893xw:1.00xh;0.0554xw,0&resize=768:*",
                                 "Enfermedad respiratoria"));
                 mascota_repo.save(new Mascota("Jack", "Pug", 3, 8.2f, "https://example.com/images/pug3.jpg",
                                 "Problemas articulares"));
                 mascota_repo.save(new Mascota("Nala", "Shih Tzu", 4, 7.5f, "https://example.com/images/shih_tzu4.jpg",
                                 "Problemas digestivos"));
-                mascota_repo.save(new Mascota("Milu", "Poodle", 3, 6.8f, "https://petshopchicureo.cl/cdn/shop/articles/corte-poodle.jpg?v=1697614213",
+                mascota_repo.save(new Mascota("Milu", "Poodle", 3, 6.8f,
+                                "https://petshopchicureo.cl/cdn/shop/articles/corte-poodle.jpg?v=1697614213",
                                 "Alergia a la comida"));
                 mascota_repo.save(new Mascota("Oscar", "Yorkshire Terrier", 5, 3.0f,
                                 "https://example.com/images/yorkshire_terrier3.jpg", "Infección en la piel"));
                 mascota_repo.save(new Mascota("Sophie", "Cocker Spaniel", 6, 15.2f,
                                 "https://example.com/images/cocker_spaniel3.jpg", "Problemas en los ojos"));
-                mascota_repo.save(new Mascota("Mia", "Beagle", 3, 10.9f, "https://images.ctfassets.net/denf86kkcx7r/6zcaK24BXlretJmpcHIHUK/f7a6008d468fc13b5b7cd1591972057c/pexelsartembeliaikin4084420-2",
+                mascota_repo.save(new Mascota("Mia", "Beagle", 3, 10.9f,
+                                "https://images.ctfassets.net/denf86kkcx7r/6zcaK24BXlretJmpcHIHUK/f7a6008d468fc13b5b7cd1591972057c/pexelsartembeliaikin4084420-2",
                                 "Problemas respiratorios"));
                 mascota_repo.save(new Mascota("Rocky", "Boxer", 4, 29.3f, "https://example.com/images/boxer3.jpg",
                                 "Enfermedad cardíaca"));
@@ -229,19 +235,23 @@ public class DataBaseinit implements ApplicationRunner {
                 mascota_repo.save(new Mascota("Finn", "Pomerania", 2, 3.6f, "https://example.com/images/pomerania5.jpg",
                                 "Enfermedad respiratoria"));
                 mascota_repo.save(new Mascota("Lily", "Siberian Husky", 3, 24.8f,
-                                "https://www.purina.es/sites/default/files/styles/ttt_image_510/public/2024-02/sitesdefaultfilesstylessquare_medium_440x440public2022-08Siberian20Husky2.jpg?itok=d5njFuxB", "Problemas articulares"));
+                                "https://www.purina.es/sites/default/files/styles/ttt_image_510/public/2024-02/sitesdefaultfilesstylessquare_medium_440x440public2022-08Siberian20Husky2.jpg?itok=d5njFuxB",
+                                "Problemas articulares"));
                 mascota_repo.save(new Mascota("Bella", "Labrador Retriever", 5, 33.2f,
                                 "https://example.com/images/labrador_retriever3.jpg", "Problemas en la piel"));
                 mascota_repo.save(new Mascota("Zoe", "Golden Retriever", 4, 30.5f,
                                 "https://example.com/images/golden_retriever4.jpg", "Enfermedad respiratoria"));
                 mascota_repo.save(new Mascota("Maggie", "Border Collie", 3, 18.0f,
                                 "https://example.com/images/border_collie3.jpg", "Problemas en los ojos"));
-                mascota_repo.save(new Mascota("Lenda", "Poodle", 4, 6.5f, "https://lenda.net/wp-content/uploads/2023/12/Un-perro-poodle-feliz-jpg.webp",
+                mascota_repo.save(new Mascota("Lenda", "Poodle", 4, 6.5f,
+                                "https://lenda.net/wp-content/uploads/2023/12/Un-perro-poodle-feliz-jpg.webp",
                                 "Alergia alimentaria"));
-                mascota_repo.save(new Mascota("Oscar", "Beagle", 10, 11.5f, "https://thumbs.dreamstime.com/b/un-perro-viejo-del-beagle-16953148.jpg",
+                mascota_repo.save(new Mascota("Oscar", "Beagle", 10, 11.5f,
+                                "https://thumbs.dreamstime.com/b/un-perro-viejo-del-beagle-16953148.jpg",
                                 "Problemas digestivos"));
                 mascota_repo.save(new Mascota("Buddy", "Siberian Husky", 4, 22.0f,
-                                "https://images.saymedia-content.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cq_auto:eco%2Cw_1200/MTk2Njc0ODUxNzAyODQzMTk4/colors-of-siberian-huskies.png", "Alergia a la comida"));
+                                "https://images.saymedia-content.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cq_auto:eco%2Cw_1200/MTk2Njc0ODUxNzAyODQzMTk4/colors-of-siberian-huskies.png",
+                                "Alergia a la comida"));
                 mascota_repo.save(new Mascota("Roxy", "Pug", 3, 7.8f, "https://example.com/images/pug4.jpg",
                                 "Problemas de piel"));
                 mascota_repo.save(new Mascota("Nala", "Dachshund", 4, 9.0f, "https://example.com/images/dachshund4.jpg",
@@ -259,7 +269,8 @@ public class DataBaseinit implements ApplicationRunner {
                 mascota_repo.save(new Mascota("Roxy", "Pomerania", 3, 3.2f, "https://example.com/images/pomerania7.jpg",
                                 "Problemas articulares"));
                 mascota_repo.save(new Mascota("Maggie", "Siberian Husky", 3, 26.0f,
-                                "https://plus.unsplash.com/premium_photo-1668208363137-7ebc4ce6b7b7?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2liZXJpYW4lMjBodXNreXxlbnwwfHwwfHx8MA%3D%3D", "Problemas respiratorios"));
+                                "https://plus.unsplash.com/premium_photo-1668208363137-7ebc4ce6b7b7?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2liZXJpYW4lMjBodXNreXxlbnwwfHwwfHx8MA%3D%3D",
+                                "Problemas respiratorios"));
                 mascota_repo.save(new Mascota("Mia", "Yorkshire Terrier", 2, 3.4f,
                                 "https://example.com/images/yorkshire_terrier4.jpg", "Enfermedad de piel"));
                 mascota_repo.save(new Mascota("Toby", "Labrador Retriever", 5, 32.0f,
@@ -278,7 +289,8 @@ public class DataBaseinit implements ApplicationRunner {
                                 "https://example.com/images/cocker_spaniel5.jpg", "Problemas dentales"));
                 mascota_repo.save(new Mascota("Max", "Labrador Retriever", 3, 29.4f,
                                 "https://example.com/images/labrador_retriever5.jpg", "Infección en la piel"));
-                mascota_repo.save(new Mascota("Sanzon", "Beagle", 1, 11.3f, "https://www.publico.es/yo-animal/wp-content/uploads/2024/04/puppy-1024x687.jpg",
+                mascota_repo.save(new Mascota("Sanzon", "Beagle", 1, 11.3f,
+                                "https://www.publico.es/yo-animal/wp-content/uploads/2024/04/puppy-1024x687.jpg",
                                 "Problemas articulares"));
                 mascota_repo.save(new Mascota("Nala", "Pug", 5, 7.9f, "https://example.com/images/pug7.jpg",
                                 "Problemas digestivos"));
@@ -286,19 +298,22 @@ public class DataBaseinit implements ApplicationRunner {
                                 "https://example.com/images/golden_retriever6.jpg", "Problemas respiratorios"));
                 mascota_repo.save(new Mascota("Oscar", "Shih Tzu", 6, 7.1f, "https://example.com/images/shih_tzu9.jpg",
                                 "Enfermedad de piel"));
-                mascota_repo.save(new Mascota("Roxy", "Beagle", 3, 10.9f, "https://www.thesprucepets.com/thmb/slg48hln7ejv_3XYrcdLG8ooKwE=/2119x0/filters:no_upscale():strip_icc()/GettyImages-475324140-292c4ecfd73c4c8483efe31193f8189a.jpg",
+                mascota_repo.save(new Mascota("Roxy", "Beagle", 3, 10.9f,
+                                "https://www.thesprucepets.com/thmb/slg48hln7ejv_3XYrcdLG8ooKwE=/2119x0/filters:no_upscale():strip_icc()/GettyImages-475324140-292c4ecfd73c4c8483efe31193f8189a.jpg",
                                 "Alergias cutáneas"));
                 mascota_repo.save(new Mascota("Sophie", "Pomerania", 4, 3.5f,
                                 "https://example.com/images/pomerania9.jpg", "Problemas dentales"));
                 mascota_repo.save(new Mascota("Finn", "Siberian Husky", 2, 26.5f,
-                                "https://huskysiberiano.cl/wp-content/uploads/2023/11/cuidado-husky.jpg", "Alergias respiratorias"));
+                                "https://huskysiberiano.cl/wp-content/uploads/2023/11/cuidado-husky.jpg",
+                                "Alergias respiratorias"));
                 mascota_repo.save(new Mascota("Mia", "Labrador Retriever", 4, 33.0f,
                                 "https://example.com/images/labrador_retriever6.jpg", "Problemas dentales"));
                 mascota_repo.save(new Mascota("Toby", "Pug", 3, 7.6f, "https://example.com/images/pug8.jpg",
                                 "Infección ocular"));
                 mascota_repo.save(new Mascota("Rosie", "Pomerania", 2, 3.7f,
                                 "https://example.com/images/pomerania10.jpg", "Enfermedad respiratoria"));
-                mascota_repo.save(new Mascota("Gus", "Beagle", 5, 11.1f, "https://espree.com/sites/default/files/2019-10/Beagle.png",
+                mascota_repo.save(new Mascota("Gus", "Beagle", 5, 11.1f,
+                                "https://espree.com/sites/default/files/2019-10/Beagle.png",
                                 "Problemas digestivos"));
                 mascota_repo.save(new Mascota("Sophie", "Golden Retriever", 4, 32.5f,
                                 "https://example.com/images/golden_retriever7.jpg", "Problemas respiratorios"));
@@ -306,10 +321,12 @@ public class DataBaseinit implements ApplicationRunner {
                                 "Problemas en los ojos"));
                 mascota_repo.save(new Mascota("Maggie", "Dachshund", 3, 9.7f,
                                 "https://example.com/images/dachshund5.jpg", "Infección en la piel"));
-                mascota_repo.save(new Mascota("Rosie", "Poodle", 6, 6.2f, "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2023/02/09141023/Diana-the-Poodle.jpg",
+                mascota_repo.save(new Mascota("Rosie", "Poodle", 6, 6.2f,
+                                "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2023/02/09141023/Diana-the-Poodle.jpg",
                                 "Alergias cutáneas"));
                 mascota_repo.save(new Mascota("Mirio", "Siberian Husky", 5, 25.0f,
-                                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGeoYzAkyO3wXe-MM_WYuxop9HeLIJMiMEuQ&s", "Problemas articulares"));
+                                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGeoYzAkyO3wXe-MM_WYuxop9HeLIJMiMEuQ&s",
+                                "Problemas articulares"));
                 mascota_repo.save(new Mascota("Nala", "Golden Retriever", 4, 31.7f,
                                 "https://example.com/images/golden_retriever8.jpg", "Problemas respiratorios"));
                 mascota_repo.save(new Mascota("Toby", "Pug", 3, 7.2f, "https://example.com/images/pug9.jpg",
@@ -323,12 +340,15 @@ public class DataBaseinit implements ApplicationRunner {
                 mascota_repo.save(new Mascota("Rosie", "Pomerania", 5, 3.8f,
                                 "https://example.com/images/pomerania11.jpg", "Problemas dentales"));
                 mascota_repo.save(new Mascota("Mazorca", "Siberian Husky", 4, 24.0f,
-                                "https://as2.ftcdn.net/v2/jpg/02/35/86/35/1000_F_235863557_Gc9FFamRiBXkZbO7nhQs5g3ce1Jwck8j.jpg", "Alergias respiratorias"));
+                                "https://as2.ftcdn.net/v2/jpg/02/35/86/35/1000_F_235863557_Gc9FFamRiBXkZbO7nhQs5g3ce1Jwck8j.jpg",
+                                "Alergias respiratorias"));
                 mascota_repo.save(new Mascota("Maggie", "Dachshund", 6, 9.2f,
                                 "https://example.com/images/dachshund6.jpg", "Problemas digestivos"));
-                mascota_repo.save(new Mascota("Nala", "Beagle", 4, 11.2f, "https://hips.hearstapps.com/hmg-prod/images/gettyimages-1437033396-65aa13023a8ed.jpg?crop=1xw:0.84375xh;center,top",
+                mascota_repo.save(new Mascota("Nala", "Beagle", 4, 11.2f,
+                                "https://hips.hearstapps.com/hmg-prod/images/gettyimages-1437033396-65aa13023a8ed.jpg?crop=1xw:0.84375xh;center,top",
                                 "Problemas en los ojos"));
-                mascota_repo.save(new Mascota("Pardo", "Poodle", 5, 6.1f, "https://preview.redd.it/mgm1808ede8b1.jpg?auto=webp&s=c424a1081cd95172ca64add0d61309cc4ae0eb9d",
+                mascota_repo.save(new Mascota("Pardo", "Poodle", 5, 6.1f,
+                                "https://preview.redd.it/mgm1808ede8b1.jpg?auto=webp&s=c424a1081cd95172ca64add0d61309cc4ae0eb9d",
                                 "Enfermedad de piel"));
                 mascota_repo.save(new Mascota("Rosie", "Pug", 3, 7.3f, "https://example.com/images/pug10.jpg",
                                 "Problemas respiratorios"));
@@ -374,7 +394,7 @@ public class DataBaseinit implements ApplicationRunner {
 
                 // Ruta al archivo Excel
                 InputStream inputStream = getClass().getResourceAsStream("/static/excel/MEDICAMENTOS_VETERINARIA.xlsx");
-        
+
                 // Leer el archivo Excel
                 Workbook workbook = new XSSFWorkbook(inputStream);
                 Sheet sheet = workbook.getSheetAt(0); // Leer la primera hoja
@@ -478,6 +498,7 @@ public class DataBaseinit implements ApplicationRunner {
                         consulta.setMascota(mascota);
                         consulta.setVeterinario(veterinario);
                         consulta.setDroga(droga);
+                        consulta.setCantidad(1);
                 }
 
         }

@@ -11,6 +11,8 @@ import com.example.demo.model.Droga;
 import com.example.demo.service.DrogaService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping("/drogas")
@@ -30,6 +32,11 @@ public class DrogaController {
     @GetMapping("/ver/{id}")
     public Droga verDroga(@PathVariable("id") Long id) {
         return drogaService.findById(id);
+    }
+
+    @PutMapping("/modificar")
+    public void modificarDroga(@RequestBody Droga droga) {
+        drogaService.update(droga);
     }
 
 }
