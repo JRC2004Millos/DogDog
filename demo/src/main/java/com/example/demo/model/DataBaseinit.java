@@ -498,7 +498,7 @@ public class DataBaseinit implements ApplicationRunner {
                         consulta.setMascota(mascota);
                         consulta.setVeterinario(veterinario);
                         consulta.setDroga(droga);
-                        consulta.setCantidad(1);
+                        consulta.setCantidad(0);
                 }
 
         }
