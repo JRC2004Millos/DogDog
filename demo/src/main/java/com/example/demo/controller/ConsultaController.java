@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -52,8 +53,24 @@ public class ConsultaController {
 
     }
 
+
     @GetMapping("/mascota/{mascotaId}")
     public List<Consulta> getConsultasByMascota(@PathVariable Long mascotaId) {
         return consultaService.findByMascotaId(mascotaId);
     }
+
+    // localhost:8080/consultas/ultimoMes
+    @GetMapping("/ultimoMes")
+    public ResponseEntity<Long> getTratamientosUltimoMes() {
+        Long total = consultaService.getTratamientosUltimoMes();
+        return ResponseEntity.ok(total);
+    }
+
+    // localhost:8080/consultas/tratamientos-por-droga
+    @GetMapping("/tratamientos-por-droga")
+    public ResponseEntity<List<Object[]>> getCantidadTratamientosPorDroga() {
+        List<Object[]> tratamientos = consultaService.getCantidadTratamientosPorDrogaUltimoMes();
+        return ResponseEntity.ok(tratamientos);
+    }
+
 }

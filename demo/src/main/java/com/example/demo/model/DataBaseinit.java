@@ -458,13 +458,13 @@ public class DataBaseinit implements ApplicationRunner {
                 calendar.set(2023, Calendar.JUNE, 15);
                 consulta_repo.save(new Consulta(calendar.getTime()));
 
-                calendar.set(2023, Calendar.JULY, 20);
+                calendar.set(2024, Calendar.SEPTEMBER, 23);
                 consulta_repo.save(new Consulta(calendar.getTime()));
 
                 calendar.set(2023, Calendar.AUGUST, 25);
                 consulta_repo.save(new Consulta(calendar.getTime()));
 
-                calendar.set(2023, Calendar.SEPTEMBER, 30);
+                calendar.set(2024, Calendar.SEPTEMBER, 30);
                 consulta_repo.save(new Consulta(calendar.getTime()));
 
                 calendar.set(2023, Calendar.OCTOBER, 5);
@@ -476,7 +476,7 @@ public class DataBaseinit implements ApplicationRunner {
                 calendar.set(2023, Calendar.DECEMBER, 15);
                 consulta_repo.save(new Consulta(calendar.getTime()));
 
-                calendar.set(2024, Calendar.JANUARY, 20);
+                calendar.set(2024, Calendar.SEPTEMBER, 20);
                 consulta_repo.save(new Consulta(calendar.getTime()));
 
                 calendar.set(2024, Calendar.FEBRUARY, 25);
@@ -490,6 +490,7 @@ public class DataBaseinit implements ApplicationRunner {
                         int mascota_id = ThreadLocalRandom.current().nextInt(1, cantidad_mascota);
                         int vet_id = ThreadLocalRandom.current().nextInt(1, cantidad_vet);
                         int droga_id = ThreadLocalRandom.current().nextInt(1, cantidad_droga);
+                        int cantidad = ThreadLocalRandom.current().nextInt(1, 10);
 
                         Mascota mascota = mascota_repo.findById(Long.valueOf(mascota_id)).get();
                         Veterinario veterinario = vet_repo.findById(Long.valueOf(vet_id)).get();
@@ -498,8 +499,7 @@ public class DataBaseinit implements ApplicationRunner {
                         consulta.setMascota(mascota);
                         consulta.setVeterinario(veterinario);
                         consulta.setDroga(droga);
-                        consulta.setCantidad(0);
+                        consulta.setCantidad(cantidad);
                 }
-
         }
 }

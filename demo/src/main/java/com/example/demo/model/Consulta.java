@@ -42,6 +42,10 @@ public class Consulta {
         this.fechaConsulta = fechaConsulta;
     }
 
+    public Consulta(Date fechaConsulta, int cantidad) {
+        this.fechaConsulta = fechaConsulta;
+    }
+
     public Long getId() {
         return id;
     }

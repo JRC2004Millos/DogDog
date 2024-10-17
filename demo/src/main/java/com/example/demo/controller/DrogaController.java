@@ -54,4 +54,9 @@ public class DrogaController {
         return ResponseEntity.ok(ganancias);
     }
 
+    // http://localhost:8080/drogas/top3
+    @GetMapping("/top3")
+    public List<Object[]> getTopTratamientos() {
+        return drogaService.getTopTratamientos();
+    }
 }

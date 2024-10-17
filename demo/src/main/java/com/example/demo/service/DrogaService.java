@@ -22,4 +22,6 @@ public interface DrogaService {
     public Double getVentasTotales();
 
     public Double getGananciasTotales();
+
+    public List<Object[]> getTopTratamientos();
 }

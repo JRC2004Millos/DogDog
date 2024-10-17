@@ -72,6 +72,8 @@ public class VeterinarioController {
     // http://localhost:8080/veterinario/modificar/{id}
     @PutMapping("/modificar")
     public void modificar(@RequestBody Veterinario veterinario) {
+        Veterinario original = veterinarioService.findById(veterinario.getId());
+        veterinario.setConsulta(original.getConsulta());
         veterinarioService.update(veterinario);
     }
 

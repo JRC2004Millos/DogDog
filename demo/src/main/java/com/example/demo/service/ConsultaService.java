@@ -20,4 +20,8 @@ public interface ConsultaService {
     public void update(Consulta consulta);
 
     public List<Consulta> findByMascotaId(Long mascotaId);
+
+    public Long getTratamientosUltimoMes();
+
+    public List<Object[]> getCantidadTratamientosPorDrogaUltimoMes();
 }

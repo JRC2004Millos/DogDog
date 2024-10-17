@@ -50,4 +50,10 @@ public class DrogaServiceImpl implements DrogaService {
     public Double getGananciasTotales() {
         return drogaRepository.getGananciasTotales();
     }
+
+    @Override
+    public List<Object[]> getTopTratamientos() {
+        return drogaRepository.findTopByUnidadesVendidas();
+    }
+
 }
