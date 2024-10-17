@@ -21,4 +21,5 @@ public interface VeterinarioService {
 
     public void update(Veterinario veterinario);
 
+    public int countByEstado(boolean estado);
 }

@@ -18,4 +18,8 @@ public interface DrogaService {
     public void deleteById(Long id);
 
     public void update(Droga droga);
+
+    public Double getVentasTotales();
+
+    public Double getGananciasTotales();
 }

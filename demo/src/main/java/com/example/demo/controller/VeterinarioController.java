@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -77,5 +79,14 @@ public class VeterinarioController {
     @DeleteMapping("/eliminar/{id}")
     public void eliminar(@PathVariable("id") Long id) {
         veterinarioService.deleteById(id);
+    }
+
+    // http://localhost:8080/veterinario/activosInactivos
+    @GetMapping("/activosInactivos")
+    public Map<String, Integer> getActivosInactivos() {
+        Map<String, Integer> response = new HashMap<>();
+        response.put("activos", veterinarioService.countByEstado(true));
+        response.put("inactivos", veterinarioService.countByEstado(false));
+        return response;
     }
 }

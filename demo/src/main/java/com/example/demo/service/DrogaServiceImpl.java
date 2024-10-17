@@ -40,4 +40,14 @@ public class DrogaServiceImpl implements DrogaService {
             drogaRepository.save(droga);
         }
     }
+
+    @Override
+    public Double getVentasTotales() {
+        return drogaRepository.getVentasTotales();
+    }
+
+    @Override
+    public Double getGananciasTotales() {
+        return drogaRepository.getGananciasTotales();
+    }
 }

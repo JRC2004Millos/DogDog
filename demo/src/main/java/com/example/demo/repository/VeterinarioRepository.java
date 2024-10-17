@@ -13,4 +13,6 @@ public interface VeterinarioRepository extends JpaRepository<Veterinario, Long> 
 
     @Query("SELECT v FROM Veterinario v JOIN Consulta c ON c.veterinario = v WHERE c.mascota.id = :mascotaId")
     Veterinario findVeterinarioByMascotaId(@Param("mascotaId") Long mascotaId);
+
+    int countByEstado(boolean estado);
 }

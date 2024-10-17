@@ -44,4 +44,8 @@ public class VeterinarioServiceImpl implements VeterinarioService {
         repo.save(veterinario);
     }
 
+    @Override
+    public int countByEstado(boolean estado) {
+        return repo.countByEstado(estado);
+    }
 }

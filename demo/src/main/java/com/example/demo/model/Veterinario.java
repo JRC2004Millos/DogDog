@@ -24,6 +24,7 @@ public class Veterinario {
     private String especialidad;
     private String fotoURL;
     private int numAtenciones;
+    private boolean estado;
 
     @JsonIgnoreProperties("veterinario")
     @OneToMany(mappedBy = "veterinario", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -37,6 +38,7 @@ public class Veterinario {
         this.especialidad = especialidad;
         this.fotoURL = fotoURL;
         this.numAtenciones = numAtenciones;
+        this.estado = true;
     }
 
     public Veterinario() {
@@ -105,4 +107,14 @@ public class Veterinario {
     public void setConsulta(List<Consulta> consulta) {
         this.consulta = consulta;
     }
+
+    public boolean getEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+
+
 }

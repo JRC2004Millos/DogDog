@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -83,5 +83,19 @@ public class MascotaController {
     @PutMapping("/modificar")
     public void modificarMascota(@RequestBody Mascota mascota) {
         mascotaService.update(mascota);
+    }
+
+    // http://localhost:8080/mascotas/total
+    @GetMapping("/total")
+    public ResponseEntity<Long> getTotalMascotas() {
+        long total = mascotaService.getTotalMascotas();
+        return ResponseEntity.ok(total);
+    }
+
+    // http://localhost:8080/mascotas/en-tratamiento
+    @GetMapping("/en-tratamiento")
+    public ResponseEntity<Long> mascotasEnTratamiento() {
+        long totalEnTratamiento = mascotaService.mascotasEnTratamiento();
+        return ResponseEntity.ok(totalEnTratamiento);
     }
 }

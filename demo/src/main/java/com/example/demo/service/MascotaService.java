@@ -23,4 +23,5 @@ public interface MascotaService {
 
     public int mascotasEnTratamiento();
 
+    public long getTotalMascotas();
 }

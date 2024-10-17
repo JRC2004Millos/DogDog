@@ -48,4 +48,10 @@ public class MascotaServiceImpl implements MascotaService {
     public int mascotasEnTratamiento() {
         return repo.mascotasEnTratamiento();
     }
+
+    @Override
+    public long getTotalMascotas() {
+        return repo.getTotalMascotas();
+    }
+
 }
