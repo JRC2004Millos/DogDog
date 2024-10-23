@@ -71,6 +71,12 @@
     		<version>5.2.3</version> <!-- Asegúrate de usar la última versión -->
 		</dependency>
 
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
