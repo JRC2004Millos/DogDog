@@ -2,9 +2,8 @@ package com.example.demo.controller;
 
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -34,14 +33,25 @@ public class MascotaController {
     private ClienteService clienteService;
 
     @GetMapping("/ver")
-    public List<Mascota> verMascotas() {
-        return mascotaService.findAll();
+    public ResponseEntity<List<Mascota>> verMascotas() {
+
+        List<Mascota> mascotas = mascotaService.findAll();
+
+        ResponseEntity<List<Mascota>> response = new ResponseEntity<>(mascotas, HttpStatus.OK);
+
+        return response;
     }
 
     // http://localhost:8080/mascotas/buscar/{id}
     @GetMapping("/buscar/{id}")
-    public Mascota mostrarMascota(@PathVariable("id") Long identificacion) {
-        return mascotaService.findById(identificacion);
+    public ResponseEntity<Mascota> mostrarMascota(@PathVariable("id") Long identificacion) {
+
+        Mascota mascota = mascotaService.findById(identificacion);
+
+        if (mascota == null) {
+            return new ResponseEntity<Mascota>(mascota, HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<Mascota>(mascota, HttpStatus.OK);
     }
 
     // http://localhost:8080/mascotas/agregar
@@ -54,21 +64,22 @@ public class MascotaController {
         return "agregar_mascota";
     }
 
-    private static final Logger logger = LoggerFactory.getLogger(MascotaController.class);
-
     @PostMapping("/agregar")
-    public void agregarMascotaForm(@RequestBody Mascota mascota) {
-        // Usar el logger para imprimir los detalles de la mascota
-        logger.info("Mascota recibida: {}", mascota);
-        logger.info("Cliente: {}", mascota.getCliente());
+    public ResponseEntity<Mascota> agregarMascotaForm(@RequestBody Mascota mascota) {
 
-        // Guardar la mascota
-        mascotaService.add(mascota);
+        Mascota mascotaNueva = mascotaService.add(mascota);
+
+        if (mascotaNueva == null) {
+            return new ResponseEntity<Mascota>(mascotaNueva, HttpStatus.BAD_REQUEST);
+        }
+
+        return new ResponseEntity<Mascota>(mascotaNueva, HttpStatus.CREATED);
     }
 
     @DeleteMapping("/eliminar/{id}")
-    public void eliminarMascota(@PathVariable("id") Long identificacion) {
+    public ResponseEntity<String> eliminarMascota(@PathVariable("id") Long identificacion) {
         mascotaService.deleteById(identificacion);
+        return new ResponseEntity<>("DELETED", HttpStatus.NO_CONTENT);
     }
 
     // http://localhost:8080/mascotas/modificar/{id}
@@ -81,8 +92,10 @@ public class MascotaController {
     }
 
     @PutMapping("/modificar")
-    public void modificarMascota(@RequestBody Mascota mascota) {
+    public ResponseEntity<Mascota> modificarMascota(@RequestBody Mascota mascota) {
         mascotaService.update(mascota);
+
+        return new ResponseEntity<>(mascota, HttpStatus.OK);
     }
 
     // http://localhost:8080/mascotas/total

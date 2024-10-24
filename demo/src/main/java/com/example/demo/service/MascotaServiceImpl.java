@@ -30,8 +30,9 @@ public class MascotaServiceImpl implements MascotaService {
     }
 
     @Override
-    public void add(Mascota mascota) {
+    public Mascota add(Mascota mascota) {
         repo.save(mascota);
+        return mascota;
     }
 
     @Override
@@ -41,8 +42,8 @@ public class MascotaServiceImpl implements MascotaService {
 
     @Override
     public Mascota update(Mascota mascota) {
-        return repo.save(mascota);  // Retorna la mascota actualizada
-    } 
+        return repo.save(mascota); // Retorna la mascota actualizada
+    }
 
     @Override
     public int mascotasEnTratamiento() {

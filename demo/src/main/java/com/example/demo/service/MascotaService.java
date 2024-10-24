@@ -15,7 +15,7 @@ public interface MascotaService {
 
     public List<Mascota> findByDuenoId(Long clienteId);
 
-    public void add(Mascota mascota);
+    public Mascota add(Mascota mascota);
 
     public void deleteById(Long id);
 

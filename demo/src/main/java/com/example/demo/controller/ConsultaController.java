@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -26,13 +27,22 @@ public class ConsultaController {
     private ConsultaService consultaService;
 
     @GetMapping("/ver")
-    public List<Consulta> verConsultas() {
-        return consultaService.findAll();
+    public ResponseEntity<List<Consulta>> verConsultas() {
+
+        List<Consulta> consultas = consultaService.findAll();
+
+        ResponseEntity<List<Consulta>> response = new ResponseEntity<>(consultas, HttpStatus.OK);
+        return response;
     }
 
     @GetMapping("/ver/{id}")
-    public Consulta verConsulta(@PathVariable Long id) {
-        return consultaService.findById(id);
+    public ResponseEntity<Consulta> verConsulta(@PathVariable Long id) {
+        Consulta consulta = consultaService.findById(id);
+        if (consulta == null) {
+            return new ResponseEntity<Consulta>(consulta, HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<Consulta>(consulta, HttpStatus.OK);
     }
 
     @PostMapping("/agregar")
@@ -42,17 +52,18 @@ public class ConsultaController {
     }
 
     @DeleteMapping("/borrar/{id}")
-    public void borrar(@PathVariable Long id) {
+    public ResponseEntity<String> borrar(@PathVariable Long id) {
         consultaService.deleteById(id);
+        return new ResponseEntity<>("DELETED", HttpStatus.NO_CONTENT);
 
     }
 
     @PutMapping("/modificar")
-    public void modificar(@RequestBody Consulta consulta) {
+    public ResponseEntity<Consulta> modificar(@RequestBody Consulta consulta) {
         consultaService.update(consulta);
 
+        return new ResponseEntity<>(consulta, HttpStatus.OK);
     }
-
 
     @GetMapping("/mascota/{mascotaId}")
     public List<Consulta> getConsultasByMascota(@PathVariable Long mascotaId) {
