@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.DTOs.VeterinarioDTO;
+import com.example.demo.DTOs.VeterinarioMapper;
 import com.example.demo.model.Veterinario;
 import com.example.demo.service.VeterinarioService;
 
@@ -49,7 +53,7 @@ public class VeterinarioController {
     // http://localhost:8080/veterinario/agregar
     @GetMapping("/agregar")
     public String agregar(Model model) {
-        Veterinario veterinario = new Veterinario("", 0, "", "", "", 0);
+        Veterinario veterinario = new Veterinario("", 0, "", "", "");
 
         model.addAttribute("veterinario", veterinario);
 
@@ -58,8 +62,15 @@ public class VeterinarioController {
 
     // http://localhost:8080/veterinario/agregar
     @PostMapping("/agregar")
-    public void agregar(@RequestBody Veterinario veterinario) {
-        veterinarioService.add(veterinario);
+    public ResponseEntity<VeterinarioDTO> agregar(@RequestBody Veterinario veterinario) {
+        Veterinario newVet = veterinarioService.add(veterinario);
+        VeterinarioDTO vetDTO = VeterinarioMapper.INSTANCE.convert(newVet);
+        if (veterinario == null) {
+            return new ResponseEntity<VeterinarioDTO>(vetDTO, HttpStatus.BAD_REQUEST);
+        }
+
+        return new ResponseEntity<VeterinarioDTO>(vetDTO, HttpStatus.OK);
+
     }
 
     // http://localhost:8080/veterinario/modificar/{id}

@@ -30,8 +30,8 @@ public class VeterinarioServiceImpl implements VeterinarioService {
     }
 
     @Override
-    public void add(Veterinario veterinario) {
-        repo.save(veterinario);
+    public Veterinario add(Veterinario veterinario) {
+        return repo.save(veterinario);
     }
 
     @Override
@@ -40,8 +40,8 @@ public class VeterinarioServiceImpl implements VeterinarioService {
     }
 
     @Override
-    public void update(Veterinario veterinario) {
-        repo.save(veterinario);
+    public Veterinario update(Veterinario veterinario) {
+        return repo.save(veterinario);
     }
 
     @Override

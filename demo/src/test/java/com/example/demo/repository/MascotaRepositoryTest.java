@@ -68,11 +68,9 @@ public class MascotaRepositoryTest {
         }
 
         veterinarioRepository.save(new Veterinario("Dr. Juan Pérez", 111111, "clave123", "Cirugía",
-                "https://universidadeuropea.com/resources/media/images/medicina-veterinaria-800x450.width-1200.format-webp.webp",
-                150));
+                "https://universidadeuropea.com/resources/media/images/medicina-veterinaria-800x450.width-1200.format-webp.webp"));
         veterinarioRepository.save(new Veterinario("Dra. Ana Gómez", 222222, "clave234", "Medicina Interna",
-                "https://www.infobae.com/new-resizer/ZnDkR1HUD3VOYyxcl1NfySwaToc=/1440x960/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/L6GI2ZSXFZGADESR57UO666ZE4.jpg",
-                200));
+                "https://www.infobae.com/new-resizer/ZnDkR1HUD3VOYyxcl1NfySwaToc=/1440x960/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/L6GI2ZSXFZGADESR57UO666ZE4.jpg"));
 
         Mascota mascota = mascotaRepository.findById(1L).get();
         Veterinario veterinario = veterinarioRepository.findById(1L).get();

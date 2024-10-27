@@ -365,34 +365,92 @@ public class DataBaseinit implements ApplicationRunner {
                 mascota_repo.save(new Mascota("Rosie", "Shih Tzu", 5, 6.7f, "https://example.com/images/shih_tzu12.jpg",
                                 "Problemas respiratorios"));
 
-                vet_repo.save(new Veterinario("Dr. Juan Pérez", 111111, "clave123", "Cirugía",
-                                "https://universidadeuropea.com/resources/media/images/medicina-veterinaria-800x450.width-1200.format-webp.webp",
-                                150));
-                vet_repo.save(new Veterinario("Dra. Ana Gómez", 222222, "clave234", "Medicina Interna",
-                                "https://www.infobae.com/new-resizer/ZnDkR1HUD3VOYyxcl1NfySwaToc=/1440x960/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/L6GI2ZSXFZGADESR57UO666ZE4.jpg",
-                                200));
-                vet_repo.save(new Veterinario("Dr. Carlos López", 333333, "clave345", "Dermatología",
-                                "https://blog.agrovetmarket.com/wp-content/uploads/2020/05/vet.jpg", 180));
-                vet_repo.save(new Veterinario("Dra. Laura Martínez", 444444, "clave456", "Odontología",
-                                "https://bensvet.com.br/wp-content/uploads/2020/03/blog-5-passos-para-se-tornar-o-melhor-m%C3%A9dico-veterin%C3%A1rio.jpg",
-                                210));
-                vet_repo.save(new Veterinario("Dr. Andrés Fernández", 555555, "clave567", "Cardiología",
-                                "https://media.diariolasamericas.com/p/dd615822f3890b61f37609e2635dd657/adjuntos/216/imagenes/100/128/0100128714/1200x630/smart/dia-mundial-del-veterinariojpg.jpg",
-                                170));
-                vet_repo.save(new Veterinario("Dra. Patricia Ruiz", 666666, "clave678", "Neurología",
-                                "https://blog.comparasoftware.com/wp-content/uploads/2022/02/software-veterinario-768x480.jpg",
-                                160));
-                vet_repo.save(new Veterinario("Dr. Javier Morales", 777777, "clave789", "Oftalmología",
-                                "https://plus.unsplash.com/premium_photo-1677165483776-3e2e85595746?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dmV0ZXJpbmFyaWF8ZW58MHx8MHx8fDA%3D",
-                                190));
-                vet_repo.save(new Veterinario("Dra. Beatriz García", 888888, "clave890", "Oncología",
-                                "https://blog.uchceu.es/veterinaria/wp-content/uploads/sites/12/2012/07/293887-500x480.jpg",
-                                230));
-                vet_repo.save(new Veterinario("Dr. Mario Torres", 999999, "clave901", "Gastroenterología",
-                                "https://www.veterinariaelbosque.cl/images/noti_petcovid_3.jpg", 140));
-                vet_repo.save(new Veterinario("Dra. Claudia Sánchez", 101010, "clave1234", "Pediatría",
-                                "https://bogota.gov.co/sites/default/files/styles/1050px/public/2024-05/vertinario-1.jpg",
-                                220));
+                vet_repo.save(Veterinario.builder()
+                                .nombre("Dr. Juan Perez")
+                                .cedula(111111)
+                                .clave("clave123")
+                                .especialidad("Cirugía")
+                                .fotoURL("https://universidadeuropea.com/resources/media/images/medicina-veterinaria-800x450.width-1200.format-webp.webp")
+                                .build());
+
+                vet_repo.save(Veterinario.builder().nombre("Dra. Ana Gómez")
+                                .cedula(222222)
+                                .clave("clave234")
+                                .especialidad("Medicina Interna")
+                                .fotoURL("https://www.infobae.com/new-resizer/ZnDkR1HUD3VOYyxcl1NfySwaToc=/1440x960/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/L6GI2ZSXFZGADESR57UO666ZE4.jpg")
+                                .build());
+
+                vet_repo.save(
+                                Veterinario.builder()
+                                                .nombre("Dr. Carlos López")
+                                                .cedula(333333)
+                                                .clave("clave345")
+                                                .especialidad("Dermatología")
+                                                .fotoURL("https://blog.agrovetmarket.com/wp-content/uploads/2020/05/vet.jpg")
+                                                .build());
+
+                vet_repo.save(
+                                Veterinario.builder()
+                                                .nombre("Dra. Laura Martínez")
+                                                .cedula(444444)
+                                                .clave("clave456")
+                                                .especialidad("Odontología")
+                                                .fotoURL("https://bensvet.com.br/wp-content/uploads/2020/03/blog-5-passos-para-se-tornar-o-melhor-m%C3%A9dico-veterin%C3%A1rio.jpg")
+                                                .build());
+
+                vet_repo.save(
+                                Veterinario.builder()
+                                                .nombre("Dr. Andrés Fernández")
+                                                .cedula(555555)
+                                                .clave("clave567")
+                                                .especialidad("Cardiología")
+                                                .fotoURL("https://media.diariolasamericas.com/p/dd615822f3890b61f37609e2635dd657/adjuntos/216/imagenes/100/128/0100128714/1200x630/smart/dia-mundial-del-veterinariojpg.jpg")
+                                                .build());
+
+                vet_repo.save(
+                                Veterinario.builder()
+                                                .nombre("Dra. Patricia Ruiz")
+                                                .cedula(666666)
+                                                .clave("clave678")
+                                                .especialidad("Neurología")
+                                                .fotoURL("https://blog.comparasoftware.com/wp-content/uploads/2022/02/software-veterinario-768x480.jpg")
+                                                .build());
+
+                vet_repo.save(
+                                Veterinario.builder()
+                                                .nombre("Dr. Javier Morales")
+                                                .cedula(777777)
+                                                .clave("clave789")
+                                                .especialidad("Oftalmología")
+                                                .fotoURL("https://plus.unsplash.com/premium_photo-1677165483776-3e2e85595746?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dmV0ZXJpbmFyaWF8ZW58MHx8MHx8fDA%3D")
+                                                .build());
+
+                vet_repo.save(
+                                Veterinario.builder()
+                                                .nombre("Dra. Beatriz García")
+                                                .cedula(888888)
+                                                .clave("clave890")
+                                                .especialidad("Oncología")
+                                                .fotoURL("https://blog.uchceu.es/veterinaria/wp-content/uploads/sites/12/2012/07/293887-500x480.jpg")
+                                                .build());
+
+                vet_repo.save(
+                                Veterinario.builder()
+                                                .nombre("Dr. Mario Torres")
+                                                .cedula(999999)
+                                                .clave("clave901")
+                                                .especialidad("Gastroenterología")
+                                                .fotoURL("https://www.veterinariaelbosque.cl/images/noti_petcovid_3.jpg")
+                                                .build());
+
+                vet_repo.save(
+                                Veterinario.builder()
+                                                .nombre("Dra. Claudia Sánchez")
+                                                .cedula(101010)
+                                                .clave("clave1234")
+                                                .especialidad("Pediatría")
+                                                .fotoURL("https://bogota.gov.co/sites/default/files/styles/1050px/public/2024-05/vertinario-1.jpg")
+                                                .build());
 
                 // Ruta al archivo Excel
                 InputStream inputStream = getClass().getResourceAsStream("/static/excel/MEDICAMENTOS_VETERINARIA.xlsx");
@@ -495,11 +553,11 @@ public class DataBaseinit implements ApplicationRunner {
                         int cantidad = ThreadLocalRandom.current().nextInt(1, 10);
 
                         Mascota mascota = mascota_repo.findById(Long.valueOf(mascota_id)).get();
-                        Veterinario veterinario = vet_repo.findById(Long.valueOf(vet_id)).get();
+                        Veterinario vet = vet_repo.findById(Long.valueOf(vet_id)).get();
                         Droga droga = droga_repo.findById(Long.valueOf(droga_id)).get();
 
                         consulta.setMascota(mascota);
-                        consulta.setVeterinario(veterinario);
+                        consulta.setVeterinario(vet);
                         consulta.setDroga(droga);
                         consulta.setCantidad(cantidad);
                 }

@@ -15,11 +15,11 @@ public interface VeterinarioService {
 
     public List<Veterinario> findAll();
 
-    public void add(Veterinario veterinario);
+    public Veterinario add(Veterinario veterinario);
 
     public void deleteById(Long id);
 
-    public void update(Veterinario veterinario);
+    public Veterinario update(Veterinario veterinario);
 
     public int countByEstado(boolean estado);
 }
