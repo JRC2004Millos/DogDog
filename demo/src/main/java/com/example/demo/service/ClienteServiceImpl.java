@@ -30,8 +30,8 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
-    public void add(Cliente cliente) {
-        repo.save(cliente);
+    public Cliente add(Cliente cliente) {
+        return repo.save(cliente);
     }
 
     @Override
@@ -40,8 +40,8 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
-    public void update(Cliente cliente) {
-        repo.save(cliente);
+    public Cliente update(Cliente cliente) {
+        return repo.save(cliente);
     }
 
 }

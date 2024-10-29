@@ -1,4 +1,4 @@
-package com.example.error;
+package com.example.demo.error;
 
 public class NotFoundException extends RuntimeException {
     private Long id;

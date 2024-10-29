@@ -14,12 +14,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Profile;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 
 import com.example.demo.repository.ClienteRepository;
 import com.example.demo.repository.ConsultaRepository;
 import com.example.demo.repository.DrogaRepository;
 import com.example.demo.repository.MascotaRepository;
+import com.example.demo.repository.RoleRepository;
+import com.example.demo.repository.UserRepository;
 import com.example.demo.repository.VeterinarioRepository;
 
 import jakarta.transaction.Transactional;
@@ -44,58 +47,232 @@ public class DataBaseinit implements ApplicationRunner {
         @Autowired
         ConsultaRepository consulta_repo;
 
+        @Autowired
+        PasswordEncoder passwordEncoder;
+
+        @Autowired
+        RoleRepository role_repo;
+
+        @Autowired
+        UserRepository user_repo;
+
         @Override
         public void run(ApplicationArguments args) throws Exception {
-                client_repo.save(new Cliente(123456, "Gabriel Mora", "morita@gmail.com", 896547));
-                client_repo.save(new Cliente(9876543, "Eladio Carrion", "ela.god@gmail.com", 546791));
-                client_repo.save(new Cliente(753124, "Benito Antonio", "BadBunny@gmail.com", 749685));
-                client_repo.save(new Cliente(741258, "Diomedes Diaz", "diomedesdays@gmail.com", 349761));
-                client_repo.save(new Cliente(852123, "Kaleth Morales", "KaLimbo@gmail.com", 412398));
-                client_repo.save(new Cliente(6523987, "Silvestre Dangond", "WinniePooh@gmail.com", 987201));
-                client_repo.save(new Cliente(12345678, "Henry Cavill", "cavillHenry@gmail.com", 321567885));
-                client_repo.save(new Cliente(456123, "Lana Del Rey", "lana.delrey@gmail.com", 658124));
-                client_repo.save(new Cliente(234567, "Rosalía Vila", "rosalia.vila@gmail.com", 321654));
-                client_repo.save(new Cliente(987654, "Sebastián Yatra", "yatra.sebas@gmail.com", 875412));
-                client_repo.save(new Cliente(654789, "Shakira Mebarak", "shaki@gmail.com", 963258));
-                client_repo.save(new Cliente(321654, "Rauw Alejandro", "rauw.alejandro@gmail.com", 784512));
-                client_repo.save(new Cliente(963852, "Karol G", "karolg@gmail.com", 654123));
-                client_repo.save(new Cliente(159753, "Nicky Jam", "nicky.jam@gmail.com", 258741));
-                client_repo.save(new Cliente(258741, "Marc Anthony", "marc.anthony@gmail.com", 951753));
-                client_repo.save(new Cliente(852369, "Maluma", "maluma.baby@gmail.com", 741852));
-                client_repo.save(new Cliente(753951, "J Balvin", "balvin.j@gmail.com", 852741));
-                client_repo.save(new Cliente(456852, "Ozuna", "ozuna@gmail.com", 369852));
-                client_repo.save(new Cliente(654321, "Daddy Yankee", "daddy.yankee@gmail.com", 789456));
-                client_repo.save(new Cliente(741852, "Anuel AA", "anuel.aa@gmail.com", 987654));
-                client_repo.save(new Cliente(987123, "Natti Natasha", "natti.natasha@gmail.com", 654789));
-                client_repo.save(new Cliente(789456, "Tini Stoessel", "tini@gmail.com", 456123));
-                client_repo.save(new Cliente(852741, "Becky G", "beckyg@gmail.com", 123789));
-                client_repo.save(new Cliente(369852, "Camila Cabello", "camila.cabello@gmail.com", 654321));
-                client_repo.save(new Cliente(963741, "Ricky Martin", "ricky.martin@gmail.com", 852963));
-                client_repo.save(new Cliente(753159, "Thalía", "thalia@gmail.com", 951357));
-                client_repo.save(new Cliente(6547891, "Enrique Iglesias", "enrique.iglesias@gmail.com", 159753));
-                client_repo.save(new Cliente(7412581, "Carlos Vives", "vives.carlos@gmail.com", 852963));
-                client_repo.save(new Cliente(8529631, "Juanes", "juanes@gmail.com", 753159));
-                client_repo.save(new Cliente(9513571, "Alejandro Sanz", "sanz.alejandro@gmail.com", 654852));
-                client_repo.save(new Cliente(1597531, "Pablo Alborán", "pablo.alboran@gmail.com", 321654));
-                client_repo.save(new Cliente(2589631, "Manuel Turizo", "turizo.manuel@gmail.com", 654789));
-                client_repo.save(new Cliente(456741, "Kany García", "kany.garcia@gmail.com", 852963));
-                client_repo.save(new Cliente(123789, "Gloria Trevi", "gloria.trevi@gmail.com", 159753));
-                client_repo.save(new Cliente(9874561, "David Bisbal", "david.bisbal@gmail.com", 753951));
-                client_repo.save(new Cliente(6549631, "Alejandra Guzmán", "alejandra.guzman@gmail.com", 369852));
-                client_repo.save(new Cliente(9517531, "Ricardo Arjona", "arjona@gmail.com", 963852));
-                client_repo.save(new Cliente(9638521, "Amanda Miguel", "amanda.miguel@gmail.com", 456741));
-                client_repo.save(new Cliente(3692581, "Eros Ramazzotti", "eros.ramazzotti@gmail.com", 654852));
-                client_repo.save(new Cliente(123123, "Selena Gomez", "selena.gomez@gmail.com", 789123));
-                client_repo.save(new Cliente(321321, "Justin Bieber", "justin.bieber@gmail.com", 654789));
-                client_repo.save(new Cliente(987987, "Ariana Grande", "ariana.grande@gmail.com", 852963));
-                client_repo.save(new Cliente(654654, "Taylor Swift", "taylor.swift@gmail.com", 963741));
-                client_repo.save(new Cliente(789789, "Shawn Mendes", "shawn.mendes@gmail.com", 159753));
-                client_repo.save(new Cliente(852852, "Billie Eilish", "billie.eilish@gmail.com", 258963));
-                client_repo.save(new Cliente(963963, "Dua Lipa", "dua.lipa@gmail.com", 369852));
-                client_repo.save(new Cliente(6543211, "João Gilberto", "joao.gilberto@gmail.com", 852741));
-                client_repo.save(new Cliente(7891231, "Zara Larsson", "zara.larsson@gmail.com", 654321));
-                client_repo.save(new Cliente(8529630, "Aitana", "aitana@gmail.com", 123456));
-                client_repo.save(new Cliente(9632581, "Lali", "lali@gmail.com", 987654));
+
+                role_repo.save(new Role("CLIENTE"));
+                role_repo.save(new Role("VETERINARIO"));
+                role_repo.save(new Role("ADMIN"));
+
+                Cliente clienteSave;
+                Veterinario veterinarioSave;
+                UserEntity userEntity;
+                UserEntity admin = new UserEntity();
+
+                admin.setUsername("admin");
+                admin.setPassword(passwordEncoder.encode("123"));
+                admin.getRoles().add(role_repo.findByName("ADMIN").get());
+                userEntity = user_repo.save(admin);
+
+                clienteSave = (new Cliente(123456, "Gabriel Mora", "morita@gmail.com", 896547));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(9876543, "Eladio Carrion", "ela.god@gmail.com", 546791));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(753124, "Benito Antonio", "BadBunny@gmail.com", 749685));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(741258, "Diomedes Diaz", "diomedesdays@gmail.com", 349761));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(852123, "Kaleth Morales", "KaLimbo@gmail.com", 412398));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(6523987, "Silvestre Dangond", "WinniePooh@gmail.com", 987201));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(12345678, "Henry Cavill", "cavillHenry@gmail.com", 321567885));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(456123, "Lana Del Rey", "lana.delrey@gmail.com", 658124));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(234567, "Rosalía Vila", "rosalia.vila@gmail.com", 321654));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(987654, "Sebastián Yatra", "yatra.sebas@gmail.com", 875412));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(654789, "Shakira Mebarak", "shaki@gmail.com", 963258));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(321654, "Rauw Alejandro", "rauw.alejandro@gmail.com", 784512));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(963852, "Karol G", "karolg@gmail.com", 654123));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(159753, "Nicky Jam", "nicky.jam@gmail.com", 258741));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(258741, "Marc Anthony", "marc.anthony@gmail.com", 951753));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(852369, "Maluma", "maluma.baby@gmail.com", 741852));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(753951, "J Balvin", "balvin.j@gmail.com", 852741));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(456852, "Ozuna", "ozuna@gmail.com", 369852));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(654321, "Daddy Yankee", "daddy.yankee@gmail.com", 789456));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(741852, "Anuel AA", "anuel.aa@gmail.com", 987654));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(987123, "Natti Natasha", "natti.natasha@gmail.com", 654789));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(789456, "Tini Stoessel", "tini@gmail.com", 456123));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(852741, "Becky G", "beckyg@gmail.com", 123789));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(369852, "Camila Cabello", "camila.cabello@gmail.com", 654321));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(963741, "Ricky Martin", "ricky.martin@gmail.com", 852963));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(753159, "Thalía", "thalia@gmail.com", 951357));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(6547891, "Enrique Iglesias", "enrique.iglesias@gmail.com", 159753));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(7412581, "Carlos Vives", "vives.carlos@gmail.com", 852963));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(8529631, "Juanes", "juanes@gmail.com", 753159));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(9513571, "Alejandro Sanz", "sanz.alejandro@gmail.com", 654852));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(1597531, "Pablo Alborán", "pablo.alboran@gmail.com", 321654));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(2589631, "Manuel Turizo", "turizo.manuel@gmail.com", 654789));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(456741, "Kany García", "kany.garcia@gmail.com", 852963));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(123789, "Gloria Trevi", "gloria.trevi@gmail.com", 159753));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(9874561, "David Bisbal", "david.bisbal@gmail.com", 753951));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(6549631, "Alejandra Guzmán", "alejandra.guzman@gmail.com", 369852));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(9517531, "Ricardo Arjona", "arjona@gmail.com", 963852));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(9638521, "Amanda Miguel", "amanda.miguel@gmail.com", 456741));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(3692581, "Eros Ramazzotti", "eros.ramazzotti@gmail.com", 654852));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(123123, "Selena Gomez", "selena.gomez@gmail.com", 789123));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(321321, "Justin Bieber", "justin.bieber@gmail.com", 654789));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(987987, "Ariana Grande", "ariana.grande@gmail.com", 852963));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(654654, "Taylor Swift", "taylor.swift@gmail.com", 963741));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(789789, "Shawn Mendes", "shawn.mendes@gmail.com", 159753));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(852852, "Billie Eilish", "billie.eilish@gmail.com", 258963));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(963963, "Dua Lipa", "dua.lipa@gmail.com", 369852));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(6543211, "João Gilberto", "joao.gilberto@gmail.com", 852741));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(7891231, "Zara Larsson", "zara.larsson@gmail.com", 654321));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(8529630, "Aitana", "aitana@gmail.com", 123456));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
+                clienteSave = (new Cliente(9632581, "Lali", "lali@gmail.com", 987654));
+                userEntity = saveUserCliente(clienteSave);
+                clienteSave.setUser(userEntity);
+                client_repo.save(clienteSave);
 
                 mascota_repo.save(new Mascota("Luna", "Beagle", 3, 10.5f,
                                 "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Shemsu_Sotis_Perun.jpg/1200px-Shemsu_Sotis_Perun.jpg",
@@ -365,92 +542,134 @@ public class DataBaseinit implements ApplicationRunner {
                 mascota_repo.save(new Mascota("Rosie", "Shih Tzu", 5, 6.7f, "https://example.com/images/shih_tzu12.jpg",
                                 "Problemas respiratorios"));
 
-                vet_repo.save(Veterinario.builder()
+                veterinarioSave = (Veterinario.builder()
                                 .nombre("Dr. Juan Perez")
                                 .cedula(111111)
                                 .clave("clave123")
                                 .especialidad("Cirugía")
                                 .fotoURL("https://universidadeuropea.com/resources/media/images/medicina-veterinaria-800x450.width-1200.format-webp.webp")
+                                .estado(true)
                                 .build());
 
-                vet_repo.save(Veterinario.builder().nombre("Dra. Ana Gómez")
+                userEntity = saveUserVet(veterinarioSave);
+                veterinarioSave.setUser(userEntity);
+                vet_repo.save(veterinarioSave);
+
+                veterinarioSave = (Veterinario.builder().nombre("Dra. Ana Gómez")
                                 .cedula(222222)
                                 .clave("clave234")
                                 .especialidad("Medicina Interna")
                                 .fotoURL("https://www.infobae.com/new-resizer/ZnDkR1HUD3VOYyxcl1NfySwaToc=/1440x960/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/L6GI2ZSXFZGADESR57UO666ZE4.jpg")
+                                .estado(true)
                                 .build());
 
-                vet_repo.save(
-                                Veterinario.builder()
-                                                .nombre("Dr. Carlos López")
-                                                .cedula(333333)
-                                                .clave("clave345")
-                                                .especialidad("Dermatología")
-                                                .fotoURL("https://blog.agrovetmarket.com/wp-content/uploads/2020/05/vet.jpg")
-                                                .build());
+                userEntity = saveUserVet(veterinarioSave);
+                veterinarioSave.setUser(userEntity);
+                vet_repo.save(veterinarioSave);
 
-                vet_repo.save(
-                                Veterinario.builder()
-                                                .nombre("Dra. Laura Martínez")
-                                                .cedula(444444)
-                                                .clave("clave456")
-                                                .especialidad("Odontología")
-                                                .fotoURL("https://bensvet.com.br/wp-content/uploads/2020/03/blog-5-passos-para-se-tornar-o-melhor-m%C3%A9dico-veterin%C3%A1rio.jpg")
-                                                .build());
+                veterinarioSave = (Veterinario.builder()
+                                .nombre("Dr. Carlos López")
+                                .cedula(333333)
+                                .clave("clave345")
+                                .especialidad("Dermatología")
+                                .fotoURL("https://blog.agrovetmarket.com/wp-content/uploads/2020/05/vet.jpg")
+                                .estado(true)
+                                .build());
 
-                vet_repo.save(
-                                Veterinario.builder()
-                                                .nombre("Dr. Andrés Fernández")
-                                                .cedula(555555)
-                                                .clave("clave567")
-                                                .especialidad("Cardiología")
-                                                .fotoURL("https://media.diariolasamericas.com/p/dd615822f3890b61f37609e2635dd657/adjuntos/216/imagenes/100/128/0100128714/1200x630/smart/dia-mundial-del-veterinariojpg.jpg")
-                                                .build());
+                userEntity = saveUserVet(veterinarioSave);
+                veterinarioSave.setUser(userEntity);
+                vet_repo.save(veterinarioSave);
 
-                vet_repo.save(
-                                Veterinario.builder()
-                                                .nombre("Dra. Patricia Ruiz")
-                                                .cedula(666666)
-                                                .clave("clave678")
-                                                .especialidad("Neurología")
-                                                .fotoURL("https://blog.comparasoftware.com/wp-content/uploads/2022/02/software-veterinario-768x480.jpg")
-                                                .build());
+                veterinarioSave = (Veterinario.builder()
+                                .nombre("Dra. Laura Martínez")
+                                .cedula(444444)
+                                .clave("clave456")
+                                .especialidad("Odontología")
+                                .fotoURL("https://bensvet.com.br/wp-content/uploads/2020/03/blog-5-passos-para-se-tornar-o-melhor-m%C3%A9dico-veterin%C3%A1rio.jpg")
+                                .estado(true)
+                                .build());
 
-                vet_repo.save(
-                                Veterinario.builder()
-                                                .nombre("Dr. Javier Morales")
-                                                .cedula(777777)
-                                                .clave("clave789")
-                                                .especialidad("Oftalmología")
-                                                .fotoURL("https://plus.unsplash.com/premium_photo-1677165483776-3e2e85595746?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dmV0ZXJpbmFyaWF8ZW58MHx8MHx8fDA%3D")
-                                                .build());
+                userEntity = saveUserVet(veterinarioSave);
+                veterinarioSave.setUser(userEntity);
+                vet_repo.save(veterinarioSave);
 
-                vet_repo.save(
-                                Veterinario.builder()
-                                                .nombre("Dra. Beatriz García")
-                                                .cedula(888888)
-                                                .clave("clave890")
-                                                .especialidad("Oncología")
-                                                .fotoURL("https://blog.uchceu.es/veterinaria/wp-content/uploads/sites/12/2012/07/293887-500x480.jpg")
-                                                .build());
+                veterinarioSave = (Veterinario.builder()
+                                .nombre("Dr. Andrés Fernández")
+                                .cedula(555555)
+                                .clave("clave567")
+                                .especialidad("Cardiología")
+                                .fotoURL("https://media.diariolasamericas.com/p/dd615822f3890b61f37609e2635dd657/adjuntos/216/imagenes/100/128/0100128714/1200x630/smart/dia-mundial-del-veterinariojpg.jpg")
+                                .estado(true)
+                                .build());
 
-                vet_repo.save(
-                                Veterinario.builder()
-                                                .nombre("Dr. Mario Torres")
-                                                .cedula(999999)
-                                                .clave("clave901")
-                                                .especialidad("Gastroenterología")
-                                                .fotoURL("https://www.veterinariaelbosque.cl/images/noti_petcovid_3.jpg")
-                                                .build());
+                userEntity = saveUserVet(veterinarioSave);
+                veterinarioSave.setUser(userEntity);
+                vet_repo.save(veterinarioSave);
 
-                vet_repo.save(
-                                Veterinario.builder()
-                                                .nombre("Dra. Claudia Sánchez")
-                                                .cedula(101010)
-                                                .clave("clave1234")
-                                                .especialidad("Pediatría")
-                                                .fotoURL("https://bogota.gov.co/sites/default/files/styles/1050px/public/2024-05/vertinario-1.jpg")
-                                                .build());
+                veterinarioSave = (Veterinario.builder()
+                                .nombre("Dra. Patricia Ruiz")
+                                .cedula(666666)
+                                .clave("clave678")
+                                .especialidad("Neurología")
+                                .fotoURL("https://blog.comparasoftware.com/wp-content/uploads/2022/02/software-veterinario-768x480.jpg")
+                                .estado(true)
+                                .build());
+
+                userEntity = saveUserVet(veterinarioSave);
+                veterinarioSave.setUser(userEntity);
+                vet_repo.save(veterinarioSave);
+
+                veterinarioSave = (Veterinario.builder()
+                                .nombre("Dr. Javier Morales")
+                                .cedula(777777)
+                                .clave("clave789")
+                                .especialidad("Oftalmología")
+                                .fotoURL("https://plus.unsplash.com/premium_photo-1677165483776-3e2e85595746?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8dmV0ZXJpbmFyaWF8ZW58MHx8MHx8fDA%3D")
+                                .estado(true)
+                                .build());
+
+                userEntity = saveUserVet(veterinarioSave);
+                veterinarioSave.setUser(userEntity);
+                vet_repo.save(veterinarioSave);
+
+                veterinarioSave = (Veterinario.builder()
+                                .nombre("Dra. Beatriz García")
+                                .cedula(888888)
+                                .clave("clave890")
+                                .especialidad("Oncología")
+                                .fotoURL("https://blog.uchceu.es/veterinaria/wp-content/uploads/sites/12/2012/07/293887-500x480.jpg")
+                                .estado(true)
+                                .build());
+
+                userEntity = saveUserVet(veterinarioSave);
+                veterinarioSave.setUser(userEntity);
+                vet_repo.save(veterinarioSave);
+
+                veterinarioSave = (Veterinario.builder()
+                                .nombre("Dr. Mario Torres")
+                                .cedula(999999)
+                                .clave("clave901")
+                                .especialidad("Gastroenterología")
+                                .fotoURL("https://www.veterinariaelbosque.cl/images/noti_petcovid_3.jpg")
+                                .estado(true)
+                                .build());
+
+                userEntity = saveUserVet(veterinarioSave);
+                veterinarioSave.setUser(userEntity);
+                vet_repo.save(veterinarioSave);
+
+                veterinarioSave = (Veterinario.builder()
+                                .nombre("Dra. Claudia Sánchez")
+                                .cedula(101010)
+                                .clave("clave1234")
+                                .especialidad("Pediatría")
+                                .fotoURL("https://bogota.gov.co/sites/default/files/styles/1050px/public/2024-05/vertinario-1.jpg")
+                                .estado(true)
+                                .build());
+
+                userEntity = saveUserVet(veterinarioSave);
+                veterinarioSave.setUser(userEntity);
+                vet_repo.save(veterinarioSave);
 
                 // Ruta al archivo Excel
                 InputStream inputStream = getClass().getResourceAsStream("/static/excel/MEDICAMENTOS_VETERINARIA.xlsx");
@@ -561,5 +780,23 @@ public class DataBaseinit implements ApplicationRunner {
                         consulta.setDroga(droga);
                         consulta.setCantidad(cantidad);
                 }
+        }
+
+        private UserEntity saveUserCliente(Cliente cliente) {
+                UserEntity user = new UserEntity();
+                user.setUsername(String.valueOf(cliente.getCedula()));
+                user.setPassword(passwordEncoder.encode("123"));
+                Role roles = role_repo.findByName("CLIENTE").get();
+                user.setRoles(List.of(roles));
+                return user_repo.save(user);
+        }
+
+        private UserEntity saveUserVet(Veterinario vet) {
+                UserEntity user = new UserEntity();
+                user.setUsername(String.valueOf(vet.getCedula()));
+                user.setPassword(passwordEncoder.encode(vet.getClave()));
+                Role roles = role_repo.findByName("VETERINARIO").get();
+                user.setRoles(List.of(roles));
+                return user_repo.save(user);
         }
 }

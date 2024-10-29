@@ -15,10 +15,10 @@ public interface ClienteService {
 
     public List<Cliente> findAll();
 
-    public void add(Cliente cliente);
+    public Cliente add(Cliente cliente);
 
     public void deleteById(Long id);
 
-    public void update(Cliente cliente);
+    public Cliente update(Cliente cliente);
 
 }
