@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.By.ByXPath;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -57,71 +58,201 @@ public class NuevoUsuario {
 
     @Test
     public void IngresoVeterinario() throws InterruptedException {
-        // Navegar a la página de login
+        navegarALogin();
+        seleccionarVeterinario();
+        validarSeleccionVeterinario();
+        ingresarCredencialesVeterinario("1234567890", "1234567890");
+        Error();
+        seleccionarVeterinario();
+        validarSeleccionVeterinario();
+        ingresarCredencialesVeterinario("111111", "clave123");
+        navegarAClientes();
+        agregarCliente("Kris R", "14435", "50422", "KrisR@gmail.com");
+        navegarAMascotas();
+        seleccionarCliente();
+        validarSeleccionCliente();
+        ingresarCredencialesCliente("123456");
+
+    }
+
+    // Navega a la página de login y maximiza la ventana
+    private void navegarALogin() {
         driver.get("http://localhost:4200/login");
-        // Maximizar la ventana del navegador
         driver.manage().window().maximize();
-    
-        // Seleccionar "Veterinario" en el spinner
+    }
+
+    // Selecciona la opción "Veterinario" en el spinner
+    private void seleccionarVeterinario() throws InterruptedException {
         WebElement spinner = wait.until(ExpectedConditions.elementToBeClickable(By.id("user-type")));
         spinner.click();
-        Thread.sleep(2000);
+        // Thread.sleep(2000);
         WebElement opcionVet = wait.until(ExpectedConditions.elementToBeClickable(
                 By.cssSelector("option[value='1']")));
         opcionVet.click();
-        
-    
-        // Validar que se ha seleccionado la opción "Veterinario"
+    }
+
+    // Valida que la opción "Veterinario" fue seleccionada
+    private void validarSeleccionVeterinario() throws InterruptedException {
+        WebElement spinner = driver.findElement(By.id("user-type"));
         Select select = new Select(spinner);
         String opcionSeleccionada = select.getFirstSelectedOption().getText().trim();
         System.out.println("Opción seleccionada: " + opcionSeleccionada);
         assert opcionSeleccionada.equals("Veterinario");
-        Thread.sleep(2000);
-    
-        // Esperar a que los campos de "Veterinario" aparezcan
+        // Thread.sleep(2000);
+    }
+
+    // Ingresa las credenciales del veterinario
+    private void ingresarCredencialesVeterinario(String cedula, String contrasena) throws InterruptedException {
         WebElement inputCedula = wait.until(ExpectedConditions.elementToBeClickable(By.id("cedulaVet")));
         WebElement inputContrasena = wait.until(ExpectedConditions.elementToBeClickable(By.id("passVet")));
-    
-        // Ingresar datos en los campos
-        inputCedula.sendKeys("111111");
-        Thread.sleep(2000);
-        inputContrasena.sendKeys("clave123");
-        Thread.sleep(2000);
-    
-        // Hacer clic en el botón "Iniciar Sesión"
+
+        inputCedula.sendKeys(cedula);
+        // Thread.sleep(2000);
+        inputContrasena.sendKeys(contrasena);
+        // Thread.sleep(2000);
+
         WebElement iniciarSesion = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnIniciarSesion")));
         iniciarSesion.click();
-        Thread.sleep(2000);
-        // Interactuar con la página de Clientes
+        // Thread.sleep(2000);
+    }
+
+    // Navega a la sección de clientes
+    private void navegarAClientes() throws InterruptedException {
         WebElement verClientes = wait.until(ExpectedConditions.elementToBeClickable(By.id("cuadroCliente")));
         verClientes.click();
         Thread.sleep(2000);
+    }
+
+    // Agrega un cliente con los datos proporcionados
+    private void agregarCliente(String nombre, String cedula, String celular, String correo)
+            throws InterruptedException {
         WebElement agregarCliente = wait.until(ExpectedConditions.elementToBeClickable(By.id("agregarCliente")));
         agregarCliente.click();
-        Thread.sleep(2000);
-        
-        // Ingresar datos del cliente
+        // Thread.sleep(2000);
+
         WebElement inputNombre = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("nombre")));
         WebElement inputCedulaCliente = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("cedula")));
         WebElement inputCelular = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("celular")));
         WebElement inputCorreo = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
-    
-        inputNombre.sendKeys("Kris R");
-        Thread.sleep(2000);
+
+        inputNombre.sendKeys(nombre);
+        // Thread.sleep(2000);
         inputCedulaCliente.sendKeys(Keys.BACK_SPACE);
-        inputCedulaCliente.sendKeys("12345");
-        Thread.sleep(2000);
+        inputCedulaCliente.sendKeys(cedula);
+        // Thread.sleep(2000);
         inputCelular.sendKeys(Keys.BACK_SPACE);
-        inputCelular.sendKeys("121212");
-        Thread.sleep(2000);
-        inputCorreo.sendKeys("KrisR@gmail.com");
-        Thread.sleep(2000);
-    
-        // Hacer clic en el botón "Agregar"
+        inputCelular.sendKeys(celular);
+        // Thread.sleep(2000);
+        inputCorreo.sendKeys(correo);
+        // Thread.sleep(2000);
+
         WebElement btnAgregar = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnAgregar")));
         btnAgregar.click();
-    
-        // Espera opcional para observar el resultado
-        Thread.sleep(2000);
+        // Thread.sleep(2000);
     }
+
+    private void Error() {
+        WebElement btnError = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnVolver")));
+        btnError.click();
+    }
+
+    private void navegarAMascotas() throws InterruptedException {
+
+        WebElement salir = wait.until(ExpectedConditions.elementToBeClickable(By.id("volverSesion")));
+        salir.click();
+
+        WebElement verMascota = wait.until(ExpectedConditions.elementToBeClickable(By.id("cuadroMascota")));
+        verMascota.click();
+
+        WebElement agregarMascota = wait.until(ExpectedConditions.elementToBeClickable(By.id("agregar")));
+        agregarMascota.click();
+
+        WebElement inputNombre = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("nombre")));
+        WebElement inputRaza = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("raza")));
+        WebElement inputEdad = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("edad")));
+        WebElement inputPeso = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("peso")));
+        WebElement inputEnfermedad = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("enfermedad")));
+        WebElement inputFoto = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("fotoURL")));
+        // WebElement spinnerEnfermero =
+        // wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("cliente")));
+
+        inputNombre.sendKeys("Firulo");
+        inputRaza.sendKeys("Beagle");
+        inputEdad.sendKeys("14");
+        inputPeso.sendKeys("5");
+        inputEnfermedad.sendKeys("Retraso");
+
+        WebElement spinner = wait.until(ExpectedConditions.elementToBeClickable(By.id("cliente")));
+        spinner.click();
+        // Thread.sleep(2000);
+        WebElement cliente = wait.until(ExpectedConditions.elementToBeClickable(ByXPath
+                .xpath("//*[@id='cliente']/option[2]")));
+        cliente.click();
+
+        inputFoto.sendKeys(
+                "https://www.akc.org/wp-content/uploads/2021/01/Beagle-puppy-standing-in-the-grass-1-500x486.jpeg");
+
+        WebElement btnAgregar = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnAgregar")));
+        btnAgregar.click();
+
+        WebElement btnVolver = wait.until(ExpectedConditions.elementToBeClickable(By.id("volverSesion")));
+        btnVolver.click();
+
+        WebElement cerrarSesion = wait.until(ExpectedConditions.elementToBeClickable(By.id("cerrarSesion")));
+        cerrarSesion.click();
+    }
+
+    private void cerrarSesion(String usuarioCliente) throws InterruptedException {
+
+        WebElement cerrarSesion = wait.until(ExpectedConditions.elementToBeClickable(By.id("volverSesion")));
+        cerrarSesion.click();
+
+        WebElement salir = wait.until(ExpectedConditions.elementToBeClickable(By.id("cerrarSesion")));
+        salir.click();
+
+        seleccionarCliente();
+        validarSeleccionCliente();
+
+        WebElement cedulaCliente = wait.until(ExpectedConditions.elementToBeClickable(By.id("cedulaCliente")));
+        cedulaCliente.sendKeys(usuarioCliente);
+
+        WebElement btnIniciarSesion = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnIniciarSesion")));
+        btnIniciarSesion.click();
+
+    }
+
+    private void seleccionarCliente() throws InterruptedException {
+        WebElement spinner = wait.until(ExpectedConditions.elementToBeClickable(By.id("user-type")));
+        spinner.click();
+        // Thread.sleep(2000);
+        WebElement opcionVet = wait.until(ExpectedConditions.elementToBeClickable(
+                By.cssSelector("option[value='3']")));
+        opcionVet.click();
+    }
+
+    private void validarSeleccionCliente() throws InterruptedException {
+        WebElement spinner = driver.findElement(By.id("user-type"));
+        Select select = new Select(spinner);
+        String opcionSeleccionada = select.getFirstSelectedOption().getText().trim();
+        System.out.println("Opción seleccionada: " + opcionSeleccionada);
+        assert opcionSeleccionada.equals("Cliente");
+        // Thread.sleep(2000);
+    }
+
+    private void ingresarCredencialesCliente(String cedula) throws InterruptedException {
+        WebElement inputCedula = wait.until(ExpectedConditions.elementToBeClickable(By.id("cedulaCliente")));
+        inputCedula.sendKeys(cedula);
+
+        WebElement btnIniciarSesion = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnIniciarSesion")));
+        btnIniciarSesion.click();
+
+        WebElement spinner = wait.until(ExpectedConditions.elementToBeClickable(By.id("seleccionMascota")));
+        spinner.click();
+        // Thread.sleep(2000);
+        WebElement cliente = wait.until(ExpectedConditions.elementToBeClickable(ByXPath
+                .xpath("//*[@id='seleccionMascota']")));
+        cliente.click();
+
+    }
+
 }
