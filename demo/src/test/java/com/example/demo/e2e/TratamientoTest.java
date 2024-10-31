@@ -1,6 +1,5 @@
 package com.example.demo.e2e;
 
-
 import java.time.Duration;
 
 import org.junit.Before; // Cambiado a JUnit 4
@@ -49,11 +48,16 @@ public class TratamientoTest {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-
     @Test
     public void registroTratamiento() throws InterruptedException {
-        
+
         navegarALogin();
+        seleccionarAdmin();
+        validarSeleccionAdmin();
+        ingresarCredencialesAdmin("admin", "Jave1234*");
+        verDashboard();
+        devolverse();
+        cerrarSesion();
         seleccionarVeterinario();
         validarSeleccionVeterinario();
         ingresarCredencialesVeterinario("111111", "clave123");
@@ -69,12 +73,8 @@ public class TratamientoTest {
         validarSeleccionAdmin();
         ingresarCredencialesAdmin("admin", "Jave1234*");
         verDashboard();
-        devolverse();
-        verDashboard();
 
     }
-
-
 
     private void navegarALogin() {
         driver.get(BASE_URL + "/login");
@@ -113,35 +113,39 @@ public class TratamientoTest {
         // Thread.sleep(2000);
     }
 
-    private void navegarTratamientos(){
+    private void navegarTratamientos() {
         WebElement verTratamientos = wait.until(ExpectedConditions.elementToBeClickable(By.id("cuadroTratamientos")));
         verTratamientos.click();
 
         WebElement btnAgregar = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("agregar")));
-        btnAgregar.click(); 
+        btnAgregar.click();
     }
 
     private void addTratamientos() throws InterruptedException {
         WebElement spinnerMascota = wait.until(ExpectedConditions.elementToBeClickable(By.id("mascota")));
         spinnerMascota.click();
-        WebElement opcionMascota = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='mascota']//option[2]")));
+        WebElement opcionMascota = wait
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='mascota']//option[2]")));
         opcionMascota.click();
 
         WebElement spinnerDroga = wait.until(ExpectedConditions.elementToBeClickable(By.id("droga")));
         spinnerDroga.click();
         Thread.sleep(2000);
-        WebElement opcionDroga = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='droga']/option[45]")));
+        WebElement opcionDroga = wait
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='droga']/option[45]")));
         Thread.sleep(2000);
         opcionDroga.click();
 
         WebElement spinnerVet = wait.until(ExpectedConditions.elementToBeClickable(By.id("veterinario")));
         spinnerVet.click();
-        WebElement opcionVeterinario = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='veterinario']/option[2]")));
+        WebElement opcionVeterinario = wait
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='veterinario']/option[2]")));
         opcionVeterinario.click();
 
         WebElement spinnerCant = wait.until(ExpectedConditions.elementToBeClickable(By.id("cantidad")));
         spinnerCant.click();
-        WebElement opcionCantidad = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='cantidad']/option[1]")));
+        WebElement opcionCantidad = wait
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='cantidad']/option[1]")));
         opcionCantidad.click();
 
         Thread.sleep(2000);
@@ -155,7 +159,7 @@ public class TratamientoTest {
 
     }
 
-    private void devolverse(){
+    private void devolverse() {
         WebElement salir = wait.until(ExpectedConditions.elementToBeClickable(By.id("volverSesion")));
         salir.click();
     }
@@ -188,28 +192,28 @@ public class TratamientoTest {
         // Ingresar el número de cédula
         WebElement inputCedula = wait.until(ExpectedConditions.elementToBeClickable(By.id("cedulaCliente")));
         inputCedula.sendKeys(cedula);
-    
+
         // Iniciar sesión
         WebElement btnIniciarSesion = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnIniciarSesion")));
         btnIniciarSesion.click();
-    
+
         // Seleccionar la mascota
         WebElement spinner = wait.until(ExpectedConditions.elementToBeClickable(By.id("seleccionMascota")));
         spinner.click();
-        WebElement cliente = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='seleccionMascota']")));
+        WebElement cliente = wait
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='seleccionMascota']")));
         cliente.click();
-    
+
         // Scroll hacia abajo hasta el final de la página
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
         Thread.sleep(2000); // Espera para asegurar que el scroll se complete
-    
+
         // Scroll hacia arriba hasta el elemento específico
         WebElement element = driver.findElement(By.id("header")); // Cambia "header" al selector correcto
         js.executeScript("arguments[0].scrollIntoView(true);", element);
         Thread.sleep(2000); // Espera para asegurarse de que el scroll hacia arriba se complete
     }
-    
 
     private void seleccionarAdmin() throws InterruptedException {
         WebElement spinner = wait.until(ExpectedConditions.elementToBeClickable(By.id("user-type")));

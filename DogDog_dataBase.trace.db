@@ -3686,3 +3686,58 @@ The connection was not closed by the application and is garbage collected [90018
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	... 94 more
+2024-10-30 19:57:54.420954-05:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLTimeoutException: Tiempo vencido intentando trabar (lock) la tabla "ROLES"
+Timeout trying to lock table "ROLES"; SQL statement:
+drop table if exists roles cascade [50200-224]
+2024-10-30 19:57:54.455822-05:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-10-30 19:57:54.457345-05:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-10-30 19:57:54.458345-05:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-10-30 19:57:54.460566-05:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-10-30 19:57:54.461565-05:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-10-30 19:57:54.462867-05:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-10-30 19:57:54.467662-05:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-10-30 19:57:54.472470-05:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-10-30 19:57:54.476581-05:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: El objeto ya está cerrado
+The object is already closed [90007-224]
+2024-10-30 19:57:56.366169-05:00 jdbc[18]: null
+org.h2.message.DbException: La conexión no fue cerrada por la aplicación y esta siendo limpiada (garbage collected)
+The connection was not closed by the application and is garbage collected [90018-224]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:218)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:135)
+	at org.h2.Driver.connect(Driver.java:59)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:724)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:703)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: La conexión no fue cerrada por la aplicación y esta siendo limpiada (garbage collected)
+The connection was not closed by the application and is garbage collected [90018-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 16 more
