@@ -68,10 +68,14 @@ public class NuevoUsuario {
         ingresarCredencialesVeterinario("111111", "clave123");
         navegarAClientes();
         agregarCliente("Kris R", "14435", "50422", "KrisR@gmail.com");
+        devolverse();
         navegarAMascotas();
+        ingresarDatosMascota("Firulo", "Beagle", "14", "5", "Retraso", "https://www.akc.org/wp-content/uploads/2021/01/Beagle-puppy-standing-in-the-grass-1-500x486.jpeg");
+        devolverse();
+        cerrarSesion();
         seleccionarCliente();
         validarSeleccionCliente();
-        ingresarCredencialesCliente("123456");
+        ingresarCredencialesCliente("14435");
 
     }
 
@@ -156,18 +160,13 @@ public class NuevoUsuario {
         btnError.click();
     }
 
-    private void navegarAMascotas() throws InterruptedException {
-
+    private void devolverse(){
         WebElement salir = wait.until(ExpectedConditions.elementToBeClickable(By.id("volverSesion")));
         salir.click();
+    }
 
-        WebElement verMascota = wait.until(ExpectedConditions.elementToBeClickable(By.id("cuadroMascota")));
-        verMascota.click();
-
-        WebElement agregarMascota = wait.until(ExpectedConditions.elementToBeClickable(By.id("agregar")));
-        agregarMascota.click();
-
-        WebElement inputNombre = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("nombre")));
+    private void ingresarDatosMascota(String nombre, String raza, String edad, String peso, String enfermedad, String fotoURL) throws InterruptedException {
+                WebElement inputNombre = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("nombre")));
         WebElement inputRaza = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("raza")));
         WebElement inputEdad = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("edad")));
         WebElement inputPeso = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("peso")));
@@ -176,49 +175,40 @@ public class NuevoUsuario {
         // WebElement spinnerEnfermero =
         // wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("cliente")));
 
-        inputNombre.sendKeys("Firulo");
-        inputRaza.sendKeys("Beagle");
-        inputEdad.sendKeys("14");
-        inputPeso.sendKeys("5");
-        inputEnfermedad.sendKeys("Retraso");
+        inputNombre.sendKeys(nombre);
+        inputRaza.sendKeys(raza);
+        inputEdad.sendKeys(edad);
+        inputPeso.sendKeys(peso);
+        inputEnfermedad.sendKeys(enfermedad);
 
         WebElement spinner = wait.until(ExpectedConditions.elementToBeClickable(By.id("cliente")));
         spinner.click();
         // Thread.sleep(2000);
         WebElement cliente = wait.until(ExpectedConditions.elementToBeClickable(ByXPath
-                .xpath("//*[@id='cliente']/option[2]")));
+                .xpath("//*[@id='cliente']/option[52]")));
         cliente.click();
 
-        inputFoto.sendKeys(
-                "https://www.akc.org/wp-content/uploads/2021/01/Beagle-puppy-standing-in-the-grass-1-500x486.jpeg");
+        inputFoto.sendKeys(fotoURL);
 
         WebElement btnAgregar = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnAgregar")));
         btnAgregar.click();
-
-        WebElement btnVolver = wait.until(ExpectedConditions.elementToBeClickable(By.id("volverSesion")));
-        btnVolver.click();
-
-        WebElement cerrarSesion = wait.until(ExpectedConditions.elementToBeClickable(By.id("cerrarSesion")));
-        cerrarSesion.click();
     }
 
-    private void cerrarSesion(String usuarioCliente) throws InterruptedException {
 
-        WebElement cerrarSesion = wait.until(ExpectedConditions.elementToBeClickable(By.id("volverSesion")));
-        cerrarSesion.click();
+    private void navegarAMascotas() throws InterruptedException {
+
+        WebElement verMascota = wait.until(ExpectedConditions.elementToBeClickable(By.id("cuadroMascota")));
+        verMascota.click();
+
+        WebElement agregarMascota = wait.until(ExpectedConditions.elementToBeClickable(By.id("agregar")));
+        agregarMascota.click();
+
+    }
+
+    private void cerrarSesion() throws InterruptedException {
 
         WebElement salir = wait.until(ExpectedConditions.elementToBeClickable(By.id("cerrarSesion")));
         salir.click();
-
-        seleccionarCliente();
-        validarSeleccionCliente();
-
-        WebElement cedulaCliente = wait.until(ExpectedConditions.elementToBeClickable(By.id("cedulaCliente")));
-        cedulaCliente.sendKeys(usuarioCliente);
-
-        WebElement btnIniciarSesion = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnIniciarSesion")));
-        btnIniciarSesion.click();
-
     }
 
     private void seleccionarCliente() throws InterruptedException {
@@ -256,3 +246,5 @@ public class NuevoUsuario {
     }
 
 }
+
+
