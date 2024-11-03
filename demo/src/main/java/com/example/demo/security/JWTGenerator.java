@@ -2,8 +2,10 @@ package com.example.demo.security;
 
 import java.security.Key;
 import java.util.Date;
+import java.util.stream.Collectors;
 
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
 
 import io.jsonwebtoken.Jwts;
@@ -22,15 +24,21 @@ public class JWTGenerator {
         Date currentDate = new Date();
         Date expireDate = new Date(currentDate.getTime() + EXPIRATION_TIME);
 
+        // Extraer roles del usuario autenticado
+        String roles = authentication.getAuthorities().stream()
+                        .map(GrantedAuthority::getAuthority)
+                        .collect(Collectors.joining(","));
+
+        // Incluir roles en los claims del token
         String token = Jwts.builder()
                 .setSubject(username)
+                .claim("role", roles) // Aquí agregamos los roles
                 .setIssuedAt(currentDate)
                 .setExpiration(expireDate)
                 .signWith(key, SignatureAlgorithm.HS512)
                 .compact();
 
         return token;
-
     }
 
     public String extractUsername(String token) {

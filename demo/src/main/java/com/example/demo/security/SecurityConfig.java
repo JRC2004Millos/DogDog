@@ -28,7 +28,13 @@ public class SecurityConfig {
                 .authorizeHttpRequests(requests -> requests
                         .requestMatchers("/h2/**").permitAll()
                         .requestMatchers("/clientes/login").permitAll()
+                        .requestMatchers("/admin/**").hasAuthority("ADMIN")
+                        .requestMatchers("/veterinarios").hasAuthority("ADMIN")
                         .requestMatchers("/veterinario/login").permitAll()
+                        .requestMatchers("/veterinario/modificar/**").hasAuthority("ADMIN")
+                        .requestMatchers("/veterinario/agregar/**").hasAuthority("ADMIN")
+                        .requestMatchers("/veterinario/eliminar/**").hasAuthority("ADMIN")
+                        .requestMatchers("/admin/negocio").hasAuthority("ADMIN")
                         .requestMatchers("/clientes/ver").hasAuthority("VETERINARIO")
                         .requestMatchers("/clientes/ver/**").hasAuthority("CLIENTE")
                         .requestMatchers("/clientes/agregar").hasAuthority("VETERINARIO")
