@@ -69,7 +69,7 @@ public class DataBaseinit implements ApplicationRunner {
                 UserEntity admin = new UserEntity();
 
                 admin.setUsername("admin");
-                admin.setPassword(passwordEncoder.encode("123"));
+                admin.setPassword(passwordEncoder.encode("Jave1234*"));
                 admin.getRoles().add(role_repo.findByName("ADMIN").get());
                 userEntity = user_repo.save(admin);
 
