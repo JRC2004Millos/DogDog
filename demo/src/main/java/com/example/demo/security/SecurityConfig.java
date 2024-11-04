@@ -28,6 +28,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(requests -> requests
                         .requestMatchers("/h2/**").permitAll()
                         .requestMatchers("/clientes/login").permitAll()
+                        .requestMatchers("/admin/login").permitAll()
                         .requestMatchers("/admin/**").hasAuthority("ADMIN")
                         .requestMatchers("/veterinarios").hasAuthority("ADMIN")
                         .requestMatchers("/veterinario/login").permitAll()
