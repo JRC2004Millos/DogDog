@@ -72,7 +72,7 @@ public class VeterinarioController {
     }
 
     @GetMapping("/details")
-    public ResponseEntity<VeterinarioDTO> buscarEstudianteEntity() {
+    public ResponseEntity<VeterinarioDTO> buscarVeterinarioEntity() {
         Veterinario veterinario = veterinarioService.findByCedula(Integer.parseInt(
                 SecurityContextHolder.getContext().getAuthentication().getName()));
 
@@ -96,9 +96,9 @@ public class VeterinarioController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity loginVeterinarioEntity(@RequestBody Veterinario veterinario) {
+    public ResponseEntity loginVeterinarioEntity(@RequestBody VeterinarioDTO veterinarioDTO) {
         Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(veterinario.getCedula(), veterinario.getClave()));
+                new UsernamePasswordAuthenticationToken(veterinarioDTO.getCedula(), veterinarioDTO.getClave()));
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
@@ -110,14 +110,6 @@ public class VeterinarioController {
     // http://localhost:8080/veterinario/agregar
     @PostMapping("/agregar")
     public ResponseEntity agregar(@RequestBody Veterinario veterinario) {
-        // Veterinario newVet = veterinarioService.add(veterinario);
-        // VeterinarioDTO vetDTO = VeterinarioMapper.INSTANCE.convert(newVet);
-        // if (veterinario == null) {
-        // return new ResponseEntity<VeterinarioDTO>(vetDTO, HttpStatus.BAD_REQUEST);
-        // }
-
-        // return new ResponseEntity<VeterinarioDTO>(vetDTO, HttpStatus.OK);
-
         if (userRepository.existsByUsername(String.valueOf(veterinario.getCedula()))) {
             return new ResponseEntity<String>("Este veterinario ya existe", HttpStatus.BAD_REQUEST);
         }
@@ -126,6 +118,7 @@ public class VeterinarioController {
         veterinario.setUser(userEntity);
         Veterinario vetDB = veterinarioService.add(veterinario);
         VeterinarioDTO newVet = VeterinarioMapper.INSTANCE.convert(vetDB);
+
         if (newVet == null) {
             return new ResponseEntity<VeterinarioDTO>(HttpStatus.BAD_REQUEST);
         }

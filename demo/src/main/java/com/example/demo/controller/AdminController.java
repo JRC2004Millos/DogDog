@@ -37,7 +37,7 @@ public class AdminController {
     JWTGenerator jwtGenerator;
 
     @PostMapping("/login")
-    public ResponseEntity loginClienteEntity(@RequestBody UserEntity user) {
+    public ResponseEntity loginAdminEntity(@RequestBody UserEntity user) {
 
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));

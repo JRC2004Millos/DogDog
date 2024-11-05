@@ -22,6 +22,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.Cliente;
+import com.example.demo.DTOs.ClienteDTO;
+import com.example.demo.DTOs.ClienteMapper;
 import com.example.demo.model.Mascota;
 import com.example.demo.model.UserEntity;
 import com.example.demo.repository.UserRepository;
@@ -70,17 +72,17 @@ public class ClienteController {
         return service.findByCedula(cedula);
     }
 
+    // http://localhost:8080/clientes/login
     @PostMapping("/login")
-    public ResponseEntity loginClienteEntity(@RequestBody Cliente cliente) {
-
+    public ResponseEntity<String> loginClienteEntity(@RequestBody ClienteDTO clienteDTO) {
         Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(cliente.getCedula(), "123"));
+                new UsernamePasswordAuthenticationToken(clienteDTO.getCedula(), "123"));
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
         String token = jwtGenerator.generateToken(authentication);
 
-        return new ResponseEntity<String>(token, HttpStatus.OK);
+        return new ResponseEntity<>(token, HttpStatus.OK);
     }
 
     @GetMapping("/details")
