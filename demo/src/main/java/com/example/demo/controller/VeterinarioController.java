@@ -32,6 +32,8 @@ import com.example.demo.security.CustomUserDetailService;
 import com.example.demo.security.JWTGenerator;
 import com.example.demo.service.VeterinarioService;
 
+import jakarta.transaction.Transactional;
+
 @RestController
 @RequestMapping("/veterinario")
 @CrossOrigin("http://localhost:4200")
@@ -143,9 +145,23 @@ public class VeterinarioController {
     }
 
     // http://localhost:8080/veterinario/eliminar/{id}
+    @Transactional
     @DeleteMapping("/eliminar/{id}")
-    public void eliminar(@PathVariable("id") Long id) {
+    public ResponseEntity<String> eliminarVeterinario(@PathVariable("id") Long id) {
+        Veterinario veterinario = veterinarioService.findById(id);
+        if (veterinario == null) {
+            return new ResponseEntity<>("Veterinario no encontrado", HttpStatus.NOT_FOUND);
+        }
+        
+        if (veterinario.getUser() != null) {
+            UserEntity user = veterinario.getUser();
+            user.getRoles().clear();
+            userRepository.save(user);
+            userRepository.delete(user);
+        }
+        
         veterinarioService.deleteById(id);
+        return new ResponseEntity<>("Veterinario eliminado exitosamente", HttpStatus.OK);
     }
 
     // http://localhost:8080/veterinario/activosInactivos

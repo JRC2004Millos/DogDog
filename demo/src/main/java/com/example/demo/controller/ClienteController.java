@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -134,9 +135,23 @@ public class ClienteController {
     }
 
     // http://localhost:8080/clientes/eliminar/{id}
+    @Transactional
     @DeleteMapping("/eliminar/{id}")
-    public void eliminarCliente(@PathVariable("id") Long identificacion) {
-        service.deleteById(identificacion);
+    public ResponseEntity<String> eliminarCliente(@PathVariable("id") Long id) {
+        Cliente cliente = service.findById(id);
+        if (cliente == null) {
+            return new ResponseEntity<>("Cliente no encontrado", HttpStatus.NOT_FOUND);
+        }
+        
+        if (cliente.getUser() != null) {
+            UserEntity user = cliente.getUser();
+            user.getRoles().clear();
+            userRepository.save(user); 
+            userRepository.delete(user);
+        }
+        
+        service.deleteById(id);
+        return new ResponseEntity<>("Cliente eliminado exitosamente", HttpStatus.OK);
     }
 
     // http://localhost:8080/clientes/modificar/{id}
